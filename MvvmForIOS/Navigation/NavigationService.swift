@@ -13,7 +13,6 @@ class NavigationService: INavigationService {
     private var modalViewController:UIViewController?
     private let sideNavigator:LGSideMenuController = LGSideMenuController()
     public weak var window:UIWindow?
-    
     init(window:UIWindow) {
         NSLog("[MvvmForIOS]Load NavigationService")
         self.window = window
@@ -229,3 +228,4 @@ class NavigationService: INavigationService {
         return (animated)
     }
 }
+

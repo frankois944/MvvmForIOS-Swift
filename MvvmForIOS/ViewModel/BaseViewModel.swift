@@ -27,3 +27,4 @@ open class BaseViewModel : IBaseViewModel, IVisibility {
     open func isVisible(IsVisible:Bool) -> Void {
     }
 }
+

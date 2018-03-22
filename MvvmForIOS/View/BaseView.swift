@@ -10,7 +10,6 @@ import UIKit
 
 open class BaseView<T:IBaseViewModel> : UIViewController {
     public var viewModel:T!
-    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,3 +51,4 @@ open class BaseView<T:IBaseViewModel> : UIViewController {
         }
     }
 }
+
