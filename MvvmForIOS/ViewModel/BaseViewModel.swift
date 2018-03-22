@@ -10,7 +10,7 @@ import Foundation
 
 open class BaseViewModel : IBaseViewModel, IVisibility {
     
-    open lazy var navigation:INavigationService! = ServiceLocator.resolve();
+    open lazy var navigation:INavigationService! = ServiceLocator.resolve()
     
     required public init() {
     }

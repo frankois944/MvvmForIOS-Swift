@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol IBaseViewModel {
-    init();
-    func startViewModel(parameters: Any?);
+    init()
+    func startViewModel(parameters: Any?)
 }

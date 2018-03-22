@@ -9,6 +9,6 @@
 import UIKit
 
 protocol IVisibility {
-    func WillBeVisible(willBeVisible:Bool) -> Void;
-    func IsVisible(IsVisible:Bool) -> Void;
+    func WillBeVisible(willBeVisible:Bool) -> Void
+    func IsVisible(IsVisible:Bool) -> Void
 }
