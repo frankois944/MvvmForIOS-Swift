@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View-->
+        <scene sceneID="7pN-3W-fRW">
+            <objects>
+                <viewController storyboardIdentifier="FirstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8BQ-eY-MJr" customClass="FirstView" customModule="MvvmForIOS_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rne-DP-Vag"/>
+                        <viewControllerLayoutGuide type="bottom" id="jaV-G6-23a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QWl-2Y-ehK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIz-Kd-b9J">
+                                <rect key="frame" x="16" y="20" width="343" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Plb-BL-WFO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-uh-8K8">
+                                <rect key="frame" x="16" y="90" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO0-gT-blU">
+                                <rect key="frame" x="16" y="128" width="343" height="30"/>
+                                <state key="normal" title="SecondView"/>
+                                <connections>
+                                    <action selector="goSecondView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="J4o-VQ-ole"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6zK-uh-8K8" firstAttribute="top" secondItem="DIz-Kd-b9J" secondAttribute="bottom" constant="8" symbolic="YES" id="K5u-Ex-ETX"/>
+                            <constraint firstItem="dO0-gT-blU" firstAttribute="leading" secondItem="6zK-uh-8K8" secondAttribute="leading" id="MGN-2f-bLS"/>
+                            <constraint firstItem="DIz-Kd-b9J" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="Tcv-jB-a08"/>
+                            <constraint firstItem="6zK-uh-8K8" firstAttribute="trailing" secondItem="DIz-Kd-b9J" secondAttribute="trailing" id="ZX6-Fz-qKp"/>
+                            <constraint firstItem="DIz-Kd-b9J" firstAttribute="top" secondItem="rne-DP-Vag" secondAttribute="bottom" id="fhv-wl-cNI"/>
+                            <constraint firstItem="DIz-Kd-b9J" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="mPU-4N-jkp"/>
+                            <constraint firstItem="6zK-uh-8K8" firstAttribute="leading" secondItem="DIz-Kd-b9J" secondAttribute="leading" id="scx-43-TGJ"/>
+                            <constraint firstItem="dO0-gT-blU" firstAttribute="top" secondItem="6zK-uh-8K8" secondAttribute="bottom" constant="8" symbolic="YES" id="voi-lW-weT"/>
+                            <constraint firstItem="dO0-gT-blU" firstAttribute="trailing" secondItem="6zK-uh-8K8" secondAttribute="trailing" id="y5v-Rx-kTP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentText" destination="6zK-uh-8K8" id="Rvc-Nd-i2H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WmK-IE-TdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="-452.02398800599701"/>
+        </scene>
+    </scenes>
+</document>
