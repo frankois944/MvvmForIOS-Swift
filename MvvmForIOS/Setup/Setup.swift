@@ -9,12 +9,12 @@
 import UIKit
 
 open class Setup: NSObject {
-
+    
     private weak var _window:UIWindow?;
-
+    
     public init(window:UIWindow!) {
-		NSLog("[MvvmForIOS]START setup");
+        NSLog("[MvvmForIOS]START setup");
         self._window = window;
-		ServiceLocator.register(service: NavigationService(window: window) as INavigationService);
+        ServiceLocator.register(service: NavigationService(window: window) as INavigationService);
     }
 }

@@ -12,18 +12,18 @@ open class BaseViewModel : IBaseViewModel, IVisibility {
     
     open lazy var navigation:INavigationService! = ServiceLocator.resolve();
     
-	required public init() {
-	}
-
+    required public init() {
+    }
+    
     deinit {
     }
     
     open func startViewModel(parameters: Any?) {
     }
-
-	open func WillBeVisible(willBeVisible:Bool) -> Void {
-	}
-
-	open func IsVisible(IsVisible:Bool) -> Void {
-	}
+    
+    open func WillBeVisible(willBeVisible:Bool) -> Void {
+    }
+    
+    open func IsVisible(IsVisible:Bool) -> Void {
+    }
 }
