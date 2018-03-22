@@ -21,9 +21,9 @@ open class BaseViewModel : IBaseViewModel, IVisibility {
     open func startViewModel(parameters: Any?) {
     }
     
-    open func WillBeVisible(willBeVisible:Bool) -> Void {
+    open func willBeVisible(willBeVisible:Bool) -> Void {
     }
     
-    open func IsVisible(IsVisible:Bool) -> Void {
+    open func isVisible(IsVisible:Bool) -> Void {
     }
 }

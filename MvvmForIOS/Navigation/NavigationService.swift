@@ -177,16 +177,16 @@ class NavigationService: INavigationService {
         let classname = NSStringFromClass(viewModel as! AnyClass) as String
         let module = classname.components(separatedBy: ".").first!
         
-        //getting view name
+        // getting view name
         let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
         let storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
         
-        //Init and start ViewModel
+        // Init and start ViewModel
         let newViewModel = viewModel.init()
         newViewModel.startViewModel(parameters: withParameters)
         
-        //Init View
+        // Init View
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: viewName) as! BaseView<T>
         

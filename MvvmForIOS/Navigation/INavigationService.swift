@@ -10,7 +10,6 @@ import UIKit
 import LGSideMenuController
 
 public protocol INavigationService {
-    
     var navigation:LGSideMenuController {get}
     
     func setCenterViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!) -> Void
