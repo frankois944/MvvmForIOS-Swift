@@ -10,28 +10,27 @@ import UIKit
 import LGSideMenuController
 
 class NavigationService: INavigationService {
-    
-    private var _modalViewController:UIViewController?
-    private let _sideNavigator:LGSideMenuController = LGSideMenuController()
-    public weak var _window:UIWindow?
+    private var modalViewController:UIViewController?
+    private let sideNavigator:LGSideMenuController = LGSideMenuController()
+    public weak var window:UIWindow?
     
     init(window:UIWindow) {
         NSLog("[MvvmForIOS]Load NavigationService")
-        _window = window
+        self.window = window
     }
     
     var navigation:LGSideMenuController {
         get
         {
-            return (_sideNavigator)
+            return (sideNavigator)
         }
     }
     
     func setCenterViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!) -> Void {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
-        _sideNavigator.rootViewController = UINavigationController(rootViewController: view)
-        _window?.rootViewController = _sideNavigator
-        _window?.makeKeyAndVisible()
+        sideNavigator.rootViewController = UINavigationController(rootViewController: view)
+        window?.rootViewController = sideNavigator
+        window?.makeKeyAndVisible()
     }
     
     func showViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!) -> Void {
@@ -47,7 +46,7 @@ class NavigationService: INavigationService {
         
         if ((view as? ILeftPannelAttribute) != nil) {
             if ((view as? IRootAttribute) != nil) {
-                _sideNavigator.leftViewController = UINavigationController(rootViewController: view)
+                sideNavigator.leftViewController = UINavigationController(rootViewController: view)
                 if (onCompletion != nil) {
                     onCompletion!()
                 }
@@ -55,13 +54,13 @@ class NavigationService: INavigationService {
             else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
-                (_sideNavigator.leftViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
+                (sideNavigator.leftViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
                 CATransaction.commit()
             }
         }
         else if ((view as? ILeftPannelAttribute) != nil) {
             if ((view as? IRootAttribute) != nil) {
-                _sideNavigator.rightViewController = UINavigationController(rootViewController: view)
+                sideNavigator.rightViewController = UINavigationController(rootViewController: view)
                 if (onCompletion != nil) {
                     onCompletion!()
                 }
@@ -69,13 +68,13 @@ class NavigationService: INavigationService {
             else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
-                (_sideNavigator.rightViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
+                (sideNavigator.rightViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
                 CATransaction.commit()
             }
         }
         else {
             if ((view as? IRootAttribute) != nil) {
-                _sideNavigator.rootViewController = UINavigationController(rootViewController: view)
+                sideNavigator.rootViewController = UINavigationController(rootViewController: view)
                 if (onCompletion != nil) {
                     onCompletion!()
                 }
@@ -83,7 +82,7 @@ class NavigationService: INavigationService {
             else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
-                (_sideNavigator.rootViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
+                (sideNavigator.rootViewController as! UINavigationController).pushViewController(view, animated: getIsAnimatedForOpen(view: view))
                 CATransaction.commit()
             }
         }
@@ -102,26 +101,26 @@ class NavigationService: INavigationService {
     }
     
     func showModalViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?, customizeModal:((UIViewController) -> (Void))?, withParameters:AnyObject?) -> Void {
-        if (_modalViewController != nil) {
+        if (modalViewController != nil) {
             NSLog("Must have only one Modal View")
         }
         else {
-            _modalViewController = getView(viewModel: viewModelToShow, withParameters: withParameters)
-            if (customizeModal != nil && _modalViewController != nil) {
-                customizeModal!(_modalViewController!)
+            modalViewController = getView(viewModel: viewModelToShow, withParameters: withParameters)
+            if (customizeModal != nil && modalViewController != nil) {
+                customizeModal!(modalViewController!)
             }
-            (_sideNavigator.rootViewController as! UINavigationController).topViewController?.present(_modalViewController!, animated: getIsAnimatedForOpen(view: _modalViewController), completion: onCompletion)
+            (sideNavigator.rootViewController as! UINavigationController).topViewController?.present(modalViewController!, animated: getIsAnimatedForOpen(view: modalViewController), completion: onCompletion)
         }
     }
     
     func setRightSideViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!) -> Void {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
-        _sideNavigator.rightViewController = UINavigationController(rootViewController: view)
+        sideNavigator.rightViewController = UINavigationController(rootViewController: view)
     }
     
     func setLeftSideViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!) -> Void {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
-        _sideNavigator.leftViewController = UINavigationController(rootViewController: view)
+        sideNavigator.leftViewController = UINavigationController(rootViewController: view)
     }
     
     func closeViewModel<T:IBaseViewModel>(viewModelToClose:T!) -> Void {
@@ -132,18 +131,18 @@ class NavigationService: INavigationService {
         CATransaction.begin()
         CATransaction.setCompletionBlock(onCompletion)
         
-        if (_modalViewController != nil) {
-            _modalViewController?.dismiss(animated: getIsAnimatedForClose(view: _modalViewController), completion: nil)
-            _modalViewController = nil
+        if (modalViewController != nil) {
+            modalViewController?.dismiss(animated: getIsAnimatedForClose(view: modalViewController), completion: nil)
+            modalViewController = nil
         }
-        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: _sideNavigator.leftViewController as? UINavigationController) != nil) {
-            (_sideNavigator.leftViewController as! UINavigationController).popViewController(animated: true)
+        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.leftViewController as? UINavigationController) != nil) {
+            (sideNavigator.leftViewController as! UINavigationController).popViewController(animated: true)
         }
-        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: _sideNavigator.rightViewController as? UINavigationController) != nil) {
-            (_sideNavigator.rightViewController as! UINavigationController).popViewController(animated: true)
+        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rightViewController as? UINavigationController) != nil) {
+            (sideNavigator.rightViewController as! UINavigationController).popViewController(animated: true)
         }
-        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: _sideNavigator.rootViewController as? UINavigationController) != nil) {
-            (_sideNavigator.rootViewController as! UINavigationController).popViewController(animated: true)
+        else if (isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rootViewController as? UINavigationController) != nil) {
+            (sideNavigator.rootViewController as! UINavigationController).popViewController(animated: true)
         }
         else {
             NSLog("[MvvmForIOS]No View Found or is RootView for %@", String(describing: type(of: viewModelToClose!)))
@@ -158,19 +157,19 @@ class NavigationService: INavigationService {
     }
     
     func showLeftPannel(animated:Bool) -> Void {
-        animated == true ? _sideNavigator.showLeftViewAnimated() : _sideNavigator.showLeftView()
+        animated == true ? sideNavigator.showLeftViewAnimated() : sideNavigator.showLeftView()
     }
     
     func showRightPannel(animated:Bool) -> Void {
-        animated == true ? _sideNavigator.showRightViewAnimated() : _sideNavigator.showRightView()
+        animated == true ? sideNavigator.showRightViewAnimated() : sideNavigator.showRightView()
     }
     
     func hideLeftPannel(animated:Bool) -> Void {
-        animated == true ? _sideNavigator.hideLeftViewAnimated() : _sideNavigator.hideLeftView()
+        animated == true ? sideNavigator.hideLeftViewAnimated() : sideNavigator.hideLeftView()
     }
     
     func hideRightPannel(animated:Bool) -> Void {
-        animated == true ? _sideNavigator.hideRightViewAnimated() : _sideNavigator.hideRightView()
+        animated == true ? sideNavigator.hideRightViewAnimated() : sideNavigator.hideRightView()
     }
     
     private func getView<T:IBaseViewModel>(viewModel:T.Type!, withParameters:AnyObject?) -> UIViewController {
@@ -190,7 +189,7 @@ class NavigationService: INavigationService {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: viewName) as! BaseView<T>
         
-        //Store ViewModel in View
+        // Store ViewModel in View
         newViewController.viewModel = newViewModel
         return (newViewController)
     }
