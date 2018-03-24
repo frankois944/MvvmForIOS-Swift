@@ -12,8 +12,6 @@
 		703F91162063EC1F000A81A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F91142063EC1F000A81A1 /* LaunchScreen.storyboard */; };
 		703F91312063EC59000A81A1 /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91292063EC3A000A81A1 /* LGSideMenuController.framework */; };
 		703F91322063EC59000A81A1 /* LGSideMenuController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91292063EC3A000A81A1 /* LGSideMenuController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		703F91342063EC5E000A81A1 /* MvvmForIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOS.framework */; };
-		703F91352063EC5E000A81A1 /* MvvmForIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		703F91402063ED07000A81A1 /* IDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F913F2063ED07000A81A1 /* IDataService.swift */; };
 		703F91422063ED1D000A81A1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91412063ED1D000A81A1 /* DataService.swift */; };
 		703F91442063ED88000A81A1 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91432063ED88000A81A1 /* FirstView.swift */; };
@@ -22,6 +20,8 @@
 		703F914A2063EDA8000A81A1 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91492063EDA8000A81A1 /* SecondViewModel.swift */; };
 		703F914C2063EDE8000A81A1 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F914B2063EDE8000A81A1 /* First.storyboard */; };
 		703F91502063EE71000A81A1 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F914F2063EE71000A81A1 /* Second.storyboard */; };
+		70D9E0462066726200268958 /* MvvmForIOSSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */; };
+		70D9E0472066726200268958 /* MvvmForIOSSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,19 +32,19 @@
 			remoteGlobalIDString = 049323CE20234A3400950B7C;
 			remoteInfo = MvvmForIOS;
 		};
-		703F912F2063EC4C000A81A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 703F911D2063EC2A000A81A1 /* MvvmForIOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 049323CD20234A3400950B7C;
-			remoteInfo = MvvmForIOS;
-		};
 		703F91362063EC5E000A81A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 703F911D2063EC2A000A81A1 /* MvvmForIOS.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 049323CD20234A3400950B7C;
 			remoteInfo = MvvmForIOS;
+		};
+		70D9E0482066726200268958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 703F911D2063EC2A000A81A1 /* MvvmForIOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 049323CD20234A3400950B7C;
+			remoteInfo = MvvmForIOSSwift;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,7 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				703F91352063EC5E000A81A1 /* MvvmForIOS.framework in Embed Frameworks */,
+				70D9E0472066726200268958 /* MvvmForIOSSwift.framework in Embed Frameworks */,
 				703F91322063EC59000A81A1 /* LGSideMenuController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				703F91342063EC5E000A81A1 /* MvvmForIOS.framework in Frameworks */,
+				70D9E0462066726200268958 /* MvvmForIOSSwift.framework in Frameworks */,
 				703F91312063EC59000A81A1 /* LGSideMenuController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +129,7 @@
 		703F911E2063EC2A000A81A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				703F91232063EC2A000A81A1 /* MvvmForIOS.framework */,
+				703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,8 +218,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				703F91302063EC4C000A81A1 /* PBXTargetDependency */,
 				703F91372063EC5E000A81A1 /* PBXTargetDependency */,
+				70D9E0492066726200268958 /* PBXTargetDependency */,
 			);
 			name = "MvvmForIOS-Sample";
 			productName = "MvvmForIOS-Sample";
@@ -267,10 +267,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		703F91232063EC2A000A81A1 /* MvvmForIOS.framework */ = {
+		703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = MvvmForIOS.framework;
+			path = MvvmForIOSSwift.framework;
 			remoteRef = 703F91222063EC2A000A81A1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -308,15 +308,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		703F91302063EC4C000A81A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MvvmForIOS;
-			targetProxy = 703F912F2063EC4C000A81A1 /* PBXContainerItemProxy */;
-		};
 		703F91372063EC5E000A81A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MvvmForIOS;
 			targetProxy = 703F91362063EC5E000A81A1 /* PBXContainerItemProxy */;
+		};
+		70D9E0492066726200268958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MvvmForIOSSwift;
+			targetProxy = 70D9E0482066726200268958 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
