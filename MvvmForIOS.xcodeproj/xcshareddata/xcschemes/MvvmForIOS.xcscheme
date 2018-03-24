@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "049323CD20234A3400950B7C"
-               BuildableName = "MvvmForIOS.framework"
-               BlueprintName = "MvvmForIOS"
+               BuildableName = "MvvmForIOSSwift.framework"
+               BlueprintName = "MvvmForIOSSwift"
                ReferencedContainer = "container:MvvmForIOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "049323CD20234A3400950B7C"
-            BuildableName = "MvvmForIOS.framework"
-            BlueprintName = "MvvmForIOS"
+            BuildableName = "MvvmForIOSSwift.framework"
+            BlueprintName = "MvvmForIOSSwift"
             ReferencedContainer = "container:MvvmForIOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "049323CD20234A3400950B7C"
-            BuildableName = "MvvmForIOS.framework"
-            BlueprintName = "MvvmForIOS"
+            BuildableName = "MvvmForIOSSwift.framework"
+            BlueprintName = "MvvmForIOSSwift"
             ReferencedContainer = "container:MvvmForIOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

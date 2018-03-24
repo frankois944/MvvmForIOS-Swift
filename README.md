@@ -33,7 +33,7 @@ github "frankois944/MvvmForIOS-Swift"
 
 * CocoaPods
 
-pod 'MvvmForIOS-Swift'
+pod 'MvvmForIOSSwift'
 
 ## How to use it
 There is a sample who explain how to implement the Framework in Swift project without binding stuff

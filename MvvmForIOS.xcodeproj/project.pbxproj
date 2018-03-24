@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		04750EA9202374A900315B77 /* IVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVisibility.swift; sourceTree = "<group>"; };
-		049323CE20234A3400950B7C /* MvvmForIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049323D220234A3400950B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		049323D920234A4300950B7C /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		049323DA20234A4300950B7C /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		049323CF20234A3400950B7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				049323CE20234A3400950B7C /* MvvmForIOS.framework */,
+				049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +176,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		049323CD20234A3400950B7C /* MvvmForIOS */ = {
+		049323CD20234A3400950B7C /* MvvmForIOSSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 049323D620234A3400950B7C /* Build configuration list for PBXNativeTarget "MvvmForIOS" */;
+			buildConfigurationList = 049323D620234A3400950B7C /* Build configuration list for PBXNativeTarget "MvvmForIOSSwift" */;
 			buildPhases = (
 				049323C920234A3400950B7C /* Sources */,
 				049323CA20234A3400950B7C /* Frameworks */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				703F90FA2063D871000A81A1 /* PBXTargetDependency */,
 			);
-			name = MvvmForIOS;
+			name = MvvmForIOSSwift;
 			productName = MvvmForIOS;
-			productReference = 049323CE20234A3400950B7C /* MvvmForIOS.framework */;
+			productReference = 049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +229,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				049323CD20234A3400950B7C /* MvvmForIOS */,
+				049323CD20234A3400950B7C /* MvvmForIOSSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		049323D620234A3400950B7C /* Build configuration list for PBXNativeTarget "MvvmForIOS" */ = {
+		049323D620234A3400950B7C /* Build configuration list for PBXNativeTarget "MvvmForIOSSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				049323D720234A3400950B7C /* Debug */,
