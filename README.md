@@ -27,10 +27,13 @@ Also, you can KVO but it's not fully compatible with Swift.
 
 * Carthage
 //Add in your Cartfile :
+
 github "Friend-LGA/LGSideMenuController"
+
 github "frankois944/MvvmForIOS-Swift"
 
 * CocoaPods
+
 //Add in your Podfile :
 
 pod 'MvvmForIOS-Swift'
