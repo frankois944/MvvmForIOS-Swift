@@ -26,8 +26,15 @@ Also, you can KVO but it's not fully compatible with Swift.
 ## How to install MvvmForIOS-Swift
 
 * Carthage
-
+//Add in your Cartfile :
+github "Friend-LGA/LGSideMenuController"
 github "frankois944/MvvmForIOS-Swift"
+
+* CocoaPods
+//Add in your Podfile :
+
+pod 'MvvmForIOS-Swift'
+
 
 ## How to use it
 There is a sample who explain how to implement the Framework in Swift project without binding stuff
