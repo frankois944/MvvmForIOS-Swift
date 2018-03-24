@@ -87,9 +87,7 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 })
 ```
 
-
-####INavigationService Interface
-
+###INavigationService Interface
 
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
@@ -140,7 +138,7 @@ navigation.hideLeftPanel(animated: true)
 navigation.hideRightPanel(animated: true)
 ```
 
-* you can also push a viewModel inside a side Panel 
+* You can also push a viewModel inside a side Panel 
 
 ```Swift
 the view declaration must have 
@@ -150,7 +148,7 @@ class SecondView: BaseView<SecondViewModel>, ILeftPanelAttribute /*mandatory*/ {
 navigation.showViewModel(viewModelToShow: SecondViewModel.self)
 ```
 
-* you can access at __LGSideMenuController__ with 
+* You can access to __LGSideMenuController__ with 
 ```Swift
 let lgSideCtr = navigation.navigation;
 ```
