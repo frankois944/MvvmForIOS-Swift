@@ -28,6 +28,16 @@ class FirstView: BaseView<FirstViewModel>, IRootAttribute {
         viewModel.showSecondViewModel()
     }
     
+    @IBAction func showLeftPanel(_ sender: Any) {
+        viewModel.service.someData = contentText.text
+        viewModel.showLeftPanel()
+    }
+    
+    @IBAction func showRightPanel(_ sender: Any) {
+        viewModel.service.someData = contentText.text
+        viewModel.showRightPanel()
+    }
+    
     /*
     // MARK: - Navigation
 

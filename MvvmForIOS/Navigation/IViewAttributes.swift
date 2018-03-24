@@ -1,5 +1,5 @@
 //
-//  IPannelAttributes.swift
+//  IPanelAttributes.swift
 //  MvvmForIOS
 //
 //  Created by Dabonot Francois on 25/02/2018.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-public protocol ILeftPannelAttribute {
+public protocol ILeftPanelAttribute {
 }
 
-public protocol IRightPannelAttribute {
+public protocol IRightPanelAttribute {
 }
 
 public protocol ITransitionAttribute {

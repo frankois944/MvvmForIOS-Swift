@@ -9,7 +9,7 @@
 import UIKit
 import MvvmForIOS
 
-class SecondView: BaseView<SecondViewModel> {
+class SecondView: BaseView<SecondViewModel>, ILeftPanelAttribute {
     @IBOutlet weak var contentToShowLabel: UILabel!
     
     override func viewDidLoad() {
@@ -23,7 +23,6 @@ class SecondView: BaseView<SecondViewModel> {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

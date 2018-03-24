@@ -28,10 +28,10 @@ public protocol INavigationService {
     func closeViewModel<T:IBaseViewModel>(viewModelToClose:T!, onCompletion:(() -> (Void))?) -> Void
     func closeViewModel<T:IBaseViewModel>(viewModelToClose:T!) -> Void
     
-    func showLeftPannel(animated:Bool) -> Void
-    func showRightPannel(animated:Bool) -> Void
-    func hideLeftPannel(animated:Bool) -> Void
-    func hideRightPannel(animated:Bool) -> Void
+    func showLeftPanel(animated:Bool) -> Void
+    func showRightPanel(animated:Bool) -> Void
+    func hideLeftPanel(animated:Bool) -> Void
+    func hideRightPanel(animated:Bool) -> Void
     
     func resolveViewModel<T:IBaseViewModel>(viewModelToGet:T.Type!) -> T!
 }

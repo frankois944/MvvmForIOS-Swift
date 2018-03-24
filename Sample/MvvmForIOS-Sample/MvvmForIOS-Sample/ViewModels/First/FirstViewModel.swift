@@ -22,4 +22,12 @@ class FirstViewModel: BaseViewModel {
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
     }
     
+    
+    func showLeftPanel() -> Void {
+        navigation.showLeftPanel(animated: true)
+    }
+    
+    func showRightPanel() -> Void {
+        navigation.showRightPanel(animated: true)
+    }
 }

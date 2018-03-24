@@ -44,15 +44,35 @@
                                     <action selector="goSecondView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="J4o-VQ-ole"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYc-Hd-jlG">
+                                <rect key="frame" x="16" y="166" width="343" height="30"/>
+                                <state key="normal" title="Show left Panel"/>
+                                <connections>
+                                    <action selector="showLeftPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="hUp-Wz-plk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUK-AG-g0w">
+                                <rect key="frame" x="16" y="204" width="343" height="30"/>
+                                <state key="normal" title="Show right Panel"/>
+                                <connections>
+                                    <action selector="showRightPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="oUo-3V-wZj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="leading" secondItem="sUK-AG-g0w" secondAttribute="leading" id="0Za-Wf-g5b"/>
+                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="top" secondItem="dO0-gT-blU" secondAttribute="bottom" constant="8" symbolic="YES" id="3to-UG-Gjt"/>
+                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="trailing" secondItem="dO0-gT-blU" secondAttribute="trailing" id="DtH-pk-tJP"/>
+                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="leading" secondItem="dO0-gT-blU" secondAttribute="leading" id="E6H-Qp-WRP"/>
+                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="trailing" secondItem="sUK-AG-g0w" secondAttribute="trailing" id="H3L-gn-bCs"/>
                             <constraint firstItem="6zK-uh-8K8" firstAttribute="top" secondItem="DIz-Kd-b9J" secondAttribute="bottom" constant="8" symbolic="YES" id="K5u-Ex-ETX"/>
                             <constraint firstItem="dO0-gT-blU" firstAttribute="leading" secondItem="6zK-uh-8K8" secondAttribute="leading" id="MGN-2f-bLS"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="Tcv-jB-a08"/>
                             <constraint firstItem="6zK-uh-8K8" firstAttribute="trailing" secondItem="DIz-Kd-b9J" secondAttribute="trailing" id="ZX6-Fz-qKp"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="top" secondItem="rne-DP-Vag" secondAttribute="bottom" id="fhv-wl-cNI"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="mPU-4N-jkp"/>
+                            <constraint firstItem="sUK-AG-g0w" firstAttribute="top" secondItem="MYc-Hd-jlG" secondAttribute="bottom" constant="8" symbolic="YES" id="nvx-40-kQ2"/>
                             <constraint firstItem="6zK-uh-8K8" firstAttribute="leading" secondItem="DIz-Kd-b9J" secondAttribute="leading" id="scx-43-TGJ"/>
                             <constraint firstItem="dO0-gT-blU" firstAttribute="top" secondItem="6zK-uh-8K8" secondAttribute="bottom" constant="8" symbolic="YES" id="voi-lW-weT"/>
                             <constraint firstItem="dO0-gT-blU" firstAttribute="trailing" secondItem="6zK-uh-8K8" secondAttribute="trailing" id="y5v-Rx-kTP"/>

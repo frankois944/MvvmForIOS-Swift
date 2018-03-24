@@ -43,7 +43,7 @@ class NavigationService: INavigationService {
     func showViewModel<T:IBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?, withParameters:AnyObject?) -> Void {
         let view = getView(viewModel: viewModelToShow, withParameters: withParameters)
         
-        if ((view as? ILeftPannelAttribute) != nil) {
+        if ((view as? ILeftPanelAttribute) != nil) {
             if ((view as? IRootAttribute) != nil) {
                 sideNavigator.leftViewController = UINavigationController(rootViewController: view)
                 if (onCompletion != nil) {
@@ -57,7 +57,7 @@ class NavigationService: INavigationService {
                 CATransaction.commit()
             }
         }
-        else if ((view as? ILeftPannelAttribute) != nil) {
+        else if ((view as? ILeftPanelAttribute) != nil) {
             if ((view as? IRootAttribute) != nil) {
                 sideNavigator.rightViewController = UINavigationController(rootViewController: view)
                 if (onCompletion != nil) {
@@ -155,19 +155,19 @@ class NavigationService: INavigationService {
         return (newViewModel)
     }
     
-    func showLeftPannel(animated:Bool) -> Void {
+    func showLeftPanel(animated:Bool) -> Void {
         animated == true ? sideNavigator.showLeftViewAnimated() : sideNavigator.showLeftView()
     }
     
-    func showRightPannel(animated:Bool) -> Void {
+    func showRightPanel(animated:Bool) -> Void {
         animated == true ? sideNavigator.showRightViewAnimated() : sideNavigator.showRightView()
     }
     
-    func hideLeftPannel(animated:Bool) -> Void {
+    func hideLeftPanel(animated:Bool) -> Void {
         animated == true ? sideNavigator.hideLeftViewAnimated() : sideNavigator.hideLeftView()
     }
     
-    func hideRightPannel(animated:Bool) -> Void {
+    func hideRightPanel(animated:Bool) -> Void {
         animated == true ? sideNavigator.hideRightViewAnimated() : sideNavigator.hideRightView()
     }
     

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mvvmForIOS = Setup(window: window)
         navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
+        navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
+        navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
         // Override point for customization after application launch.
         return true
     }
