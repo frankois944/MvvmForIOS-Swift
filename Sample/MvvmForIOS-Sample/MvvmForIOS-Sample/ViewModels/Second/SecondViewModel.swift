@@ -1,13 +1,13 @@
 //
 //  SecondViewModel.swift
-//  MvvmForIOS-Sample
+//  MvvmForIOSSwift-Sample
 //
 //  Created by Dabonot Francois on 22/03/2018.
 //  Copyright © 2018 Dabonot Francois. All rights reserved.
 //
 
 import UIKit
-import MvvmForIOS
+import MvvmForIOSSwift
 
 class SecondViewModel: BaseViewModel {
     let service:IDataService! = ServiceLocator.resolve()
