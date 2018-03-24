@@ -87,7 +87,9 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 })
 ```
 
+
 ####INavigationService Interface
+
 
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
