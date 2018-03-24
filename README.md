@@ -5,7 +5,7 @@ It's fully written in Swift 4 and have some tools for respecting the mvvm patter
 
 Content of the framework :
 * A structure View/ViewModel/Model
-* A navigation service where we manage the navigation from the viewModel
+* A navigation service where we manage the navigation between viewModel
 * A service locator for IoC capabilities
 
 ### Compatibility
@@ -87,7 +87,7 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 })
 ```
 
-#####INavigationService Interface
+####INavigationService Interface
 
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
