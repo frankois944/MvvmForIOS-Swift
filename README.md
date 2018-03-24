@@ -35,6 +35,12 @@ github "frankois944/MvvmForIOS-Swift"
 
 pod 'MvvmForIOSSwift'
 
+* import
+
+```Swift
+import MvvmForIOSSwift
+```
+
 ## How to use it
 There is a sample who explain how to implement the Framework in Swift project without binding stuff
 

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "MvvmForIOSSwift"
-  s.version       = "0.6"
+  s.version       = "0.7"
   s.summary       = "Framework for using Mvvm Pattern in Swift with iOS"
   s.description   = <<-DESC
   Framework for using Mvvm Pattern in Swift 4 with iOS
