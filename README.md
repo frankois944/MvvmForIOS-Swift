@@ -23,16 +23,16 @@ This framework is specialized for binding content between view and viewModel
 
 Also, you can KVO but it's not fully compatible with Swift.
 
-### How to install MvvmForIOS-Swift
+## How to install MvvmForIOS-Swift
 
 * Carthage
 
 github "frankois944/MvvmForIOS-Swift"
 
-# How to use it
+## How to use it
 There is a sample who explain how to implement the Framework in Swift project without binding stuff
 
-# Service Locator
+## Service Locator
 There is a service locator which can be used for IoC.
 
 ```Swift
@@ -53,9 +53,9 @@ let service:IDataServices! = ServiceLocator.resolve()
 let result = service.openApplicationSetting()
 ```
 
-## Navigation
+### Navigation
 
-#### Important ####
+#### Important
 The navigation is managed trought __INavigationService__.
 
 It also based on __LGSideMenuController__ Framework (https://github.com/Friend-LGA/LGSideMenuController)
@@ -87,7 +87,7 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 })
 ```
 
-###INavigationService Interface
+### INavigationService Interface
 
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
@@ -119,7 +119,7 @@ public protocol INavigationService {
 }
 ```
 
-#### Side Panel
+### Side Panel
 
 * As this framework is based on __LGSideMenuController__, the use of Panel is easy
 
