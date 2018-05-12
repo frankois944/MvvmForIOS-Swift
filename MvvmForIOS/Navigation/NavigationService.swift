@@ -177,13 +177,19 @@ class NavigationService: INavigationService {
         
         // getting view name
         let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
-        let storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
+        var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
-        
+        let classView = NSClassFromString("\(module).\(viewName)") as! BaseView<T>.Type
+       
+        //Temporary instanciate the view for gettings the storyboard name
+        //It's not possible to use static because BaseView use generic and Swift donc like to use static with generic
+        let tmpView = classView.init()
+        if tmpView.fromStoryboardName != nil {
+            storyboardName = tmpView.fromStoryboardName!
+        }
         // Init and start ViewModel
         let newViewModel = viewModel.init()
         newViewModel.startViewModel(parameters: withParameters)
-        
         // Init View
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: viewName)

@@ -9,9 +9,13 @@
 import UIKit
 
 open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
-    internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
+    
+    open var fromStoryboardName: String? {
+        return (nil)
+    }
     public var viewModel:T!
     
+    internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
     internal var viewModelObject: AnyObject? {
         get {
             return (viewModel as AnyObject?)

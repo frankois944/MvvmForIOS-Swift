@@ -10,11 +10,15 @@ import UIKit
 import MvvmForIOSSwift
 
 class FirstView: BaseView<FirstViewModel>, IRootAttribute {
+    
+    override var fromStoryboardName: String? {
+        return ("First")
+    }
+    
     @IBOutlet weak var contentText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

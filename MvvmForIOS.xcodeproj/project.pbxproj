@@ -70,12 +70,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04750EA82023749C00315B77 /* Visibility */ = {
+		04750EA82023749C00315B77 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				70F8730D20A70A98000C5771 /* IBaseView.swift */,
 				04750EA9202374A900315B77 /* IVisibility.swift */,
 			);
-			path = Visibility;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		049323C420234A3400950B7C = {
@@ -138,8 +139,7 @@
 		049323FA20234F8B00950B7C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04750EA82023749C00315B77 /* Visibility */,
-				70F8730D20A70A98000C5771 /* IBaseView.swift */,
+				04750EA82023749C00315B77 /* Interfaces */,
 				049323FB20234F9E00950B7C /* BaseView.swift */,
 				70F8730B20A7037E000C5771 /* BaseTabView.swift */,
 			);
