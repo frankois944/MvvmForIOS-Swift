@@ -28,6 +28,11 @@ class FirstView: BaseView<FirstViewModel>, IRootAttribute {
         viewModel.showSecondViewModel()
     }
     
+    @IBAction func goTabView(_ sender: Any) {
+        viewModel.service.someData = contentText.text
+        viewModel.showTabViewModel()
+    }
+    
     @IBAction func showLeftPanel(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showLeftPanel()

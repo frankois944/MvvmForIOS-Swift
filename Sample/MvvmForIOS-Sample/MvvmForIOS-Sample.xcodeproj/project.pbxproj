@@ -20,6 +20,15 @@
 		703F914A2063EDA8000A81A1 /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91492063EDA8000A81A1 /* SecondViewModel.swift */; };
 		703F914C2063EDE8000A81A1 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F914B2063EDE8000A81A1 /* First.storyboard */; };
 		703F91502063EE71000A81A1 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F914F2063EE71000A81A1 /* Second.storyboard */; };
+		70588D7F20A7114A00EDC7A5 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7E20A7114A00EDC7A5 /* TabBarView.swift */; };
+		70588D8420A7117A00EDC7A5 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8320A7117A00EDC7A5 /* TabBarViewModel.swift */; };
+		70588D8920A711D500EDC7A5 /* Tab1BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8820A711D500EDC7A5 /* Tab1BarViewModel.swift */; };
+		70588D8B20A711DE00EDC7A5 /* Tab2BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8A20A711DE00EDC7A5 /* Tab2BarViewModel.swift */; };
+		70588D8D20A711EA00EDC7A5 /* Tab3BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8C20A711EA00EDC7A5 /* Tab3BarViewModel.swift */; };
+		70588D8F20A7123D00EDC7A5 /* Tab1BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8E20A7123D00EDC7A5 /* Tab1BarView.swift */; };
+		70588D9120A7124B00EDC7A5 /* Tab2BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D9020A7124B00EDC7A5 /* Tab2BarView.swift */; };
+		70588D9320A7125800EDC7A5 /* Tab3BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D9220A7125800EDC7A5 /* Tab3BarView.swift */; };
+		70588D9520A7128F00EDC7A5 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70588D9420A7128F00EDC7A5 /* TabBar.storyboard */; };
 		70D9E0462066726200268958 /* MvvmForIOSSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */; };
 		70D9E0472066726200268958 /* MvvmForIOSSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 703F91232063EC2A000A81A1 /* MvvmForIOSSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -79,6 +88,15 @@
 		703F91492063EDA8000A81A1 /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		703F914B2063EDE8000A81A1 /* First.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
 		703F914F2063EE71000A81A1 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		70588D7E20A7114A00EDC7A5 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		70588D8320A7117A00EDC7A5 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		70588D8820A711D500EDC7A5 /* Tab1BarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1BarViewModel.swift; sourceTree = "<group>"; };
+		70588D8A20A711DE00EDC7A5 /* Tab2BarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2BarViewModel.swift; sourceTree = "<group>"; };
+		70588D8C20A711EA00EDC7A5 /* Tab3BarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3BarViewModel.swift; sourceTree = "<group>"; };
+		70588D8E20A7123D00EDC7A5 /* Tab1BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1BarView.swift; sourceTree = "<group>"; };
+		70588D9020A7124B00EDC7A5 /* Tab2BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2BarView.swift; sourceTree = "<group>"; };
+		70588D9220A7125800EDC7A5 /* Tab3BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3BarView.swift; sourceTree = "<group>"; };
+		70588D9420A7128F00EDC7A5 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +163,7 @@
 		703F91382063ECD0000A81A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70588D7A20A7100800EDC7A5 /* Tabs */,
 				703F913C2063ECEB000A81A1 /* Second */,
 				703F913B2063ECE6000A81A1 /* First */,
 			);
@@ -154,6 +173,7 @@
 		703F91392063ECD3000A81A1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				70588D7B20A7101500EDC7A5 /* Tabs */,
 				703F913E2063ECF4000A81A1 /* Second */,
 				703F913D2063ECF0000A81A1 /* First */,
 			);
@@ -203,6 +223,77 @@
 			path = Second;
 			sourceTree = "<group>";
 		};
+		70588D7A20A7100800EDC7A5 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8220A7116300EDC7A5 /* Tab3 */,
+				70588D8120A7115E00EDC7A5 /* Tab2 */,
+				70588D8020A7115000EDC7A5 /* Tab1 */,
+				70588D7E20A7114A00EDC7A5 /* TabBarView.swift */,
+				70588D9420A7128F00EDC7A5 /* TabBar.storyboard */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		70588D7B20A7101500EDC7A5 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8720A711C200EDC7A5 /* Tab3 */,
+				70588D8620A711BE00EDC7A5 /* Tab2 */,
+				70588D8520A711B800EDC7A5 /* Tab1 */,
+				70588D8320A7117A00EDC7A5 /* TabBarViewModel.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		70588D8020A7115000EDC7A5 /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8E20A7123D00EDC7A5 /* Tab1BarView.swift */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		70588D8120A7115E00EDC7A5 /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D9020A7124B00EDC7A5 /* Tab2BarView.swift */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		70588D8220A7116300EDC7A5 /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D9220A7125800EDC7A5 /* Tab3BarView.swift */,
+			);
+			path = Tab3;
+			sourceTree = "<group>";
+		};
+		70588D8520A711B800EDC7A5 /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8820A711D500EDC7A5 /* Tab1BarViewModel.swift */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		70588D8620A711BE00EDC7A5 /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8A20A711DE00EDC7A5 /* Tab2BarViewModel.swift */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		70588D8720A711C200EDC7A5 /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				70588D8C20A711EA00EDC7A5 /* Tab3BarViewModel.swift */,
+			);
+			path = Tab3;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,7 +324,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dabonot Francois";
 				TargetAttributes = {
 					703F91072063EC1F000A81A1 = {
@@ -281,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70588D9520A7128F00EDC7A5 /* TabBar.storyboard in Resources */,
 				703F91502063EE71000A81A1 /* Second.storyboard in Resources */,
 				703F91162063EC1F000A81A1 /* LaunchScreen.storyboard in Resources */,
 				703F91132063EC1F000A81A1 /* Assets.xcassets in Resources */,
@@ -295,13 +387,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70588D9320A7125800EDC7A5 /* Tab3BarView.swift in Sources */,
+				70588D8F20A7123D00EDC7A5 /* Tab1BarView.swift in Sources */,
 				703F914A2063EDA8000A81A1 /* SecondViewModel.swift in Sources */,
+				70588D8420A7117A00EDC7A5 /* TabBarViewModel.swift in Sources */,
+				70588D8920A711D500EDC7A5 /* Tab1BarViewModel.swift in Sources */,
 				703F910C2063EC1F000A81A1 /* AppDelegate.swift in Sources */,
+				70588D7F20A7114A00EDC7A5 /* TabBarView.swift in Sources */,
 				703F91482063ED9F000A81A1 /* FirstViewModel.swift in Sources */,
 				703F91462063ED92000A81A1 /* SecondView.swift in Sources */,
 				703F91442063ED88000A81A1 /* FirstView.swift in Sources */,
+				70588D9120A7124B00EDC7A5 /* Tab2BarView.swift in Sources */,
+				70588D8D20A711EA00EDC7A5 /* Tab3BarViewModel.swift in Sources */,
 				703F91402063ED07000A81A1 /* IDataService.swift in Sources */,
 				703F91422063ED1D000A81A1 /* DataService.swift in Sources */,
+				70588D8B20A711DE00EDC7A5 /* Tab2BarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +446,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -353,6 +454,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -403,6 +505,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -410,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

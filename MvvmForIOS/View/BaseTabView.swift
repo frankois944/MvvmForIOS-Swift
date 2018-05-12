@@ -1,14 +1,14 @@
 //
-//  BaseViewController.swift
-//  MvvmForIOS
+//  BasetabView.swift
+//  MvvmForIOSSwift
 //
-//  Created by François Dabonot on 01/02/2018.
+//  Created by Dabonot Francois on 12/05/2018.
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
 import UIKit
 
-open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
+open class BaseTabView<T:IBaseViewModel> :  UITabBarController, UITabBarControllerDelegate, IBaseView {
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
     public var viewModel:T!
     
@@ -23,7 +23,27 @@ open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
+        if viewControllers != nil {
+            let viewController = viewControllers![0]
+            var v = (viewController as! IBaseView)
+            if v.viewModelObject == nil {
+                let instance = (v.typeOfViewModel as! BaseViewModel.Type).init()
+                instance.startViewModel(parameters: nil)
+                v.viewModelObject = instance
+            }
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        var v = (viewController as! IBaseView)
+        if v.viewModelObject == nil {
+            let instance = (v.typeOfViewModel as! BaseViewModel.Type).init()
+            instance.startViewModel(parameters: nil)
+            v.viewModelObject = instance
+        }
+        return (true)
     }
     
     override open func didReceiveMemoryWarning() {
@@ -33,30 +53,22 @@ open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).isVisible(IsVisible: true)
-        }
+        (viewModel as! IVisibility).isVisible(IsVisible: true)
     }
     
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).isVisible(IsVisible: false)
-        }
+        (viewModel as! IVisibility).isVisible(IsVisible: false)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).willBeVisible(willBeVisible: true)
-        }
+        (viewModel as! IVisibility).willBeVisible(willBeVisible: true)
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).willBeVisible(willBeVisible: false)
-        }
+        (viewModel as! IVisibility).willBeVisible(willBeVisible: false)
     }
     
     deinit {
@@ -68,5 +80,5 @@ open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
             viewModel = nil
         }
     }
+    
 }
-

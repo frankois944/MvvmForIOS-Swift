@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,11 +58,19 @@
                                     <action selector="showRightPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="oUo-3V-wZj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-qI-aHJ">
+                                <rect key="frame" x="16" y="242" width="343" height="30"/>
+                                <state key="normal" title="Show tab bar"/>
+                                <connections>
+                                    <action selector="goTabView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="G7p-Ol-GJG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MYc-Hd-jlG" firstAttribute="leading" secondItem="sUK-AG-g0w" secondAttribute="leading" id="0Za-Wf-g5b"/>
                             <constraint firstItem="MYc-Hd-jlG" firstAttribute="top" secondItem="dO0-gT-blU" secondAttribute="bottom" constant="8" symbolic="YES" id="3to-UG-Gjt"/>
+                            <constraint firstItem="gdN-qI-aHJ" firstAttribute="trailing" secondItem="sUK-AG-g0w" secondAttribute="trailing" id="8Yw-PB-eSJ"/>
                             <constraint firstItem="MYc-Hd-jlG" firstAttribute="trailing" secondItem="dO0-gT-blU" secondAttribute="trailing" id="DtH-pk-tJP"/>
                             <constraint firstItem="MYc-Hd-jlG" firstAttribute="leading" secondItem="dO0-gT-blU" secondAttribute="leading" id="E6H-Qp-WRP"/>
                             <constraint firstItem="MYc-Hd-jlG" firstAttribute="trailing" secondItem="sUK-AG-g0w" secondAttribute="trailing" id="H3L-gn-bCs"/>
@@ -71,10 +79,12 @@
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="Tcv-jB-a08"/>
                             <constraint firstItem="6zK-uh-8K8" firstAttribute="trailing" secondItem="DIz-Kd-b9J" secondAttribute="trailing" id="ZX6-Fz-qKp"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="top" secondItem="rne-DP-Vag" secondAttribute="bottom" id="fhv-wl-cNI"/>
+                            <constraint firstItem="gdN-qI-aHJ" firstAttribute="leading" secondItem="sUK-AG-g0w" secondAttribute="leading" id="ltY-CE-Ush"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="mPU-4N-jkp"/>
                             <constraint firstItem="sUK-AG-g0w" firstAttribute="top" secondItem="MYc-Hd-jlG" secondAttribute="bottom" constant="8" symbolic="YES" id="nvx-40-kQ2"/>
                             <constraint firstItem="6zK-uh-8K8" firstAttribute="leading" secondItem="DIz-Kd-b9J" secondAttribute="leading" id="scx-43-TGJ"/>
                             <constraint firstItem="dO0-gT-blU" firstAttribute="top" secondItem="6zK-uh-8K8" secondAttribute="bottom" constant="8" symbolic="YES" id="voi-lW-weT"/>
+                            <constraint firstItem="gdN-qI-aHJ" firstAttribute="top" secondItem="sUK-AG-g0w" secondAttribute="bottom" constant="8" symbolic="YES" id="wAQ-4U-c1E"/>
                             <constraint firstItem="dO0-gT-blU" firstAttribute="trailing" secondItem="6zK-uh-8K8" secondAttribute="trailing" id="y5v-Rx-kTP"/>
                         </constraints>
                     </view>

@@ -22,6 +22,10 @@ class FirstViewModel: BaseViewModel {
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
     }
     
+    func showTabViewModel() -> Void {
+        navigation.showViewModel(viewModelToShow: TabBarViewModel.self)
+        //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
+    }
     
     func showLeftPanel() -> Void {
         navigation.showLeftPanel(animated: true)

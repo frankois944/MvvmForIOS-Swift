@@ -1,20 +1,19 @@
 //
-//  SecondView.swift
-//  MvvmForIOSSwift-Sample
+//  Tab3BarView.swift
+//  MvvmForIOS-Sample
 //
-//  Created by Dabonot Francois on 22/03/2018.
+//  Created by Dabonot Francois on 12/05/2018.
 //  Copyright © 2018 Dabonot Francois. All rights reserved.
 //
 
 import UIKit
 import MvvmForIOSSwift
 
-class SecondView: BaseView<SecondViewModel> {
-    @IBOutlet weak var contentToShowLabel: UILabel!
-    
+class Tab3BarView: BaseView<Tab3BarViewModel> {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentToShowLabel.text = viewModel.service.someData
+        print("START Tab3BarView")
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +22,7 @@ class SecondView: BaseView<SecondViewModel> {
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 

@@ -186,10 +186,14 @@ class NavigationService: INavigationService {
         
         // Init View
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        let newViewController = storyboard.instantiateViewController(withIdentifier: viewName) as! BaseView<T>
-        
+        let newViewController = storyboard.instantiateViewController(withIdentifier: viewName)
         // Store ViewModel in View
-        newViewController.viewModel = newViewModel
+        if (newViewController is BaseView<T>) {
+            (newViewController as! BaseView<T>).viewModel = newViewModel
+        }
+        else if (newViewController is BaseTabView<T>) {
+            (newViewController as! BaseTabView<T>).viewModel = newViewModel
+        }
         return (newViewController)
     }
     
