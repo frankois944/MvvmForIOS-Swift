@@ -6,8 +6,7 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-protocol IBaseView {
-    var typeOfViewModel: AnyClass? { get set }
-    var viewModelObject: AnyObject? { get set }
-    var fromStoryboardName: String? { get }
+protocol IBaseView : IView {
+    associatedtype ViewModelType
+    var viewModel:ViewModelType! { get set }
 }

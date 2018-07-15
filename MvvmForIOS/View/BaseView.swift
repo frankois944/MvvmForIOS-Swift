@@ -9,11 +9,11 @@
 import UIKit
 
 open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
-    
+    typealias ViewModelType = T
+    open var viewModel: T!
     open var fromStoryboardName: String? {
         return (nil)
     }
-    public var viewModel:T!
     
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
     internal var viewModelObject: AnyObject? {
@@ -27,6 +27,11 @@ open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+        if viewModelObject == nil {
+            let instance = (typeOfViewModel as! BaseViewModel.Type).init()
+            instance.startViewModel(parameters: nil)
+            viewModelObject = instance
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -37,30 +42,22 @@ open class BaseView<T:IBaseViewModel> : UIViewController, IBaseView {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).isVisible(IsVisible: true)
-        }
+        (viewModel as! IVisibility).isVisible(IsVisible: true)
     }
     
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).isVisible(IsVisible: false)
-        }
+        (viewModel as! IVisibility).isVisible(IsVisible:false)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).willBeVisible(willBeVisible: true)
-        }
+        (viewModel as! IVisibility).willBeVisible(willBeVisible: true)
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if viewModel != nil {
-            (viewModel as! IVisibility).willBeVisible(willBeVisible: false)
-        }
+        (viewModel as! IVisibility).willBeVisible(willBeVisible: false)
     }
     
     deinit {

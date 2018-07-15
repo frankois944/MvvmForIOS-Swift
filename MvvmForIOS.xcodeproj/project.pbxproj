@@ -15,6 +15,7 @@
 		049324012023513100950B7C /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324002023513100950B7C /* NavigationService.swift */; };
 		049324032023513D00950B7C /* INavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324022023513D00950B7C /* INavigationService.swift */; };
 		049324052023560E00950B7C /* IBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324042023560E00950B7C /* IBaseViewModel.swift */; };
+		078CCD5720FB525500310121 /* IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IView.swift */; };
 		7055ECF72042B8AC00A08E0F /* IViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IViewAttributes.swift */; };
 		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
 		70588D7D20A7105B00EDC7A5 /* BaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */; };
@@ -50,6 +51,7 @@
 		049324002023513100950B7C /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		049324022023513D00950B7C /* INavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INavigationService.swift; sourceTree = "<group>"; };
 		049324042023560E00950B7C /* IBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseViewModel.swift; sourceTree = "<group>"; };
+		078CCD5620FB525500310121 /* IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IView.swift; sourceTree = "<group>"; };
 		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
 		7055ECF62042B8AC00A08E0F /* IViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		04750EA82023749C00315B77 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				078CCD5620FB525500310121 /* IView.swift */,
 				70F8730D20A70A98000C5771 /* IBaseView.swift */,
 				04750EA9202374A900315B77 /* IVisibility.swift */,
 			);
@@ -210,7 +213,7 @@
 		049323C520234A3400950B7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "francois dabonot";
 				TargetAttributes = {
 					049323CD20234A3400950B7C = {
@@ -275,6 +278,7 @@
 				70F8730E20A70A98000C5771 /* IBaseView.swift in Sources */,
 				049323DC20234A4300950B7C /* BaseViewModel.swift in Sources */,
 				70F8730C20A7037E000C5771 /* BaseTabView.swift in Sources */,
+				078CCD5720FB525500310121 /* IView.swift in Sources */,
 				70588D7D20A7105B00EDC7A5 /* BaseTabViewModel.swift in Sources */,
 				04750EAA202374A900315B77 /* IVisibility.swift in Sources */,
 				049324032023513D00950B7C /* INavigationService.swift in Sources */,

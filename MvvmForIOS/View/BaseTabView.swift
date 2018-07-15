@@ -8,12 +8,12 @@
 
 import UIKit
 
-open class BaseTabView<T:IBaseViewModel> :  UITabBarController, UITabBarControllerDelegate, IBaseView {
-    
+open class BaseTabView<T:IBaseViewModel> : UITabBarController, UITabBarControllerDelegate, IBaseView {
+    typealias ViewModelType = T
+    open var viewModel: T!
     open var fromStoryboardName: String? {
         return (nil)
     }
-    public var viewModel:T!
     
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
     internal var viewModelObject: AnyObject? {
@@ -30,7 +30,7 @@ open class BaseTabView<T:IBaseViewModel> :  UITabBarController, UITabBarControll
         self.delegate = self
         if viewControllers != nil {
             let viewController = viewControllers![0]
-            var v = (viewController as! IBaseView)
+            let v = (viewController as! IView)
             if v.viewModelObject == nil {
                 let instance = (v.typeOfViewModel as! BaseViewModel.Type).init()
                 instance.startViewModel(parameters: nil)
@@ -41,7 +41,7 @@ open class BaseTabView<T:IBaseViewModel> :  UITabBarController, UITabBarControll
     }
     
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        var v = (viewController as! IBaseView)
+        let v = (viewController as! IView)
         if v.viewModelObject == nil {
             let instance = (v.typeOfViewModel as! BaseViewModel.Type).init()
             instance.startViewModel(parameters: nil)

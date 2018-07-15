@@ -179,13 +179,13 @@ class NavigationService: INavigationService {
         let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
         var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
-        let classView = NSClassFromString("\(module).\(viewName)") as! BaseView<T>.Type
+        let classView = NSClassFromString("\(module).\(viewName)") as! IView.Type
        
         //Temporary instanciate the view for gettings the storyboard name
         //It's not possible to use static because BaseView use generic and Swift donc like to use static with generic
-        let tmpView = classView.init()
-        if tmpView.fromStoryboardName != nil {
-            storyboardName = tmpView.fromStoryboardName!
+        let cls = classView.init()
+        if cls.fromStoryboardName != nil {
+            storyboardName = cls.fromStoryboardName!
         }
         // Init and start ViewModel
         let newViewModel = viewModel.init()
@@ -194,12 +194,7 @@ class NavigationService: INavigationService {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: viewName)
         // Store ViewModel in View
-        if (newViewController is BaseView<T>) {
-            (newViewController as! BaseView<T>).viewModel = newViewModel
-        }
-        else if (newViewController is BaseTabView<T>) {
-            (newViewController as! BaseTabView<T>).viewModel = newViewModel
-        }
+        (newViewController as! IView).viewModelObject = newViewModel as AnyObject
         return (newViewController)
     }
     
@@ -208,10 +203,10 @@ class NavigationService: INavigationService {
             let views = navigationController?.viewControllers
             if (views != nil && views!.count > 1) {
                 for view in views! {
-                    guard let viewToTest = view as? BaseView<T> else {
+                    guard let viewToTest = view as? IView else {
                         continue
                     }
-                    if (Unmanaged.passUnretained(viewToTest.viewModel as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModelToClose as AnyObject).toOpaque())  {
+                    if (Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModelToClose as AnyObject).toOpaque())  {
                         return (view)
                     }
                 }
