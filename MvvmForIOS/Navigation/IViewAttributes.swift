@@ -15,10 +15,9 @@ public protocol IRightPanelAttribute {
 }
 
 public protocol ITransitionAttribute {
-    var isOpenTransitionAnimated:Bool!  {get set}
-    var isCloseTransitionAnimated:Bool! {get set}
+    var isOpenTransitionAnimated: Bool! {get set}
+    var isCloseTransitionAnimated: Bool! {get set}
 }
 
 public protocol IRootAttribute {
 }
-

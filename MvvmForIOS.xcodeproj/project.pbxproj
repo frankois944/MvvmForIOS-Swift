@@ -124,9 +124,9 @@
 		049323E020234A5700950B7C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */,
 				049323D920234A4300950B7C /* BaseViewModel.swift */,
 				049324042023560E00950B7C /* IBaseViewModel.swift */,
-				70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -196,6 +196,7 @@
 				049323CA20234A3400950B7C /* Frameworks */,
 				049323CB20234A3400950B7C /* Headers */,
 				049323CC20234A3400950B7C /* Resources */,
+				077B465721022BFD00B68535 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -265,6 +266,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		077B465721022BFD00B68535 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		049323C920234A3400950B7C /* Sources */ = {

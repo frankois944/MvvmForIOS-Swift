@@ -10,9 +10,9 @@ import UIKit
 import MvvmForIOSSwift
 
 class SecondViewModel: BaseViewModel {
-    let service:IDataService! = ServiceLocator.resolve()
+    let service: IDataService! = ServiceLocator.resolve()
 
     override func startViewModel(parameters: Any?) {
-        
+
     }
 }

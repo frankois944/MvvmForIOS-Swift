@@ -7,5 +7,5 @@
 //
 
 protocol IDataService: class {
-    var someData:String? {get set}
+    var someData: String? {get set}
 }

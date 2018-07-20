@@ -8,23 +8,22 @@
 
 import Foundation
 
-open class BaseViewModel : IBaseViewModel, IVisibility {
-    
-    open lazy var navigation:INavigationService! = ServiceLocator.resolve()
-    
+open class BaseViewModel: IBaseViewModel, IVisibility {
+
+    open lazy var navigation: INavigationService! = ServiceLocator.resolve()
+
     required public init() {
     }
-    
+
     deinit {
     }
-    
+
     open func startViewModel(parameters: Any?) {
     }
-    
-    open func willBeVisible(willBeVisible:Bool) -> Void {
+
+    open func willBeVisible(willBeVisible: Bool) {
     }
-    
-    open func isVisible(IsVisible:Bool) -> Void {
+
+    open func isVisible(isVisible: Bool) {
     }
 }
-

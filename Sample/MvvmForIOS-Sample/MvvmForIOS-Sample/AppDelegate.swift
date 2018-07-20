@@ -11,24 +11,24 @@ import MvvmForIOSSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     let window = UIWindow(frame: UIScreen.main.bounds)
-    lazy var navigation:INavigationService! = ServiceLocator.resolve()
-    var MvvmForIOSSwift: Setup!
+    lazy var navigation: INavigationService! = ServiceLocator.resolve()
+    var mvvmForIOSSwift: Setup!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         registerServices()
-        
-        MvvmForIOSSwift = Setup(window: window)
+
+        mvvmForIOSSwift = Setup(window: window)
         navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
         navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
         navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
         // Override point for customization after application launch.
         return true
     }
-    
-    func registerServices() -> Void {
+
+    func registerServices() {
         ServiceLocator.register(service: DataService() as IDataService)
     }
 
@@ -54,6 +54,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

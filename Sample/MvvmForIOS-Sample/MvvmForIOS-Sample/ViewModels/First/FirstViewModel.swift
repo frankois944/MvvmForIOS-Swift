@@ -11,27 +11,27 @@ import MvvmForIOSSwift
 
 class FirstViewModel: BaseViewModel {
 
-    let service:IDataService! = ServiceLocator.resolve()
-    
+    let service: IDataService! = ServiceLocator.resolve()
+
     override func startViewModel(parameters: Any?) {
-        
+
     }
-    
-    func showSecondViewModel() -> Void {
+
+    func showSecondViewModel() {
         navigation.showViewModel(viewModelToShow: SecondViewModel.self)
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
     }
-    
-    func showTabViewModel() -> Void {
+
+    func showTabViewModel() {
         navigation.showViewModel(viewModelToShow: TabBarViewModel.self)
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
     }
-    
-    func showLeftPanel() -> Void {
+
+    func showLeftPanel() {
         navigation.showLeftPanel(animated: true)
     }
-    
-    func showRightPanel() -> Void {
+
+    func showRightPanel() {
         navigation.showRightPanel(animated: true)
     }
 }

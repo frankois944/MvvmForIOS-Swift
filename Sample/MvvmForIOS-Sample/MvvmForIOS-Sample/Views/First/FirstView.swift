@@ -10,13 +10,13 @@ import UIKit
 import MvvmForIOSSwift
 
 class FirstView: BaseView<FirstViewModel>, IRootAttribute {
-    
+
     override var fromStoryboardName: String? {
         return ("First")
     }
-    
+
     @IBOutlet weak var contentText: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,27 +26,27 @@ class FirstView: BaseView<FirstViewModel>, IRootAttribute {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func goSecondView(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showSecondViewModel()
     }
-    
+
     @IBAction func goTabView(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showTabViewModel()
     }
-    
+
     @IBAction func showLeftPanel(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showLeftPanel()
     }
-    
+
     @IBAction func showRightPanel(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showRightPanel()
     }
-    
+
     /*
     // MARK: - Navigation
 

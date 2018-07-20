@@ -6,10 +6,9 @@
 //  Copyright © 2018 Dabonot Francois. All rights reserved.
 //
 
-
 class DataService: IDataService {
-    private var _someData:String?
-    var someData:String? {
+    private var _someData: String?
+    var someData: String? {
         get {
             return (_someData)
         }

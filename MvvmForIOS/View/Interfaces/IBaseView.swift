@@ -6,7 +6,7 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-protocol IBaseView : IView {
+protocol IBaseView: IView {
     associatedtype ViewModelType
-    var viewModel:ViewModelType! { get set }
+    var viewModel: ViewModelType! { get set }
 }

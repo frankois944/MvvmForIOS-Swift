@@ -11,7 +11,7 @@ import MvvmForIOSSwift
 
 class SecondView: BaseView<SecondViewModel> {
     @IBOutlet weak var contentToShowLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         contentToShowLabel.text = viewModel.service.someData
@@ -22,7 +22,7 @@ class SecondView: BaseView<SecondViewModel> {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     /*
     // MARK: - Navigation
 

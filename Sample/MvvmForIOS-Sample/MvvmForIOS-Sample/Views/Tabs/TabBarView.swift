@@ -21,7 +21,6 @@ class TabBarView: BaseTabView<TabBarViewModel> {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
