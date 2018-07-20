@@ -9,9 +9,9 @@
 import UIKit
 import MvvmForIOSSwift
 
-class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute {
+class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStoryBoardAttribute {
 
-    override var fromStoryboardName: String? {
+    static var fromStoryboardName: String? {
         return ("First")
     }
 

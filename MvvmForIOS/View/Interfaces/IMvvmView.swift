@@ -10,5 +10,4 @@ protocol IMvvmView: class {
     init()
     var typeOfViewModel: AnyClass? { get set }
     var viewModelObject: AnyObject? { get set }
-    var fromStoryboardName: String? { get }
 }

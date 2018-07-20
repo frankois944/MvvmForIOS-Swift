@@ -176,13 +176,10 @@ class MvvmNavigationService: IMvvmNavigationService {
         let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
         var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
-        let classView = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type
-
-        //Temporary instanciate the view for gettings the storyboard name
-        //It's not possible to use static because BaseView use generic and Swift donc like to use static with generic
-        let cls = classView?.init()
-        if cls?.fromStoryboardName != nil {
-            storyboardName = cls!.fromStoryboardName!
+        // getting the storyboardName from the associate view
+        let storyboardIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
+        if storyboardIsConformToFromStoryBoard?.fromStoryboardName != nil {
+            storyboardName = storyboardIsConformToFromStoryBoard!.fromStoryboardName!
         }
         // Init and start ViewModel
         let newViewModel = viewModel.init()

@@ -11,9 +11,6 @@ import UIKit
 open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!
-    open var fromStoryboardName: String? {
-        return (nil)
-    }
 
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
     internal var viewModelObject: AnyObject? {

@@ -17,5 +17,9 @@ public protocol IMvvmTransitionAttribute {
     var isCloseTransitionAnimated: Bool {get set}
 }
 
+public protocol IMvvmFromStoryBoardAttribute {
+    static var fromStoryboardName: String? {get}
+}
+
 public protocol IMvvmRootAttribute {
 }
