@@ -32,6 +32,10 @@ class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStor
         viewModel.showSecondViewModel()
     }
 
+    @IBAction func goThirdView(_ sender: Any) {
+        viewModel.showThirdViewModel()
+    }
+
     @IBAction func goTabView(_ sender: Any) {
         viewModel.service.someData = contentText.text
         viewModel.showTabViewModel()

@@ -15,6 +15,8 @@
 		049324012023513100950B7C /* MvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324002023513100950B7C /* MvvmNavigationService.swift */; };
 		049324032023513D00950B7C /* IMvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324022023513D00950B7C /* IMvvmNavigationService.swift */; };
 		049324052023560E00950B7C /* IMvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324042023560E00950B7C /* IMvvmBaseViewModel.swift */; };
+		077B466121023DD600B68535 /* ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 077B465F21023DD600B68535 /* ObjC.h */; };
+		077B466221023DD600B68535 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B466021023DD600B68535 /* ObjC.m */; };
 		078CCD5720FB525500310121 /* IMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IMvvmView.swift */; };
 		7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */; };
 		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
@@ -51,7 +53,11 @@
 		049324002023513100950B7C /* MvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmNavigationService.swift; sourceTree = "<group>"; };
 		049324022023513D00950B7C /* IMvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmNavigationService.swift; sourceTree = "<group>"; };
 		049324042023560E00950B7C /* IMvvmBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseViewModel.swift; sourceTree = "<group>"; };
+		077B465F21023DD600B68535 /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
+		077B466021023DD600B68535 /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		078CCD5620FB525500310121 /* IMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmView.swift; sourceTree = "<group>"; };
+		07993D4D21023F2000E8AF3B /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
+		07993D5321023F5100E8AF3B /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
 		7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 		049323D020234A3400950B7C /* MvvmForIOS */ = {
 			isa = PBXGroup;
 			children = (
+				07993D4D21023F2000E8AF3B /* Objc.private.modulemap */,
+				07993D5221023F5100E8AF3B /* ObjcPrivate */,
+				077B465E21023DC500B68535 /* Tools */,
 				049323FF2023510E00950B7C /* Navigation */,
 				049323FA20234F8B00950B7C /* View */,
 				049323E120234A5D00950B7C /* Locator */,
@@ -159,6 +168,23 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		077B465E21023DC500B68535 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				077B465F21023DD600B68535 /* ObjC.h */,
+				077B466021023DD600B68535 /* ObjC.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		07993D5221023F5100E8AF3B /* ObjcPrivate */ = {
+			isa = PBXGroup;
+			children = (
+				07993D5321023F5100E8AF3B /* module.modulemap */,
+			);
+			path = ObjcPrivate;
+			sourceTree = "<group>";
+		};
 		703F90F42063D864000A81A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +208,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077B466121023DD600B68535 /* ObjC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +246,7 @@
 				TargetAttributes = {
 					049323CD20234A3400950B7C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -290,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049324012023513100950B7C /* MvvmNavigationService.swift in Sources */,
+				077B466221023DD600B68535 /* ObjC.m in Sources */,
 				049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */,
 				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
 				049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */,
@@ -453,9 +481,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/MvvmForIOS/Objc.private.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.francoisdabonot.MvvmForIOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MvvmForIOS";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,9 +511,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/MvvmForIOS/Objc.private.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.francoisdabonot.MvvmForIOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MvvmForIOS";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

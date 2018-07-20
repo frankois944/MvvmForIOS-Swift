@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077B465A21023B8B00B68535 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465921023B8B00B68535 /* ThirdView.swift */; };
+		077B465D21023B9F00B68535 /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465C21023B9F00B68535 /* ThirdViewModel.swift */; };
 		703F910C2063EC1F000A81A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F910B2063EC1F000A81A1 /* AppDelegate.swift */; };
 		703F91132063EC1F000A81A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703F91122063EC1F000A81A1 /* Assets.xcassets */; };
 		703F91162063EC1F000A81A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F91142063EC1F000A81A1 /* LaunchScreen.storyboard */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		077B465921023B8B00B68535 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		077B465C21023B9F00B68535 /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
 		703F91082063EC1F000A81A1 /* MvvmForIOS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MvvmForIOS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		703F910B2063EC1F000A81A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		703F91122063EC1F000A81A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077B465821023B1F00B68535 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				077B465921023B8B00B68535 /* ThirdView.swift */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		077B465B21023B8F00B68535 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				077B465C21023B9F00B68535 /* ThirdViewModel.swift */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
 		703F90FF2063EC1F000A81A1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				70588D7A20A7100800EDC7A5 /* Tabs */,
+				077B465821023B1F00B68535 /* Third */,
 				703F913C2063ECEB000A81A1 /* Second */,
 				703F913B2063ECE6000A81A1 /* First */,
 			);
@@ -174,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				70588D7B20A7101500EDC7A5 /* Tabs */,
+				077B465B21023B8F00B68535 /* Third */,
 				703F913E2063ECF4000A81A1 /* Second */,
 				703F913D2063ECF0000A81A1 /* First */,
 			);
@@ -387,10 +409,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077B465A21023B8B00B68535 /* ThirdView.swift in Sources */,
 				70588D9320A7125800EDC7A5 /* Tab3BarView.swift in Sources */,
 				70588D8F20A7123D00EDC7A5 /* Tab1BarView.swift in Sources */,
 				703F914A2063EDA8000A81A1 /* SecondViewModel.swift in Sources */,
 				70588D8420A7117A00EDC7A5 /* TabBarViewModel.swift in Sources */,
+				077B465D21023B9F00B68535 /* ThirdViewModel.swift in Sources */,
 				70588D8920A711D500EDC7A5 /* Tab1BarViewModel.swift in Sources */,
 				703F910C2063EC1F000A81A1 /* AppDelegate.swift in Sources */,
 				70588D7F20A7114A00EDC7A5 /* TabBarView.swift in Sources */,

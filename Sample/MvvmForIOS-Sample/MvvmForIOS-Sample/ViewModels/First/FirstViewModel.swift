@@ -22,6 +22,11 @@ class FirstViewModel: MvvmBaseViewModel {
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
     }
 
+    func showThirdViewModel() {
+        navigation.showViewModel(viewModelToShow: ThirdViewModel.self)
+        //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)
+    }
+
     func showTabViewModel() {
         navigation.showViewModel(viewModelToShow: TabBarViewModel.self)
         //navigation.showViewModel(viewModelToShow: SecondViewModel.self, onCompletion: nil, withParameters: nil)

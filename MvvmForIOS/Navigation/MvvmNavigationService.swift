@@ -8,6 +8,7 @@
 
 import UIKit
 import LGSideMenuController
+import ObjcPrivate
 
 class MvvmNavigationService: IMvvmNavigationService {
 
@@ -177,19 +178,22 @@ class MvvmNavigationService: IMvvmNavigationService {
         var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
         // getting the storyboardName from the associate view
-        let storyboardIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
-        if storyboardIsConformToFromStoryBoard?.fromStoryboardName != nil {
-            storyboardName = storyboardIsConformToFromStoryBoard!.fromStoryboardName!
+        let viewControllerIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
+        if viewControllerIsConformToFromStoryBoard?.fromStoryboardName != nil {
+            storyboardName = viewControllerIsConformToFromStoryBoard!.fromStoryboardName!
         }
         // Init and start ViewModel
         let newViewModel = viewModel.init()
         newViewModel.startViewModel(parameters: withParameters)
         // Init View
-        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
-        let newViewController = storyboard.instantiateViewController(withIdentifier: viewName)
+        var newViewController = getViewControllerIfExist(storyboardName: storyboardName, identifier: viewName)
+        if newViewController == nil {
+            let viewControllerIsConformToView  = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type
+            newViewController = viewControllerIsConformToView!.init() as? UIViewController
+        }
         // Store ViewModel in View
         (newViewController as? IMvvmView)!.viewModelObject = newViewModel as AnyObject
-        return (newViewController)
+        return (newViewController)!
     }
 
     private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> UIViewController? {
@@ -225,5 +229,22 @@ class MvvmNavigationService: IMvvmNavigationService {
             animated = (viewToTest?.isCloseTransitionAnimated)!
         }
         return (animated)
+    }
+
+    func getViewControllerIfExist(storyboardName: String, identifier: String?) -> UIViewController? {
+        var resultVC: UIViewController?
+        do {
+            try ObjC.catchException {
+                let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
+                if identifier == nil {
+                    resultVC = storyBoard.instantiateInitialViewController()
+                } else {
+                    resultVC = storyBoard.instantiateViewController(withIdentifier: identifier!)
+                }
+            }
+        } catch {
+            print("ViewController not found [\(storyboardName) - \(identifier ?? "Initial")]")
+        }
+        return (resultVC)
     }
 }
