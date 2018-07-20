@@ -26,14 +26,16 @@ Also, you can KVO but it's not fully compatible with Swift.
 ## How to install MvvmForIOS-Swift
 
 * Carthage
-
+```
 github "Friend-LGA/LGSideMenuController"
-
 github "frankois944/MvvmForIOS-Swift"
+```
 
 * CocoaPods
 
-pod 'MvvmForIOSSwift'
+```
+pod 'MvvmForIOSSwift' 0.1
+```
 
 * import
 
@@ -68,16 +70,27 @@ let result = service.openApplicationSetting()
 ### Navigation
 
 #### Important
-The navigation is managed trought __INavigationService__.
+The navigation is managed trought __INavigationService__ .
 
-It also based on __LGSideMenuController__ Framework (https://github.com/Friend-LGA/LGSideMenuController)
+It also based on __LGSideMenuController__ Framework (https://github.com/Friend-LGA/LGSideMenuController), If not needed, you can just ignore it because you don't use it directly
+
+* __default__ :
 
 All navigation between *Views* are made in the ViewModels, it requires some specifics naming between the *View* + (Storyboard) and the corresponding *ViewModel*.
-
 
 **For the ViewModel *testViewModel*, the View _must_ be named *testView* and the storyboard must be named *test*.**
 
 The navigation won't work if you do not respect this rule.
+
+* __Specify the stroyboard name__ :
+
+You can specify the storyboard name with __IMvvmFromStoryBoardAttribute__ (see FirstView)
+
+* __Without storyboard__ :
+
+You can also navigate without storyboard but must follow this rule :
+
+**For the ViewModel *testViewModel*, the View _must_ be named *testView*.**
 
 #### So how to navigate?
 
@@ -103,31 +116,40 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
-public protocol INavigationService {
-    var navigation:LGSideMenuController { get }
+public protocol IMvvmNavigationService {
+    var baseNavigation: LGSideMenuController { get }
 
-    func setCenterViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!) -> Void
-    func setRightSideViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!) -> Void
-    func setLeftSideViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!) -> Void
-    
-    func showViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!) -> Void
-    func showViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?) -> Void
-    func showViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?, withParameters:AnyObject?) -> Void
-    
-    func showModalViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!) -> Void
-    func showModalViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?) -> Void
-    func showModalViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?, customizeModal:((UIViewController) -> (Void))?) -> Void
-    func showModalViewModel<T:IMvvmBaseViewModel>(viewModelToShow:T.Type!, onCompletion:(() -> (Void))?, customizeModal:((UIViewController) -> (Void))?, withParameters:AnyObject?) -> Void
-    
-    func closeViewModel<T:IMvvmBaseViewModel>(viewModelToClose:T!, onCompletion:(() -> (Void))?) -> Void
-    func closeViewModel<T:IMvvmBaseViewModel>(viewModelToClose:T!) -> Void
-    
-    func showLeftPanel(animated:Bool) -> Void
-    func showRightPanel(animated:Bool) -> Void
-    func hideLeftPanel(animated:Bool) -> Void
-    func hideRightPanel(animated:Bool) -> Void
-    
-    func resolveViewModel<T:IMvvmBaseViewModel>(viewModelToGet:T.Type!) -> T!
+    func setCenterViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    func setRightSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    func setLeftSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
+                                              onCompletion:(() -> Void)?)
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
+                                              onCompletion:(() -> Void)?,
+                                              withParameters: AnyObject?)
+
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
+                                                   onCompletion:(() -> Void)?)
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
+                                                   onCompletion:(() -> Void)?,
+                                                   customizeModal: ((UIViewController) -> Void)?)
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
+                                                   onCompletion:(() -> Void)?,
+                                                   customizeModal: ((UIViewController) -> Void)?,
+                                                   withParameters: AnyObject?)
+
+    func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?)
+    func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)
+
+    func showLeftPanel(animated: Bool)
+    func showRightPanel(animated: Bool)
+    func hideLeftPanel(animated: Bool)
+    func hideRightPanel(animated: Bool)
+
+    func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
 }
 ```
 
@@ -137,9 +159,9 @@ public protocol INavigationService {
 
 ```Swift
 //in the appDelegate, set root view for Panel
-navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
-navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
-navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
+navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self) // The initial view of your application
+navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self) // Ignore it if not needed
+navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self) // Ignore it if not needed
 
 //in a viewModel
 //show
