@@ -1,14 +1,14 @@
 //
-//  BasetabView.swift
-//  MvvmForIOSSwift
+//  BaseViewController.swift
+//  MvvmForIOS
 //
-//  Created by Dabonot Francois on 12/05/2018.
+//  Created by François Dabonot on 01/02/2018.
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
 import UIKit
 
-open class BaseTabView<T: IBaseViewModel> : UITabBarController, UITabBarControllerDelegate, IBaseView {
+open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!
     open var fromStoryboardName: String? {
@@ -27,26 +27,12 @@ open class BaseTabView<T: IBaseViewModel> : UITabBarController, UITabBarControll
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
-        if viewControllers != nil {
-            let viewController = viewControllers![0]
-            initViewModelIfnecessary(viewController: (viewController as? IView)!)
+        if viewModelObject == nil {
+            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+            instance.startViewModel(parameters: nil)
+            viewModelObject = instance
         }
         // Do any additional setup after loading the view.
-    }
-
-    public func tabBarController(_ tabBarController: UITabBarController,
-                                 shouldSelect viewController: UIViewController) -> Bool {
-        initViewModelIfnecessary(viewController: (viewController as? IView)!)
-        return (true)
-    }
-
-    fileprivate func initViewModelIfnecessary(viewController: IView) {
-        if viewController.viewModelObject == nil {
-            let instance = (viewController.typeOfViewModel as? BaseViewModel.Type)!.init()
-            instance.startViewModel(parameters: nil)
-            viewController.viewModelObject = instance
-        }
     }
 
     override open func didReceiveMemoryWarning() {
@@ -56,22 +42,22 @@ open class BaseTabView<T: IBaseViewModel> : UITabBarController, UITabBarControll
 
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        (viewModel as? IVisibility)?.isVisible(isVisible: true)
+        (viewModel as? IMvvmVisibility)?.isVisible(isVisible: true)
     }
 
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        (viewModel as? IVisibility)?.isVisible(isVisible: false)
+        (viewModel as? IMvvmVisibility)?.isVisible(isVisible: false)
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        (viewModel as? IVisibility)?.willBeVisible(willBeVisible: true)
+        (viewModel as? IMvvmVisibility)?.willBeVisible(willBeVisible: true)
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        (viewModel as? IVisibility)?.willBeVisible(willBeVisible: false)
+        (viewModel as? IMvvmVisibility)?.willBeVisible(willBeVisible: false)
     }
 
     deinit {

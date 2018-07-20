@@ -9,40 +9,49 @@
 import UIKit
 import LGSideMenuController
 
-class NavigationService: INavigationService {
+class MvvmNavigationService: IMvvmNavigationService {
 
+    private let rootNavigationControllerType: UINavigationController.Type?
     private var modalViewController: UIViewController?
     private let sideNavigator: LGSideMenuController = LGSideMenuController()
     public weak var window: UIWindow?
+
     init(window: UIWindow) {
         NSLog("[MvvmForIOS]Load NavigationService")
         self.window = window
+        self.rootNavigationControllerType = nil
     }
 
-    var navigation: LGSideMenuController {
+    init(window: UIWindow, customNavigationController: UINavigationController.Type) {
+        NSLog("[MvvmForIOS]Load NavigationService")
+        self.window = window
+        self.rootNavigationControllerType = customNavigationController
+    }
+
+    var baseNavigation: LGSideMenuController {
         return (sideNavigator)
     }
 
-    func setCenterViewModel<T: IBaseViewModel>(viewModelToShow: T.Type) {
+    func setCenterViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
-        sideNavigator.rootViewController = UINavigationController(rootViewController: view)
+        sideNavigator.rootViewController = self.rootNavigationControllerType!.init(rootViewController: view)
         window?.rootViewController = sideNavigator
         window?.makeKeyAndVisible()
     }
 
-    func showViewModel<T: IBaseViewModel>(viewModelToShow: T.Type) {
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         showViewModel(viewModelToShow: viewModelToShow, onCompletion: nil, withParameters: nil)
     }
 
-    func showViewModel<T: IBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?) {
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?) {
         showViewModel(viewModelToShow: viewModelToShow, onCompletion: onCompletion, withParameters: nil)
     }
 
-    func showViewModel<T: IBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: AnyObject?) {
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: AnyObject?) {
         let view = getView(viewModel: viewModelToShow, withParameters: withParameters)
 
-        if (view as? ILeftPanelAttribute) != nil {
-            if (view as? IRootAttribute) != nil {
+        if (view as? IMvvmLeftPanelAttribute) != nil {
+            if (view as? IMvvmRootAttribute) != nil {
                 sideNavigator.leftViewController = UINavigationController(rootViewController: view)
                 if onCompletion != nil {
                     onCompletion!()
@@ -53,8 +62,8 @@ class NavigationService: INavigationService {
                 (sideNavigator.leftViewController as? UINavigationController)!.pushViewController(view, animated: getIsAnimatedForOpen(view: view))
                 CATransaction.commit()
             }
-        } else if (view as? ILeftPanelAttribute) != nil {
-            if (view as? IRootAttribute) != nil {
+        } else if (view as? IMvvmLeftPanelAttribute) != nil {
+            if (view as? IMvvmRootAttribute) != nil {
                 sideNavigator.rightViewController = UINavigationController(rootViewController: view)
                 if onCompletion != nil {
                     onCompletion!()
@@ -66,7 +75,7 @@ class NavigationService: INavigationService {
                 CATransaction.commit()
             }
         } else {
-            if (view as? IRootAttribute) != nil {
+            if (view as? IMvvmRootAttribute) != nil {
                 sideNavigator.rootViewController = UINavigationController(rootViewController: view)
                 if onCompletion != nil {
                     onCompletion!()
@@ -80,19 +89,19 @@ class NavigationService: INavigationService {
         }
     }
 
-    func showModalViewModel<T: IBaseViewModel>(viewModelToShow: T.Type) {
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         showModalViewModel(viewModelToShow: viewModelToShow, onCompletion: nil, customizeModal: nil, withParameters: nil)
     }
 
-    func showModalViewModel<T: IBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?) {
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?) {
         showModalViewModel(viewModelToShow: viewModelToShow, onCompletion: onCompletion, customizeModal: nil, withParameters: nil)
     }
 
-    func showModalViewModel<T: IBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?) {
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?) {
         showModalViewModel(viewModelToShow: viewModelToShow, onCompletion: onCompletion, customizeModal: customizeModal, withParameters: nil)
     }
 
-    func showModalViewModel<T: IBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?, withParameters: AnyObject?) {
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?, withParameters: AnyObject?) {
         if modalViewController != nil {
             NSLog("Must have only one Modal View")
         } else {
@@ -104,21 +113,21 @@ class NavigationService: INavigationService {
         }
     }
 
-    func setRightSideViewModel<T: IBaseViewModel>(viewModelToShow: T.Type) {
+    func setRightSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
         sideNavigator.rightViewController = UINavigationController(rootViewController: view)
     }
 
-    func setLeftSideViewModel<T: IBaseViewModel>(viewModelToShow: T.Type) {
+    func setLeftSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
         sideNavigator.leftViewController = UINavigationController(rootViewController: view)
     }
 
-    func closeViewModel<T: IBaseViewModel>(viewModelToClose: T) {
+    func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T) {
         closeViewModel(viewModelToClose: viewModelToClose, onCompletion: nil)
     }
 
-    func closeViewModel<T: IBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?) {
+    func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(onCompletion)
 
@@ -137,7 +146,7 @@ class NavigationService: INavigationService {
         CATransaction.commit()
     }
 
-    func resolveViewModel<T>(viewModelToGet: T.Type) -> T where T: IBaseViewModel {
+    func resolveViewModel<T>(viewModelToGet: T.Type) -> T where T: IMvvmBaseViewModel {
         let newViewModel = viewModelToGet.init()
         newViewModel.startViewModel(parameters: nil)
         return (newViewModel)
@@ -159,7 +168,7 @@ class NavigationService: INavigationService {
         animated == true ? sideNavigator.hideRightViewAnimated() : sideNavigator.hideRightView()
     }
 
-    private func getView<T: IBaseViewModel>(viewModel: T.Type, withParameters: AnyObject?) -> UIViewController {
+    private func getView<T: IMvvmBaseViewModel>(viewModel: T.Type, withParameters: AnyObject?) -> UIViewController {
         let classname = NSStringFromClass((viewModel as? AnyClass)!)
         let module = classname.components(separatedBy: ".").first!
 
@@ -167,7 +176,7 @@ class NavigationService: INavigationService {
         let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
         var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
-        let classView = NSClassFromString("\(module).\(viewName)") as? IView.Type
+        let classView = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type
 
         //Temporary instanciate the view for gettings the storyboard name
         //It's not possible to use static because BaseView use generic and Swift donc like to use static with generic
@@ -182,16 +191,16 @@ class NavigationService: INavigationService {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: viewName)
         // Store ViewModel in View
-        (newViewController as? IView)!.viewModelObject = newViewModel as AnyObject
+        (newViewController as? IMvvmView)!.viewModelObject = newViewModel as AnyObject
         return (newViewController)
     }
 
-    private func isViewModelExistInNavigation<T: IBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> UIViewController? {
+    private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> UIViewController? {
         if navigationController != nil {
             let views = navigationController?.viewControllers
             if views != nil && views!.count > 1 {
                 for view in views! {
-                    guard let viewToTest = view as? IView else {
+                    guard let viewToTest = view as? IMvvmView else {
                         continue
                     }
                     if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModelToClose as AnyObject).toOpaque() {
@@ -205,7 +214,7 @@ class NavigationService: INavigationService {
 
     private func getIsAnimatedForOpen(view: UIViewController!) -> Bool {
         var animated: Bool = true
-        let viewToTest = view as? ITransitionAttribute
+        let viewToTest = view as? IMvvmTransitionAttribute
         if viewToTest != nil {
             animated = (viewToTest?.isOpenTransitionAnimated)!
         }
@@ -214,7 +223,7 @@ class NavigationService: INavigationService {
 
     private func getIsAnimatedForClose(view: UIViewController!) -> Bool {
         var animated: Bool = true
-        let viewToTest = view as? ITransitionAttribute
+        let viewToTest = view as? IMvvmTransitionAttribute
         if viewToTest != nil {
             animated = (viewToTest?.isCloseTransitionAnimated)!
         }

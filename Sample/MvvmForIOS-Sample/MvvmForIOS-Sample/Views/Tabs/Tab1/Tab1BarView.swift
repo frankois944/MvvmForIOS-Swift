@@ -9,7 +9,7 @@
 import UIKit
 import MvvmForIOSSwift
 
-class Tab1BarView: BaseView<Tab3BarViewModel> {
+class Tab1BarView: MvvmBaseView<Tab3BarViewModel> {
 
     var toto = 42
     override func viewDidLoad() {

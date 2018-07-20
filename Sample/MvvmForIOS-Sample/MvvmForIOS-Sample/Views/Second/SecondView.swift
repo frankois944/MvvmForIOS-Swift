@@ -9,7 +9,7 @@
 import UIKit
 import MvvmForIOSSwift
 
-class SecondView: BaseView<SecondViewModel> {
+class SecondView: MvvmBaseView<SecondViewModel> {
     @IBOutlet weak var contentToShowLabel: UILabel!
 
     override func viewDidLoad() {

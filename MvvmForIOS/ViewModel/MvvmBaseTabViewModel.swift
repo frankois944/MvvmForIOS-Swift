@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseTabViewModel: BaseViewModel {
-    open func addTabView<T: IBaseViewModel>(arrayOfViewModelsToAdd: [T.Type]) {
+class MvvmBaseTabViewModel: MvvmBaseViewModel {
+    open func addTabView<T: IMvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type]) {
     }
 }

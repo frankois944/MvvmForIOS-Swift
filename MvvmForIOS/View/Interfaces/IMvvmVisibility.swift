@@ -6,9 +6,7 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-import UIKit
-
-protocol IVisibility {
+protocol IMvvmVisibility {
     func willBeVisible(willBeVisible: Bool)
     func isVisible(isVisible: Bool)
 }

@@ -9,7 +9,7 @@
 import UIKit
 import MvvmForIOSSwift
 
-class TabBarView: BaseTabView<TabBarViewModel> {
+class TabBarView: MvvmBaseTabView<TabBarViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()

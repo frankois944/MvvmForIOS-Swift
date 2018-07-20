@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol IBaseViewModel {
+public protocol IMvvmBaseViewModel {
     init()
     func startViewModel(parameters: Any?)
 }

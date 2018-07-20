@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class BaseViewModel: IBaseViewModel, IVisibility {
+open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
 
-    open lazy var navigation: INavigationService! = ServiceLocator.resolve()
+    open lazy var navigation: IMvvmNavigationService! = MvvmServiceLocator.resolve()
 
     required public init() {
     }

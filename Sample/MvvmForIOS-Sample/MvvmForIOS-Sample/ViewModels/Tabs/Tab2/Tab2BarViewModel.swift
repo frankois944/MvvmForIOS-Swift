@@ -8,7 +8,7 @@
 
 import MvvmForIOSSwift
 
-class Tab2BarViewModel: BaseViewModel {
+class Tab2BarViewModel: MvvmBaseViewModel {
     override func startViewModel(parameters: Any?) {
         print("START Tab2BarViewModel")
     }

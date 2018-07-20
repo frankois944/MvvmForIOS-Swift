@@ -8,9 +8,9 @@
 
 import UIKit
 
-open class ServiceLocator: NSObject {
+open class MvvmServiceLocator: NSObject {
 
-    private static let sharedInstance = ServiceLocator()
+    private static let sharedInstance = MvvmServiceLocator()
     private override init() {
     }
 
@@ -22,11 +22,11 @@ open class ServiceLocator: NSObject {
 
     open static func register<T>(service: T) {
         let key = typeName(some: T.self)
-        ServiceLocator.sharedInstance.services[key] = service
+        MvvmServiceLocator.sharedInstance.services[key] = service
     }
 
     open static func resolve<T>() -> T? {
         let key = typeName(some: T.self)
-        return ServiceLocator.sharedInstance.services[key] as? T
+        return MvvmServiceLocator.sharedInstance.services[key] as? T
     }
 }

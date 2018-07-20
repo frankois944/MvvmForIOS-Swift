@@ -13,14 +13,14 @@ import MvvmForIOSSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let window = UIWindow(frame: UIScreen.main.bounds)
-    lazy var navigation: INavigationService! = ServiceLocator.resolve()
-    var mvvmForIOSSwift: Setup!
+    lazy var navigation: IMvvmNavigationService! = MvvmServiceLocator.resolve()
+    var mvvmForIOSSwift: MvvmSetup!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         registerServices()
 
-        mvvmForIOSSwift = Setup(window: window)
+        mvvmForIOSSwift = MvvmSetup(window: window, customNavigationController: UINavigationController.self)
         navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
         navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
         navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func registerServices() {
-        ServiceLocator.register(service: DataService() as IDataService)
+        MvvmServiceLocator.register(service: DataService() as IDataService)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

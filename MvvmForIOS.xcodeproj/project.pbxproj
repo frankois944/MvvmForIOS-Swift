@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04750EAA202374A900315B77 /* IVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04750EA9202374A900315B77 /* IVisibility.swift */; };
-		049323DC20234A4300950B7C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323D920234A4300950B7C /* BaseViewModel.swift */; };
-		049323DD20234A4300950B7C /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DA20234A4300950B7C /* Setup.swift */; };
-		049323DE20234A4300950B7C /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DB20234A4300950B7C /* ServiceLocator.swift */; };
-		049323FC20234F9E00950B7C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323FB20234F9E00950B7C /* BaseView.swift */; };
-		049324012023513100950B7C /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324002023513100950B7C /* NavigationService.swift */; };
-		049324032023513D00950B7C /* INavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324022023513D00950B7C /* INavigationService.swift */; };
-		049324052023560E00950B7C /* IBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324042023560E00950B7C /* IBaseViewModel.swift */; };
-		078CCD5720FB525500310121 /* IView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IView.swift */; };
-		7055ECF72042B8AC00A08E0F /* IViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IViewAttributes.swift */; };
+		04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04750EA9202374A900315B77 /* IMvvmVisibility.swift */; };
+		049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323D920234A4300950B7C /* MvvmBaseViewModel.swift */; };
+		049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DA20234A4300950B7C /* MvvmSetup.swift */; };
+		049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DB20234A4300950B7C /* MvvmServiceLocator.swift */; };
+		049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323FB20234F9E00950B7C /* MvvmBaseView.swift */; };
+		049324012023513100950B7C /* MvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324002023513100950B7C /* MvvmNavigationService.swift */; };
+		049324032023513D00950B7C /* IMvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324022023513D00950B7C /* IMvvmNavigationService.swift */; };
+		049324052023560E00950B7C /* IMvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324042023560E00950B7C /* IMvvmBaseViewModel.swift */; };
+		078CCD5720FB525500310121 /* IMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IMvvmView.swift */; };
+		7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */; };
 		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
-		70588D7D20A7105B00EDC7A5 /* BaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */; };
-		70F8730C20A7037E000C5771 /* BaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730B20A7037E000C5771 /* BaseTabView.swift */; };
-		70F8730E20A70A98000C5771 /* IBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730D20A70A98000C5771 /* IBaseView.swift */; };
+		70588D7D20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */; };
+		70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730B20A7037E000C5771 /* MvvmBaseTabView.swift */; };
+		70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,23 +41,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04750EA9202374A900315B77 /* IVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVisibility.swift; sourceTree = "<group>"; };
+		04750EA9202374A900315B77 /* IMvvmVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmVisibility.swift; sourceTree = "<group>"; };
 		049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049323D220234A3400950B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		049323D920234A4300950B7C /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		049323DA20234A4300950B7C /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
-		049323DB20234A4300950B7C /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
-		049323FB20234F9E00950B7C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		049324002023513100950B7C /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
-		049324022023513D00950B7C /* INavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INavigationService.swift; sourceTree = "<group>"; };
-		049324042023560E00950B7C /* IBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseViewModel.swift; sourceTree = "<group>"; };
-		078CCD5620FB525500310121 /* IView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IView.swift; sourceTree = "<group>"; };
+		049323D920234A4300950B7C /* MvvmBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmBaseViewModel.swift; sourceTree = "<group>"; };
+		049323DA20234A4300950B7C /* MvvmSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmSetup.swift; sourceTree = "<group>"; };
+		049323DB20234A4300950B7C /* MvvmServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MvvmServiceLocator.swift; sourceTree = "<group>"; };
+		049323FB20234F9E00950B7C /* MvvmBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseView.swift; sourceTree = "<group>"; };
+		049324002023513100950B7C /* MvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmNavigationService.swift; sourceTree = "<group>"; };
+		049324022023513D00950B7C /* IMvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmNavigationService.swift; sourceTree = "<group>"; };
+		049324042023560E00950B7C /* IMvvmBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseViewModel.swift; sourceTree = "<group>"; };
+		078CCD5620FB525500310121 /* IMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmView.swift; sourceTree = "<group>"; };
 		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
-		7055ECF62042B8AC00A08E0F /* IViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewAttributes.swift; sourceTree = "<group>"; };
+		7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
-		70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabViewModel.swift; sourceTree = "<group>"; };
-		70F8730B20A7037E000C5771 /* BaseTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabView.swift; sourceTree = "<group>"; };
-		70F8730D20A70A98000C5771 /* IBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseView.swift; sourceTree = "<group>"; };
+		70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseTabViewModel.swift; sourceTree = "<group>"; };
+		70F8730B20A7037E000C5771 /* MvvmBaseTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseTabView.swift; sourceTree = "<group>"; };
+		70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +75,9 @@
 		04750EA82023749C00315B77 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				078CCD5620FB525500310121 /* IView.swift */,
-				70F8730D20A70A98000C5771 /* IBaseView.swift */,
-				04750EA9202374A900315B77 /* IVisibility.swift */,
+				078CCD5620FB525500310121 /* IMvvmView.swift */,
+				70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */,
+				04750EA9202374A900315B77 /* IMvvmVisibility.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -116,7 +116,7 @@
 		049323DF20234A5000950B7C /* Setup */ = {
 			isa = PBXGroup;
 			children = (
-				049323DA20234A4300950B7C /* Setup.swift */,
+				049323DA20234A4300950B7C /* MvvmSetup.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -124,9 +124,9 @@
 		049323E020234A5700950B7C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				70588D7C20A7105B00EDC7A5 /* BaseTabViewModel.swift */,
-				049323D920234A4300950B7C /* BaseViewModel.swift */,
-				049324042023560E00950B7C /* IBaseViewModel.swift */,
+				70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */,
+				049323D920234A4300950B7C /* MvvmBaseViewModel.swift */,
+				049324042023560E00950B7C /* IMvvmBaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 		049323E120234A5D00950B7C /* Locator */ = {
 			isa = PBXGroup;
 			children = (
-				049323DB20234A4300950B7C /* ServiceLocator.swift */,
+				049323DB20234A4300950B7C /* MvvmServiceLocator.swift */,
 			);
 			path = Locator;
 			sourceTree = "<group>";
@@ -143,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				04750EA82023749C00315B77 /* Interfaces */,
-				049323FB20234F9E00950B7C /* BaseView.swift */,
-				70F8730B20A7037E000C5771 /* BaseTabView.swift */,
+				049323FB20234F9E00950B7C /* MvvmBaseView.swift */,
+				70F8730B20A7037E000C5771 /* MvvmBaseTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		049323FF2023510E00950B7C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				049324002023513100950B7C /* NavigationService.swift */,
-				049324022023513D00950B7C /* INavigationService.swift */,
-				7055ECF62042B8AC00A08E0F /* IViewAttributes.swift */,
+				049324002023513100950B7C /* MvvmNavigationService.swift */,
+				049324022023513D00950B7C /* IMvvmNavigationService.swift */,
+				7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -289,19 +289,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049324012023513100950B7C /* NavigationService.swift in Sources */,
-				049323DE20234A4300950B7C /* ServiceLocator.swift in Sources */,
-				049323FC20234F9E00950B7C /* BaseView.swift in Sources */,
-				049323DD20234A4300950B7C /* Setup.swift in Sources */,
-				70F8730E20A70A98000C5771 /* IBaseView.swift in Sources */,
-				049323DC20234A4300950B7C /* BaseViewModel.swift in Sources */,
-				70F8730C20A7037E000C5771 /* BaseTabView.swift in Sources */,
-				078CCD5720FB525500310121 /* IView.swift in Sources */,
-				70588D7D20A7105B00EDC7A5 /* BaseTabViewModel.swift in Sources */,
-				04750EAA202374A900315B77 /* IVisibility.swift in Sources */,
-				049324032023513D00950B7C /* INavigationService.swift in Sources */,
-				7055ECF72042B8AC00A08E0F /* IViewAttributes.swift in Sources */,
-				049324052023560E00950B7C /* IBaseViewModel.swift in Sources */,
+				049324012023513100950B7C /* MvvmNavigationService.swift in Sources */,
+				049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */,
+				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
+				049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */,
+				70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */,
+				049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */,
+				70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */,
+				078CCD5720FB525500310121 /* IMvvmView.swift in Sources */,
+				70588D7D20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift in Sources */,
+				04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */,
+				049324032023513D00950B7C /* IMvvmNavigationService.swift in Sources */,
+				7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */,
+				049324052023560E00950B7C /* IMvvmBaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
