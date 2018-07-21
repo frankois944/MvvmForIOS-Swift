@@ -31,12 +31,6 @@ github "Friend-LGA/LGSideMenuController"
 github "frankois944/MvvmForIOS-Swift"
 ```
 
-* CocoaPods
-
-```
-pod 'MvvmForIOSSwift' 0.1
-```
-
 * import
 
 ```Swift
