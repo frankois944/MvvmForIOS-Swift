@@ -1,0 +1,4 @@
+excluded:
+- External
+
+line_length: 300
