@@ -19,6 +19,7 @@
 		077B466221023DD600B68535 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B466021023DD600B68535 /* ObjC.m */; };
 		078CCD5720FB525500310121 /* IMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IMvvmView.swift */; };
 		07DEA2812104AF58009E6C12 /* IMvvmBaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */; };
+		07DEA2892104BD36009E6C12 /* MvvmBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2882104BD36009E6C12 /* MvvmBaseTableView.swift */; };
 		7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */; };
 		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
 		70588D7D20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */; };
@@ -60,6 +61,7 @@
 		07993D4D21023F2000E8AF3B /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
 		07993D5321023F5100E8AF3B /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseTabView.swift; sourceTree = "<group>"; };
+		07DEA2882104BD36009E6C12 /* MvvmBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseTableView.swift; sourceTree = "<group>"; };
 		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
 		7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				04750EA82023749C00315B77 /* Interfaces */,
 				049323FB20234F9E00950B7C /* MvvmBaseView.swift */,
 				70F8730B20A7037E000C5771 /* MvvmBaseTabView.swift */,
+				07DEA2882104BD36009E6C12 /* MvvmBaseTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
 				049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */,
 				70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */,
+				07DEA2892104BD36009E6C12 /* MvvmBaseTableView.swift in Sources */,
 				049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */,
 				70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */,
 				078CCD5720FB525500310121 /* IMvvmView.swift in Sources */,

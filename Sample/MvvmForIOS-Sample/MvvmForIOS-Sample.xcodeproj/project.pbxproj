@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		077B465A21023B8B00B68535 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465921023B8B00B68535 /* ThirdView.swift */; };
 		077B465D21023B9F00B68535 /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465C21023B9F00B68535 /* ThirdViewModel.swift */; };
+		07DEA2852104BCF5009E6C12 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2842104BCF5009E6C12 /* TableView.swift */; };
+		07DEA2872104BD19009E6C12 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2862104BD19009E6C12 /* TableViewModel.swift */; };
 		703F910C2063EC1F000A81A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F910B2063EC1F000A81A1 /* AppDelegate.swift */; };
 		703F91132063EC1F000A81A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703F91122063EC1F000A81A1 /* Assets.xcassets */; };
 		703F91162063EC1F000A81A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703F91142063EC1F000A81A1 /* LaunchScreen.storyboard */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		077B465921023B8B00B68535 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		077B465C21023B9F00B68535 /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
+		07DEA2842104BCF5009E6C12 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		07DEA2862104BD19009E6C12 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		703F91082063EC1F000A81A1 /* MvvmForIOS-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MvvmForIOS-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		703F910B2063EC1F000A81A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		703F91122063EC1F000A81A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +136,22 @@
 			path = Third;
 			sourceTree = "<group>";
 		};
+		07DEA2832104BCC5009E6C12 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				07DEA2842104BCF5009E6C12 /* TableView.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		07DEA28A2104BD86009E6C12 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				07DEA2862104BD19009E6C12 /* TableViewModel.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
 		703F90FF2063EC1F000A81A1 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +203,7 @@
 		703F91382063ECD0000A81A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07DEA2832104BCC5009E6C12 /* Table */,
 				70588D7A20A7100800EDC7A5 /* Tabs */,
 				077B465821023B1F00B68535 /* Third */,
 				703F913C2063ECEB000A81A1 /* Second */,
@@ -194,6 +215,7 @@
 		703F91392063ECD3000A81A1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				07DEA28A2104BD86009E6C12 /* Table */,
 				70588D7B20A7101500EDC7A5 /* Tabs */,
 				077B465B21023B8F00B68535 /* Third */,
 				703F913E2063ECF4000A81A1 /* Second */,
@@ -421,8 +443,10 @@
 				703F91482063ED9F000A81A1 /* FirstViewModel.swift in Sources */,
 				703F91462063ED92000A81A1 /* SecondView.swift in Sources */,
 				703F91442063ED88000A81A1 /* FirstView.swift in Sources */,
+				07DEA2852104BCF5009E6C12 /* TableView.swift in Sources */,
 				70588D9120A7124B00EDC7A5 /* Tab2BarView.swift in Sources */,
 				70588D8D20A711EA00EDC7A5 /* Tab3BarViewModel.swift in Sources */,
+				07DEA2872104BD19009E6C12 /* TableViewModel.swift in Sources */,
 				703F91402063ED07000A81A1 /* IDataService.swift in Sources */,
 				703F91422063ED1D000A81A1 /* DataService.swift in Sources */,
 				70588D8B20A711DE00EDC7A5 /* Tab2BarViewModel.swift in Sources */,

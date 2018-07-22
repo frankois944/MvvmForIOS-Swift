@@ -39,4 +39,8 @@ class FirstViewModel: MvvmBaseViewModel {
     func showRightPanel() {
         navigation.showRightPanel(animated: true)
     }
+
+    func showTableViewModel() {
+        navigation.showViewModel(viewModelToShow: TableViewModel.self)
+    }
 }

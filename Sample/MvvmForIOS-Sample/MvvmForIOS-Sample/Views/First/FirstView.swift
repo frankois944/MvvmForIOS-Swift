@@ -51,6 +51,9 @@ class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStor
         viewModel.showRightPanel()
     }
 
+    @IBAction func showTableViewCtr(_ sender: Any) {
+        viewModel.showTableViewModel()
+    }
     /*
     // MARK: - Navigation
 
