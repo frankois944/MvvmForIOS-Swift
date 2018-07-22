@@ -18,7 +18,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
             return (viewModel as AnyObject?)
         }
         set {
-            viewModel = newValue as? T
+            viewModel = (newValue as? T)!
         }
     }
 

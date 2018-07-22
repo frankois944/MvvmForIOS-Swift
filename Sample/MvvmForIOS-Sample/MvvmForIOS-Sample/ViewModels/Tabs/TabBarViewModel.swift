@@ -8,7 +8,13 @@
 
 import MvvmForIOSSwift
 
-class TabBarViewModel: MvvmBaseViewModel {
+class TabBarViewModel: MvvmBaseTabViewModel {
+
+    required init() {
+        super.init()
+        self.setTabs(arrayOfViewModelsToAdd: [Tab1BarViewModel.self, Tab2BarViewModel.self, Tab3BarViewModel.self], animated: true)
+    }
+
     override func startViewModel(parameters: Any?) {
         print("START TabBarViewModel")
     }

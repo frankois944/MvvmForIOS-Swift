@@ -9,11 +9,26 @@
 import Foundation
 import UIKit.UITabBarController
 
-class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
-    internal weak var tabCtr: UITabBarController!
+open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
+    internal weak var tabCtr: UITabBarController! {
+        didSet {
+            setTabsWithStoredViewController()
+        }
+    }
+    private var tabs: [UIViewController]?
+    private var animated = false
 
-    open func setTabs<T: IMvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type], animated: Bool) {
+    open func setTabs<T: MvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type], animated: Bool) {
         let viewControllers = self.navigation.associateViewControllersWithViewModels(viewModels: arrayOfViewModelsToAdd)
-        tabCtr.setViewControllers(viewControllers, animated: animated)
+        self.tabs = viewControllers
+        self.animated = animated
+        self.setTabsWithStoredViewController()
+    }
+
+    func setTabsWithStoredViewController() {
+        if tabCtr != nil && tabs != nil {
+            tabCtr.setViewControllers(tabs, animated: animated)
+            tabs = nil
+        }
     }
 }

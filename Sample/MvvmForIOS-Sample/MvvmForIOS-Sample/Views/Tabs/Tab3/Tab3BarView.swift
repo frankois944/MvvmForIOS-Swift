@@ -9,7 +9,11 @@
 import UIKit
 import MvvmForIOSSwift
 
-class Tab3BarView: MvvmBaseView<Tab3BarViewModel> {
+class Tab3BarView: MvvmBaseView<Tab3BarViewModel>, IMvvmFromStoryBoardAttribute {
+
+    static var fromStoryboardName: String? {
+        return ("TabBar")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
