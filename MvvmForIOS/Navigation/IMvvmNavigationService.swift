@@ -43,4 +43,5 @@ public protocol IMvvmNavigationService {
     func hideRightPanel(animated: Bool)
 
     func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
+    func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]?
 }

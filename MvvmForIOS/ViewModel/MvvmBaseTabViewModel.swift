@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import UIKit.UITabBarController
 
-class MvvmBaseTabViewModel: MvvmBaseViewModel {
-    open func addTabView<T: IMvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type]) {
+class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
+    internal weak var tabCtr: UITabBarController!
+
+    open func setTabs<T: IMvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type], animated: Bool) {
+        let viewControllers = self.navigation.associateViewControllersWithViewModels(viewModels: arrayOfViewModelsToAdd)
+        tabCtr.setViewControllers(viewControllers, animated: animated)
     }
 }

@@ -24,12 +24,16 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        loadViewModelForCurrent()
+        // Do any additional setup after loading the view.
+    }
+
+    fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
             let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
         }
-        // Do any additional setup after loading the view.
     }
 
     override open func didReceiveMemoryWarning() {

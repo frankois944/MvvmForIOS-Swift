@@ -153,6 +153,14 @@ class MvvmNavigationService: IMvvmNavigationService {
         return (newViewModel)
     }
 
+    func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]? {
+        var result = [UIViewController]()
+        for row in viewModels {
+            result.append(self.getView(viewModel: row, withParameters: nil))
+        }
+        return (result)
+    }
+
     func showLeftPanel(animated: Bool) {
         animated == true ? sideNavigator.showLeftViewAnimated() : sideNavigator.showLeftView()
     }

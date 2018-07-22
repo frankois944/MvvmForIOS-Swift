@@ -18,6 +18,7 @@
 		077B466121023DD600B68535 /* ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 077B465F21023DD600B68535 /* ObjC.h */; };
 		077B466221023DD600B68535 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B466021023DD600B68535 /* ObjC.m */; };
 		078CCD5720FB525500310121 /* IMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IMvvmView.swift */; };
+		07DEA2812104AF58009E6C12 /* IMvvmBaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */; };
 		7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */; };
 		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
 		70588D7D20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */; };
@@ -58,6 +59,7 @@
 		078CCD5620FB525500310121 /* IMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmView.swift; sourceTree = "<group>"; };
 		07993D4D21023F2000E8AF3B /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
 		07993D5321023F5100E8AF3B /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseTabView.swift; sourceTree = "<group>"; };
 		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
 		7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				078CCD5620FB525500310121 /* IMvvmView.swift */,
 				70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */,
 				04750EA9202374A900315B77 /* IMvvmVisibility.swift */,
+				07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -133,9 +136,9 @@
 		049323E020234A5700950B7C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				07DEA2822104B366009E6C12 /* Interfaces */,
 				70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */,
 				049323D920234A4300950B7C /* MvvmBaseViewModel.swift */,
-				049324042023560E00950B7C /* IMvvmBaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				07993D5321023F5100E8AF3B /* module.modulemap */,
 			);
 			path = ObjcPrivate;
+			sourceTree = "<group>";
+		};
+		07DEA2822104B366009E6C12 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				049324042023560E00950B7C /* IMvvmBaseViewModel.swift */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		703F90F42063D864000A81A1 /* Products */ = {
@@ -329,6 +340,7 @@
 				04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */,
 				049324032023513D00950B7C /* IMvvmNavigationService.swift in Sources */,
 				7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */,
+				07DEA2812104AF58009E6C12 /* IMvvmBaseTabView.swift in Sources */,
 				049324052023560E00950B7C /* IMvvmBaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

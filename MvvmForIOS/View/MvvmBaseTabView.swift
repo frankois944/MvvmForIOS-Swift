@@ -24,11 +24,13 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        loadViewModelForCurrent()
         self.delegate = self
         if viewControllers != nil {
             let viewController = viewControllers![0]
             initViewModelIfnecessary(viewController: (viewController as? IMvvmView)!)
         }
+        (viewModel as? IMvvmBaseTabView)?.tabCtr = self
         // Do any additional setup after loading the view.
     }
 
@@ -43,6 +45,14 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
             let instance = (viewController.typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewController.viewModelObject = instance
+        }
+    }
+
+    fileprivate func loadViewModelForCurrent() {
+        if viewModelObject == nil {
+        let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+            instance.startViewModel(parameters: nil)
+            viewModelObject = instance
         }
     }
 
