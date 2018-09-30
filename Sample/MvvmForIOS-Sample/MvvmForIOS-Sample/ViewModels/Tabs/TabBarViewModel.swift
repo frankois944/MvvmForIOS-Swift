@@ -7,9 +7,25 @@
 //
 
 import MvvmForIOSSwift
+import Foundation
 
-class TabBarViewModel: MvvmBaseViewModel {
+class TabBarViewModel: MvvmBaseTabViewModel {
+
+    required init() {
+        super.init()
+        self.setTabs(arrayOfViewModelsToAdd: [Tab1BarViewModel.self, Tab2BarViewModel.self, Tab3BarViewModel.self], animated: true)
+    }
+
     override func startViewModel(parameters: Any?) {
-        print("START TabBarViewModel")
+        NSLog("[startViewModel] \(String(describing: self))")
+    }
+
+    override func isDestroyed() {
+        super.isDestroyed()
+        NSLog("[isDestroyed] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 }

@@ -6,7 +6,8 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-protocol IMvvmVisibility {
+internal protocol IMvvmVisibility {
     func willBeVisible(willBeVisible: Bool)
     func isVisible(isVisible: Bool)
+    func isDestroyed()
 }

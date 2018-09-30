@@ -7,9 +7,19 @@
 //
 
 import MvvmForIOSSwift
+import Foundation
 
 class Tab3BarViewModel: MvvmBaseViewModel {
     override func startViewModel(parameters: Any?) {
-        print("START Tab3BarViewModel")
+        NSLog("[startViewModel] \(String(describing: self))")
+    }
+
+    override func isDestroyed() {
+        super.isDestroyed()
+        NSLog("[isDestroyed] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 }

@@ -21,7 +21,7 @@ public protocol IMvvmNavigationService {
                                               onCompletion:(() -> Void)?)
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
                                               onCompletion:(() -> Void)?,
-                                              withParameters: AnyObject?)
+                                              withParameters: Any?)
 
     func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
     func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
@@ -32,7 +32,7 @@ public protocol IMvvmNavigationService {
     func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
                                                    onCompletion:(() -> Void)?,
                                                    customizeModal: ((UIViewController) -> Void)?,
-                                                   withParameters: AnyObject?)
+                                                   withParameters: Any?)
 
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?)
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)
@@ -43,4 +43,5 @@ public protocol IMvvmNavigationService {
     func hideRightPanel(animated: Bool)
 
     func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
+    func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]?
 }

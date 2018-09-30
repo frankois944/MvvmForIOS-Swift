@@ -10,7 +10,17 @@ import MvvmForIOSSwift
 import Foundation
 
 class ThirdViewModel: MvvmBaseViewModel {
+
     override func startViewModel(parameters: Any?) {
-        NSLog("Start ThirdViewModel")
+        NSLog("[startViewModel] \(String(describing: self))")
+    }
+
+    override func isDestroyed() {
+        super.isDestroyed()
+        NSLog("[isDestroyed] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 }

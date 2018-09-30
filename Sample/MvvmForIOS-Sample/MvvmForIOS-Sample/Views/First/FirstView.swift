@@ -19,7 +19,12 @@ class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStor
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +56,9 @@ class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStor
         viewModel.showRightPanel()
     }
 
+    @IBAction func showTableViewCtr(_ sender: Any) {
+        viewModel.showTableViewModel()
+    }
     /*
     // MARK: - Navigation
 

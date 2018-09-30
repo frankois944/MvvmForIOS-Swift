@@ -9,11 +9,15 @@
 import UIKit
 import MvvmForIOSSwift
 
-class Tab2BarView: MvvmBaseView<Tab3BarViewModel> {
+class Tab2BarView: MvvmBaseView<Tab2BarViewModel>, IMvvmFromStoryBoardAttribute {
+
+    static var fromStoryboardName: String? {
+        return ("TabBar")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("START Tab2BarView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +26,9 @@ class Tab2BarView: MvvmBaseView<Tab3BarViewModel> {
         // Dispose of any resources that can be recreated.
     }
 
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
+    }
     /*
     // MARK: - Navigation
 

@@ -13,23 +13,27 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
     open var viewModel: T!
 
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: AnyObject? {
+    internal var viewModelObject: Any? {
         get {
-            return (viewModel as AnyObject?)
+            return (viewModel as Any?)
         }
         set {
-            viewModel = newValue as? T
+            viewModel = (newValue as? T)!
         }
     }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        loadViewModelForCurrent()
+        // Do any additional setup after loading the view.
+    }
+
+    fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
-            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+            let instance = (viewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
         }
-        // Do any additional setup after loading the view.
     }
 
     override open func didReceiveMemoryWarning() {
@@ -60,9 +64,11 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
     deinit {
     }
 
-    open override func didMove(toParentViewController parent: UIViewController?) {
+    open override func didMove(toParent parent: UIViewController?) {
         // clean viewModel
+        super.didMove(toParent: parent)
         if parent == nil {
+            (viewModel as? IMvvmVisibility)?.isDestroyed()
             viewModel = nil
         }
     }

@@ -7,8 +7,34 @@
 //
 
 import Foundation
+import UIKit.UITabBarController
 
-class MvvmBaseTabViewModel: MvvmBaseViewModel {
-    open func addTabView<T: IMvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type]) {
+open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
+    internal weak var tabCtr: UITabBarController! {
+        didSet {
+            setTabsWithStoredViewController()
+        }
+    }
+    private var tabs: [UIViewController]?
+    private var animated = false
+
+    open func setTabs<T: MvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type], animated: Bool) {
+        let viewControllers = self.navigation.associateViewControllersWithViewModels(viewModels: arrayOfViewModelsToAdd)
+        self.tabs = viewControllers
+        self.animated = animated
+        self.setTabsWithStoredViewController()
+    }
+
+    func setTabsWithStoredViewController() {
+        if tabCtr != nil && tabs != nil {
+            tabCtr.setViewControllers(tabs, animated: animated)
+            tabs = nil
+            if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
+                if viewModel.started == false {
+                    viewModel.startViewModel(parameters: nil)
+                    viewModel.started = true
+                }
+            }
+        }
     }
 }

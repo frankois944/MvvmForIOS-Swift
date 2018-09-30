@@ -15,7 +15,12 @@ class SecondView: MvvmBaseView<SecondViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentToShowLabel.text = viewModel.service.someData
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     override func didReceiveMemoryWarning() {

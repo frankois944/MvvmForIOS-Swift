@@ -6,7 +6,7 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-protocol IMvvmBaseView: IMvvmView {
+internal protocol IMvvmBaseView: IMvvmView {
     associatedtype ViewModelType
     var viewModel: ViewModelType! { get set }
 }

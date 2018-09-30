@@ -13,9 +13,9 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
     open var viewModel: T!
 
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: AnyObject? {
+    internal var viewModelObject: Any? {
         get {
-            return (viewModel as AnyObject?)
+            return (viewModel as Any?)
         }
         set {
             viewModel = newValue as? T
@@ -24,11 +24,13 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        loadViewModelForCurrent()
         self.delegate = self
         if viewControllers != nil {
             let viewController = viewControllers![0]
             initViewModelIfnecessary(viewController: (viewController as? IMvvmView)!)
         }
+        (viewModel as? IMvvmBaseTabView)?.tabCtr = self
         // Do any additional setup after loading the view.
     }
 
@@ -43,6 +45,20 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
             let instance = (viewController.typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewController.viewModelObject = instance
+        }
+        if let viewModel = viewController.viewModelObject as? MvvmBaseViewModel {
+            if viewModel.started == false {
+                viewModel.startViewModel(parameters: nil)
+                viewModel.started = true
+            }
+        }
+    }
+
+    fileprivate func loadViewModelForCurrent() {
+        if viewModelObject == nil {
+        let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+            instance.startViewModel(parameters: nil)
+            viewModelObject = instance
         }
     }
 
@@ -74,9 +90,12 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
     deinit {
     }
 
-    open override func didMove(toParentViewController parent: UIViewController?) {
+    open override func didMove(toParent parent: UIViewController?) {
         // clean viewModel
+        super.didMove(toParent: parent)
         if parent == nil {
+            viewControllers?.forEach {  $0.didMove(toParent: parent) }
+            (viewModel as? IMvvmVisibility)?.isDestroyed()
             viewModel = nil
         }
     }

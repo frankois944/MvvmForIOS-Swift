@@ -6,8 +6,8 @@
 //  Copyright © 2018 francois dabonot. All rights reserved.
 //
 
-protocol IMvvmView: class {
+internal protocol IMvvmView: class {
     init()
     var typeOfViewModel: AnyClass? { get set }
-    var viewModelObject: AnyObject? { get set }
+    var viewModelObject: Any? { get set }
 }
