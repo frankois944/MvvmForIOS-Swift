@@ -64,7 +64,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
     deinit {
     }
 
-    open override func didMove(toParentViewController parent: UIViewController?) {
+    open override func didMove(toParent parent: UIViewController?) {
         // clean viewModel
         if parent == nil {
             viewModel = nil
