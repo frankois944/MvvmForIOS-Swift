@@ -13,8 +13,12 @@ class TabBarView: MvvmBaseTabView<TabBarViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("START BaseTabView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     override func didReceiveMemoryWarning() {

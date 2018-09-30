@@ -13,12 +13,16 @@ class TableView: MvvmBaseTableView<TableViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("viewDidLoad TableView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     override func didReceiveMemoryWarning() {

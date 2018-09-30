@@ -11,4 +11,5 @@ import Foundation
 public protocol IMvvmBaseViewModel {
     init()
     func startViewModel(parameters: Any?)
+    var started: Bool {get set}
 }

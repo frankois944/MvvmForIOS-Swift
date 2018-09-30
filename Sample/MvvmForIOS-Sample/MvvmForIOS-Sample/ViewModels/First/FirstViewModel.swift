@@ -14,7 +14,16 @@ class FirstViewModel: MvvmBaseViewModel {
     let service: IDataService! = MvvmServiceLocator.resolve()
 
     override func startViewModel(parameters: Any?) {
+        NSLog("[startViewModel] \(String(describing: self))")
+    }
 
+    override func isDestroyed() {
+        super.isDestroyed()
+        NSLog("[isDestroyed] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     func showSecondViewModel() {

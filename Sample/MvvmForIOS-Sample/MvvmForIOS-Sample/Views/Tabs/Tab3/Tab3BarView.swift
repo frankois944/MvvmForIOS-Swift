@@ -17,13 +17,17 @@ class Tab3BarView: MvvmBaseView<Tab3BarViewModel>, IMvvmFromStoryBoardAttribute 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("START Tab3BarView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 
     /*

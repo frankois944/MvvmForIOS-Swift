@@ -12,6 +12,15 @@ import Foundation
 class TableViewModel: MvvmBaseViewModel {
 
     override func startViewModel(parameters: Any?) {
-        NSLog("Start TableViewModel")
+        NSLog("[startViewModel] \(String(describing: self))")
+    }
+
+    override func isDestroyed() {
+        super.isDestroyed()
+        NSLog("[isDestroyed] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 }

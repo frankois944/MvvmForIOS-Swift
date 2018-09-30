@@ -13,9 +13,9 @@ open class MvvmBaseTableView<T: IMvvmBaseViewModel> : UITableViewController, IMv
     open var viewModel: T!
 
     internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: AnyObject? {
+    internal var viewModelObject: Any? {
         get {
-            return (viewModel as AnyObject?)
+            return (viewModel as Any?)
         }
         set {
             viewModel = newValue as? T
@@ -29,9 +29,18 @@ open class MvvmBaseTableView<T: IMvvmBaseViewModel> : UITableViewController, IMv
 
     fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
-            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+            let instance = (viewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
+        }
+    }
+
+    open override func didMove(toParent parent: UIViewController?) {
+        // clean viewModel
+        super.didMove(toParent: parent)
+        if parent == nil {
+            (viewModel as? IMvvmVisibility)?.isDestroyed()
+            viewModel = nil
         }
     }
 }

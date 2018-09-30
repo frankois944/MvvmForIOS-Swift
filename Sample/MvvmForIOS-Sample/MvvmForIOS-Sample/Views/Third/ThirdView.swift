@@ -21,6 +21,10 @@ class ThirdView: MvvmBaseView<ThirdViewModel> {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         view.addSubview(label)
-        NSLog("viewDidLoad ThirdView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
+    }
+
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
     }
 }

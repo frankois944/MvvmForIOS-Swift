@@ -48,7 +48,7 @@ class MvvmNavigationService: IMvvmNavigationService {
         showViewModel(viewModelToShow: viewModelToShow, onCompletion: onCompletion, withParameters: nil)
     }
 
-    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: AnyObject?) {
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: Any?) {
         let view = getView(viewModel: viewModelToShow, withParameters: withParameters)
 
         if (view as? IMvvmLeftPanelAttribute) != nil {
@@ -102,7 +102,7 @@ class MvvmNavigationService: IMvvmNavigationService {
         showModalViewModel(viewModelToShow: viewModelToShow, onCompletion: onCompletion, customizeModal: customizeModal, withParameters: nil)
     }
 
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?, withParameters: AnyObject?) {
+    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, customizeModal: ((UIViewController) -> Void)?, withParameters: Any?) {
         if modalViewController != nil {
             NSLog("Must have only one Modal View")
         } else {
@@ -156,7 +156,7 @@ class MvvmNavigationService: IMvvmNavigationService {
     func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]? {
         var result = [UIViewController]()
         for row in viewModels {
-            result.append(self.getView(viewModel: row, withParameters: nil))
+            result.append(self.getView(viewModel: row, withParameters: nil, mustStart: false))
         }
         return (result)
     }
@@ -177,7 +177,7 @@ class MvvmNavigationService: IMvvmNavigationService {
         animated == true ? sideNavigator.hideRightViewAnimated() : sideNavigator.hideRightView()
     }
 
-    private func getView<T: IMvvmBaseViewModel>(viewModel: T.Type, withParameters: AnyObject?) -> UIViewController {
+    private func getView<T: IMvvmBaseViewModel>(viewModel: T.Type, withParameters: Any?, mustStart: Bool = false) -> UIViewController {
         let classname = NSStringFromClass((viewModel as? AnyClass)!)
         let module = classname.components(separatedBy: ".").first!
 
@@ -192,7 +192,9 @@ class MvvmNavigationService: IMvvmNavigationService {
         }
         // Init and start ViewModel
         let newViewModel = viewModel.init()
-        newViewModel.startViewModel(parameters: withParameters)
+        if mustStart == true {
+            newViewModel.startViewModel(parameters: withParameters)
+        }
         // Init View
         var newViewController = getViewControllerIfExist(storyboardName: storyboardName, identifier: viewName)
         if newViewController == nil {
@@ -200,7 +202,7 @@ class MvvmNavigationService: IMvvmNavigationService {
             newViewController = viewControllerIsConformToView!.init() as? UIViewController
         }
         // Store ViewModel in View
-        (newViewController as? IMvvmView)!.viewModelObject = newViewModel as AnyObject
+        (newViewController as? IMvvmView)!.viewModelObject = newViewModel
         return (newViewController)!
     }
 

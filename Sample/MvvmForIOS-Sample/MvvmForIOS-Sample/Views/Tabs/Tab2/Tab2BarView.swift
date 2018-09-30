@@ -17,7 +17,7 @@ class Tab2BarView: MvvmBaseView<Tab2BarViewModel>, IMvvmFromStoryBoardAttribute 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("START Tab2BarView")
+        NSLog("[viewDidLoad] \(String(describing: self))")
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +26,9 @@ class Tab2BarView: MvvmBaseView<Tab2BarViewModel>, IMvvmFromStoryBoardAttribute 
         // Dispose of any resources that can be recreated.
     }
 
+    deinit {
+        NSLog("[deinit] \(String(describing: self))")
+    }
     /*
     // MARK: - Navigation
 

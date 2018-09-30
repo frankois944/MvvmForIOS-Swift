@@ -29,6 +29,12 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
         if tabCtr != nil && tabs != nil {
             tabCtr.setViewControllers(tabs, animated: animated)
             tabs = nil
+            if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
+                if viewModel.started == false {
+                    viewModel.startViewModel(parameters: nil)
+                    viewModel.started = true
+                }
+            }
         }
     }
 }

@@ -9,4 +9,5 @@
 internal protocol IMvvmVisibility {
     func willBeVisible(willBeVisible: Bool)
     func isVisible(isVisible: Bool)
+    func isDestroyed()
 }
