@@ -20,7 +20,7 @@ class MvvmNavigationService: IMvvmNavigationService {
     init(window: UIWindow) {
         NSLog("[MvvmForIOS]Load NavigationService")
         self.window = window
-        self.rootNavigationControllerType = nil
+        self.rootNavigationControllerType = UINavigationController.self
     }
 
     init(window: UIWindow, customNavigationController: UINavigationController.Type) {
