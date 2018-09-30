@@ -8,7 +8,7 @@
 
 import UIKit
 import LGSideMenuController
-import ObjcPrivate
+import MvvmForIOSSwift_Private
 
 class MvvmNavigationService: IMvvmNavigationService {
 
