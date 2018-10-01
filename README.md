@@ -1,5 +1,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/985700b7fa1f4c00a23bf441f0e618fd)](https://www.codacy.com/app/frankois/MvvmForIOS-Swift?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frankois944/MvvmForIOS-Swift&amp;utm_campaign=Badge_Grade)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Build Status](https://travis-ci.com/frankois944/MvvmForIOS-Swift.svg?branch=master)](https://travis-ci.com/frankois944/MvvmForIOS-Swift)
 
 # MvvmForIOS-Swift
 MvvmForIOS is a framework for using Mvvm pattern on iOS.
