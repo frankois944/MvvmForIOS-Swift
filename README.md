@@ -2,6 +2,7 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Build Status](https://travis-ci.com/frankois944/MvvmForIOS-Swift.svg?branch=master)](https://travis-ci.com/frankois944/MvvmForIOS-Swift)
 [![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://swift.org)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 # MvvmForIOS-Swift
 MvvmForIOS is a framework for using Mvvm pattern on iOS.
