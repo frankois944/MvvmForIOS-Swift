@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0728F6C021629B03000D6DFA /* MvvmForIOS_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728F6BF21629B03000D6DFA /* MvvmForIOS_SampleTests.swift */; };
+		0728F6C921629DED000D6DFA /* IDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F913F2063ED07000A81A1 /* IDataService.swift */; };
+		0728F6CA21629DED000D6DFA /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91412063ED1D000A81A1 /* DataService.swift */; };
+		0728F6CB21629E05000D6DFA /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2862104BD19009E6C12 /* TableViewModel.swift */; };
+		0728F6CC21629E05000D6DFA /* Tab3BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8C20A711EA00EDC7A5 /* Tab3BarViewModel.swift */; };
+		0728F6CD21629E05000D6DFA /* Tab2BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8A20A711DE00EDC7A5 /* Tab2BarViewModel.swift */; };
+		0728F6CE21629E05000D6DFA /* Tab1BarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8820A711D500EDC7A5 /* Tab1BarViewModel.swift */; };
+		0728F6CF21629E05000D6DFA /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8320A7117A00EDC7A5 /* TabBarViewModel.swift */; };
+		0728F6D021629E05000D6DFA /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465C21023B9F00B68535 /* ThirdViewModel.swift */; };
+		0728F6D121629E05000D6DFA /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91492063EDA8000A81A1 /* SecondViewModel.swift */; };
+		0728F6D221629E05000D6DFA /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91472063ED9F000A81A1 /* FirstViewModel.swift */; };
+		0728F6D321629E05000D6DFA /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2842104BCF5009E6C12 /* TableView.swift */; };
+		0728F6D421629E05000D6DFA /* Tab3BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D9220A7125800EDC7A5 /* Tab3BarView.swift */; };
+		0728F6D521629E05000D6DFA /* Tab2BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D9020A7124B00EDC7A5 /* Tab2BarView.swift */; };
+		0728F6D621629E05000D6DFA /* Tab1BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D8E20A7123D00EDC7A5 /* Tab1BarView.swift */; };
+		0728F6D721629E05000D6DFA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7E20A7114A00EDC7A5 /* TabBarView.swift */; };
+		0728F6D821629E05000D6DFA /* TabBar.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 70588D9420A7128F00EDC7A5 /* TabBar.storyboard */; };
+		0728F6D921629E05000D6DFA /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465921023B8B00B68535 /* ThirdView.swift */; };
+		0728F6DA21629E05000D6DFA /* Second.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 703F914F2063EE71000A81A1 /* Second.storyboard */; };
+		0728F6DB21629E05000D6DFA /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91452063ED92000A81A1 /* SecondView.swift */; };
+		0728F6DC21629E05000D6DFA /* First.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 703F914B2063EDE8000A81A1 /* First.storyboard */; };
+		0728F6DD21629E05000D6DFA /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703F91432063ED88000A81A1 /* FirstView.swift */; };
 		077B465A21023B8B00B68535 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465921023B8B00B68535 /* ThirdView.swift */; };
 		077B465D21023B9F00B68535 /* ThirdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465C21023B9F00B68535 /* ThirdViewModel.swift */; };
 		07DEA2852104BCF5009E6C12 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2842104BCF5009E6C12 /* TableView.swift */; };
@@ -38,6 +60,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0728F6C221629B03000D6DFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 703F91002063EC1F000A81A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 703F91072063EC1F000A81A1;
+			remoteInfo = "MvvmForIOS-Sample";
+		};
 		703F91222063EC2A000A81A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 703F911D2063EC2A000A81A1 /* MvvmForIOS.xcodeproj */;
@@ -77,6 +106,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0728F6BD21629B02000D6DFA /* MvvmForIOS-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MvvmForIOS-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0728F6BF21629B03000D6DFA /* MvvmForIOS_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmForIOS_SampleTests.swift; sourceTree = "<group>"; };
+		0728F6C121629B03000D6DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		077B465921023B8B00B68535 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		077B465C21023B9F00B68535 /* ThirdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewModel.swift; sourceTree = "<group>"; };
 		07DEA2842104BCF5009E6C12 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -108,6 +140,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0728F6BA21629B02000D6DFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		703F91052063EC1F000A81A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0728F6BE21629B03000D6DFA /* MvvmForIOS-SampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				0728F6BF21629B03000D6DFA /* MvvmForIOS_SampleTests.swift */,
+				0728F6C121629B03000D6DFA /* Info.plist */,
+			);
+			path = "MvvmForIOS-SampleTests";
+			sourceTree = "<group>";
+		};
 		077B465821023B1F00B68535 /* Third */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +205,7 @@
 			children = (
 				703F911D2063EC2A000A81A1 /* MvvmForIOS.xcodeproj */,
 				703F910A2063EC1F000A81A1 /* MvvmForIOS-Sample */,
+				0728F6BE21629B03000D6DFA /* MvvmForIOS-SampleTests */,
 				703F91092063EC1F000A81A1 /* Products */,
 				703F91262063EC37000A81A1 /* Frameworks */,
 			);
@@ -166,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				703F91082063EC1F000A81A1 /* MvvmForIOS-Sample.app */,
+				0728F6BD21629B02000D6DFA /* MvvmForIOS-SampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,6 +391,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0728F6BC21629B02000D6DFA /* MvvmForIOS-SampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0728F6C621629B03000D6DFA /* Build configuration list for PBXNativeTarget "MvvmForIOS-SampleTests" */;
+			buildPhases = (
+				0728F6B921629B02000D6DFA /* Sources */,
+				0728F6BA21629B02000D6DFA /* Frameworks */,
+				0728F6BB21629B02000D6DFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0728F6C321629B03000D6DFA /* PBXTargetDependency */,
+			);
+			name = "MvvmForIOS-SampleTests";
+			productName = "MvvmForIOS-SampleTests";
+			productReference = 0728F6BD21629B02000D6DFA /* MvvmForIOS-SampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		703F91072063EC1F000A81A1 /* MvvmForIOS-Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 703F911A2063EC1F000A81A1 /* Build configuration list for PBXNativeTarget "MvvmForIOS-Sample" */;
@@ -367,10 +435,15 @@
 		703F91002063EC1F000A81A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Dabonot Francois";
 				TargetAttributes = {
+					0728F6BC21629B02000D6DFA = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 703F91072063EC1F000A81A1;
+					};
 					703F91072063EC1F000A81A1 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1000;
@@ -398,6 +471,7 @@
 			projectRoot = "";
 			targets = (
 				703F91072063EC1F000A81A1 /* MvvmForIOS-Sample */,
+				0728F6BC21629B02000D6DFA /* MvvmForIOS-SampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -413,6 +487,13 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0728F6BB21629B02000D6DFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		703F91062063EC1F000A81A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +509,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0728F6B921629B02000D6DFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0728F6CB21629E05000D6DFA /* TableViewModel.swift in Sources */,
+				0728F6CC21629E05000D6DFA /* Tab3BarViewModel.swift in Sources */,
+				0728F6CD21629E05000D6DFA /* Tab2BarViewModel.swift in Sources */,
+				0728F6CE21629E05000D6DFA /* Tab1BarViewModel.swift in Sources */,
+				0728F6CF21629E05000D6DFA /* TabBarViewModel.swift in Sources */,
+				0728F6D021629E05000D6DFA /* ThirdViewModel.swift in Sources */,
+				0728F6D121629E05000D6DFA /* SecondViewModel.swift in Sources */,
+				0728F6D221629E05000D6DFA /* FirstViewModel.swift in Sources */,
+				0728F6D321629E05000D6DFA /* TableView.swift in Sources */,
+				0728F6D421629E05000D6DFA /* Tab3BarView.swift in Sources */,
+				0728F6D521629E05000D6DFA /* Tab2BarView.swift in Sources */,
+				0728F6D621629E05000D6DFA /* Tab1BarView.swift in Sources */,
+				0728F6D721629E05000D6DFA /* TabBarView.swift in Sources */,
+				0728F6D821629E05000D6DFA /* TabBar.storyboard in Sources */,
+				0728F6D921629E05000D6DFA /* ThirdView.swift in Sources */,
+				0728F6DA21629E05000D6DFA /* Second.storyboard in Sources */,
+				0728F6DB21629E05000D6DFA /* SecondView.swift in Sources */,
+				0728F6DC21629E05000D6DFA /* First.storyboard in Sources */,
+				0728F6DD21629E05000D6DFA /* FirstView.swift in Sources */,
+				0728F6C921629DED000D6DFA /* IDataService.swift in Sources */,
+				0728F6CA21629DED000D6DFA /* DataService.swift in Sources */,
+				0728F6C021629B03000D6DFA /* MvvmForIOS_SampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		703F91042063EC1F000A81A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +567,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0728F6C321629B03000D6DFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 703F91072063EC1F000A81A1 /* MvvmForIOS-Sample */;
+			targetProxy = 0728F6C221629B03000D6DFA /* PBXContainerItemProxy */;
+		};
 		703F91372063EC5E000A81A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MvvmForIOS;
@@ -481,6 +596,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0728F6C421629B03000D6DFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MvvmForIOS-SampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.francoisdabonot.MvvmForIOS-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MvvmForIOS-Sample.app/MvvmForIOS-Sample";
+			};
+			name = Debug;
+		};
+		0728F6C521629B03000D6DFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MvvmForIOS-SampleTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.francoisdabonot.MvvmForIOS-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MvvmForIOS-Sample.app/MvvmForIOS-Sample";
+			};
+			name = Release;
+		};
 		703F91182063EC1F000A81A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -627,6 +779,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0728F6C621629B03000D6DFA /* Build configuration list for PBXNativeTarget "MvvmForIOS-SampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0728F6C421629B03000D6DFA /* Debug */,
+				0728F6C521629B03000D6DFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		703F91032063EC1F000A81A1 /* Build configuration list for PBXProject "MvvmForIOS-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
