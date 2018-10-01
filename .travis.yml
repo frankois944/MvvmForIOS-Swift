@@ -5,4 +5,4 @@ xcode_scheme: MvvmForIOS-Sample
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 
 before_install:
-  - cd External/ && git clone https://github.com/Friend-LGA/LGSideMenuController.git
+  - cd External/ && rm -rf LGSideMenuController && git clone https://github.com/Friend-LGA/LGSideMenuController.git
