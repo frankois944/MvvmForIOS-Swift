@@ -12,13 +12,7 @@ open class MvvmSetup: NSObject {
 
     private weak var _window: UIWindow!
 
-    public init(window: UIWindow) {
-        NSLog("[MvvmForIOS]START setup")
-        self._window = window
-        MvvmServiceLocator.register(service: MvvmNavigationService(window: window) as IMvvmNavigationService)
-    }
-
-    public init(window: UIWindow, customNavigationController: UINavigationController.Type) {
+    public init(window: UIWindow, customNavigationController: UINavigationController.Type = UINavigationController.self) {
         NSLog("[MvvmForIOS]START setup")
         self._window = window
         MvvmServiceLocator.register(service: MvvmNavigationService(window: window, customNavigationController: customNavigationController) as IMvvmNavigationService)
