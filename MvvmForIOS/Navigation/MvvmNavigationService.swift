@@ -12,7 +12,7 @@ import MvvmForIOSSwift_Private
 
 class MvvmNavigationService: IMvvmNavigationService {
 
-    private let rootNavigationControllerType: UINavigationController.Type?
+    private let rootNavigationControllerType: UINavigationController.Type
     private var modalViewController: UIViewController?
     private let sideNavigator: LGSideMenuController = LGSideMenuController()
     public weak var window: UIWindow?
@@ -35,7 +35,7 @@ class MvvmNavigationService: IMvvmNavigationService {
 
     func setCenterViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type) {
         let view = getView(viewModel: viewModelToShow, withParameters: nil)
-        sideNavigator.rootViewController = self.rootNavigationControllerType!.init(rootViewController: view)
+        sideNavigator.rootViewController = rootNavigationControllerType.init(rootViewController: view)
         window?.rootViewController = sideNavigator
         window?.makeKeyAndVisible()
     }
@@ -125,16 +125,15 @@ class MvvmNavigationService: IMvvmNavigationService {
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(onCompletion)
-
         if let modal = modalViewController {
             modal.dismiss(animated: getIsAnimatedForClose(view: modal), completion: nil)
             modalViewController = nil
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.leftViewController as? UINavigationController) {
-            (sideNavigator.leftViewController as? UINavigationController)?.popViewController(animated: true)
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rightViewController as? UINavigationController) {
-            (sideNavigator.rightViewController as? UINavigationController)?.popViewController(animated: true)
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rootViewController as? UINavigationController) {
-            (sideNavigator.rootViewController as? UINavigationController)?.popViewController(animated: true)
+        } else if let navCtr = sideNavigator.leftViewController as? UINavigationController, isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: navCtr) {
+            navCtr.popViewController(animated: true)
+        } else if let navCtr = sideNavigator.rightViewController as? UINavigationController, isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: navCtr) {
+            navCtr.popViewController(animated: true)
+        } else if let navCtr = sideNavigator.rootViewController as? UINavigationController, isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: navCtr) {
+            navCtr.popViewController(animated: true)
         } else {
             NSLog("[MvvmForIOS]No View Found or is RootView for %@", String(describing: type(of: viewModelToClose)))
         }
@@ -148,9 +147,8 @@ class MvvmNavigationService: IMvvmNavigationService {
     }
 
     func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]? {
-        var result = [UIViewController]()
-        for row in viewModels {
-            result.append(self.getView(viewModel: row, withParameters: nil, mustStart: false))
+        let result = viewModels.map {
+            return (self.getView(viewModel: $0, withParameters: nil, mustStart: false))
         }
         return (result)
     }
@@ -199,8 +197,9 @@ class MvvmNavigationService: IMvvmNavigationService {
         return (newViewController)!
     }
 
-    private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> Bool {
-        if let views = navigationController?.viewControllers, views.count > 1 {
+    private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController) -> Bool {
+        let views = navigationController.viewControllers
+        if views.count > 1 {
             for view in views {
                 guard let viewToTest = view as? IMvvmView else {
                     continue

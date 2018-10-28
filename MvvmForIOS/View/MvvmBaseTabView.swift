@@ -26,9 +26,11 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
         super.viewDidLoad()
         loadViewModelForCurrent()
         self.delegate = self
-        if viewControllers != nil {
-            let viewController = viewControllers![0]
-            initViewModelIfnecessary(viewController: (viewController as? IMvvmView)!)
+        if let viewControllers = viewControllers, viewControllers.count > 0 {
+            let viewController = viewControllers[0]
+            if let viewController = viewController as? IMvvmView {
+                initViewModelIfnecessary(viewController: viewController)
+            }
         }
         (viewModel as? IMvvmBaseTabView)?.tabCtr = self
         // Do any additional setup after loading the view.
@@ -41,8 +43,8 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
     }
 
     fileprivate func initViewModelIfnecessary(viewController: IMvvmView) {
-        if viewController.viewModelObject == nil {
-            let instance = (viewController.typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
+        if viewController.viewModelObject == nil, let type = viewController.typeOfViewModel as? MvvmBaseViewModel.Type {
+            let instance = type.init()
             instance.startViewModel(parameters: nil)
             viewController.viewModelObject = instance
         }
@@ -56,9 +58,11 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
 
     fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
-        let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
-            instance.startViewModel(parameters: nil)
-            viewModelObject = instance
+            if let type = typeOfViewModel as? MvvmBaseViewModel.Type {
+                let instance = type.init()
+                instance.startViewModel(parameters: nil)
+                viewModelObject = instance
+            }
         }
     }
 

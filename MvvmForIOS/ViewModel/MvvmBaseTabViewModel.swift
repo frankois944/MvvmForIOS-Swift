@@ -26,9 +26,8 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
     }
 
     func setTabsWithStoredViewController() {
-        if tabCtr != nil && tabs != nil {
+        if let tabCtr = tabCtr, let tabs = tabs {
             tabCtr.setViewControllers(tabs, animated: animated)
-            tabs = nil
             if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
                 if viewModel.started == false {
                     viewModel.startViewModel(parameters: nil)
