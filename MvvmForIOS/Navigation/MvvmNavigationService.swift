@@ -51,24 +51,20 @@ class MvvmNavigationService: IMvvmNavigationService {
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: Any?) {
         let view = getView(viewModel: viewModelToShow, withParameters: withParameters)
 
-        if (view as? IMvvmLeftPanelAttribute) != nil {
-            if (view as? IMvvmRootAttribute) != nil {
+        if view is IMvvmLeftPanelAttribute {
+            if view is IMvvmRootAttribute {
                 sideNavigator.leftViewController = UINavigationController(rootViewController: view)
-                if onCompletion != nil {
-                    onCompletion!()
-                }
+                onCompletion?()
             } else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
                 (sideNavigator.leftViewController as? UINavigationController)!.pushViewController(view, animated: getIsAnimatedForOpen(view: view))
                 CATransaction.commit()
             }
-        } else if (view as? IMvvmLeftPanelAttribute) != nil {
-            if (view as? IMvvmRootAttribute) != nil {
+        } else if view is IMvvmLeftPanelAttribute {
+            if view is IMvvmRootAttribute {
                 sideNavigator.rightViewController = UINavigationController(rootViewController: view)
-                if onCompletion != nil {
-                    onCompletion!()
-                }
+                onCompletion?()
             } else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
@@ -76,11 +72,9 @@ class MvvmNavigationService: IMvvmNavigationService {
                 CATransaction.commit()
             }
         } else {
-            if (view as? IMvvmRootAttribute) != nil {
+            if view is IMvvmRootAttribute {
                 sideNavigator.rootViewController = UINavigationController(rootViewController: view)
-                if onCompletion != nil {
-                    onCompletion!()
-                }
+                onCompletion?()
             } else {
                 CATransaction.begin()
                 CATransaction.setCompletionBlock(onCompletion)
@@ -107,10 +101,10 @@ class MvvmNavigationService: IMvvmNavigationService {
             NSLog("Must have only one Modal View")
         } else {
             modalViewController = getView(viewModel: viewModelToShow, withParameters: withParameters)
-            if customizeModal != nil && modalViewController != nil {
-                customizeModal!(modalViewController!)
+            if let modalViewController = modalViewController {
+                customizeModal?(modalViewController)
+                (sideNavigator.rootViewController as? UINavigationController)?.topViewController?.present(modalViewController, animated: getIsAnimatedForOpen(view: modalViewController), completion: onCompletion)
             }
-            (sideNavigator.rootViewController as? UINavigationController)?.topViewController?.present(modalViewController!, animated: getIsAnimatedForOpen(view: modalViewController), completion: onCompletion)
         }
     }
 
@@ -132,15 +126,15 @@ class MvvmNavigationService: IMvvmNavigationService {
         CATransaction.begin()
         CATransaction.setCompletionBlock(onCompletion)
 
-        if modalViewController != nil {
-            modalViewController?.dismiss(animated: getIsAnimatedForClose(view: modalViewController), completion: nil)
+        if let modal = modalViewController {
+            modal.dismiss(animated: getIsAnimatedForClose(view: modal), completion: nil)
             modalViewController = nil
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.leftViewController as? UINavigationController) != nil {
-            (sideNavigator.leftViewController as? UINavigationController)!.popViewController(animated: true)
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rightViewController as? UINavigationController) != nil {
-            (sideNavigator.rightViewController as? UINavigationController)!.popViewController(animated: true)
-        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rootViewController as? UINavigationController) != nil {
-            (sideNavigator.rootViewController as? UINavigationController)!.popViewController(animated: true)
+        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.leftViewController as? UINavigationController) {
+            (sideNavigator.leftViewController as? UINavigationController)?.popViewController(animated: true)
+        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rightViewController as? UINavigationController) {
+            (sideNavigator.rightViewController as? UINavigationController)?.popViewController(animated: true)
+        } else if isViewModelExistInNavigation(viewModelToClose: viewModelToClose, navigationController: sideNavigator.rootViewController as? UINavigationController) {
+            (sideNavigator.rootViewController as? UINavigationController)?.popViewController(animated: true)
         } else {
             NSLog("[MvvmForIOS]No View Found or is RootView for %@", String(describing: type(of: viewModelToClose)))
         }
@@ -187,9 +181,7 @@ class MvvmNavigationService: IMvvmNavigationService {
         let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
         // getting the storyboardName from the associate view
         let viewControllerIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
-        if viewControllerIsConformToFromStoryBoard?.fromStoryboardName != nil {
-            storyboardName = viewControllerIsConformToFromStoryBoard!.fromStoryboardName!
-        }
+        storyboardName = viewControllerIsConformToFromStoryBoard?.fromStoryboardName ?? storyboardName
         // Init and start ViewModel
         let newViewModel = viewModel.init()
         if mustStart == true {
@@ -198,45 +190,41 @@ class MvvmNavigationService: IMvvmNavigationService {
         // Init View
         var newViewController = getViewControllerIfExist(storyboardName: storyboardName, identifier: viewName)
         if newViewController == nil {
-            let viewControllerIsConformToView  = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type
-            newViewController = viewControllerIsConformToView!.init() as? UIViewController
+            if let viewControllerIsConformToView  = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type {
+                newViewController = viewControllerIsConformToView.init() as? UIViewController
+            }
         }
         // Store ViewModel in View
         (newViewController as? IMvvmView)!.viewModelObject = newViewModel
         return (newViewController)!
     }
 
-    private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> UIViewController? {
-        if navigationController != nil {
-            let views = navigationController?.viewControllers
-            if views != nil && views!.count > 1 {
-                for view in views! {
-                    guard let viewToTest = view as? IMvvmView else {
-                        continue
-                    }
-                    if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModelToClose as AnyObject).toOpaque() {
-                        return (view)
-                    }
+    private func isViewModelExistInNavigation<T: IMvvmBaseViewModel>(viewModelToClose: T, navigationController: UINavigationController?) -> Bool {
+        if let views = navigationController?.viewControllers, views.count > 1 {
+            for view in views {
+                guard let viewToTest = view as? IMvvmView else {
+                    continue
+                }
+                if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModelToClose as AnyObject).toOpaque() {
+                    return (true)
                 }
             }
         }
-        return (nil)
+        return (false)
     }
 
     private func getIsAnimatedForOpen(view: UIViewController!) -> Bool {
         var animated: Bool = true
-        let viewToTest = view as? IMvvmTransitionAttribute
-        if viewToTest != nil {
-            animated = (viewToTest?.isOpenTransitionAnimated)!
+        if let viewToTest = view as? IMvvmTransitionAttribute {
+            animated = viewToTest.isOpenTransitionAnimated
         }
         return (animated)
     }
 
     private func getIsAnimatedForClose(view: UIViewController!) -> Bool {
         var animated: Bool = true
-        let viewToTest = view as? IMvvmTransitionAttribute
-        if viewToTest != nil {
-            animated = (viewToTest?.isCloseTransitionAnimated)!
+        if let viewToTest = view as? IMvvmTransitionAttribute {
+            animated = viewToTest.isCloseTransitionAnimated
         }
         return (animated)
     }
@@ -246,10 +234,10 @@ class MvvmNavigationService: IMvvmNavigationService {
         do {
             try ObjC.catchException {
                 let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
-                if identifier == nil {
-                    resultVC = storyBoard.instantiateInitialViewController()
+                if let identifier = identifier {
+                    resultVC = storyBoard.instantiateViewController(withIdentifier: identifier)
                 } else {
-                    resultVC = storyBoard.instantiateViewController(withIdentifier: identifier!)
+                    resultVC = storyBoard.instantiateInitialViewController()
                 }
             }
         } catch {
