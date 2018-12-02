@@ -8,6 +8,7 @@
 
 import UIKit
 import MvvmForIOSSwift
+import MvvmForIOSSwift_SidePanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,12 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         registerServices()
-
-        mvvmForIOSSwift = MvvmSetup(window: window, customNavigationController: UINavigationController.self)
-        navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
-        navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
-        navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
+        mvvmForIOSSwift = MvvmSetup(sidePannelpresenter: MvvmSidePanelPresenter(window: window))
+        navigation.showViewModel(viewModelToShow: FirstViewModel.self)
         // Override point for customization after application launch.
+        window.makeKeyAndVisible()
         return true
     }
 

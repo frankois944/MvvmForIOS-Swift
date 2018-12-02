@@ -11,7 +11,9 @@ import Foundation
 open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
     public var started: Bool = false
 
-    open lazy var navigation: IMvvmNavigationService! = MvvmServiceLocator.resolve()
+    public var navigation: IMvvmNavigationService {
+        return (MvvmServiceLocator.resolve()!)
+    }
 
     required public init() {
     }

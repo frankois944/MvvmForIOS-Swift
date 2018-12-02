@@ -59,14 +59,8 @@ class FirstView: MvvmBaseView<FirstViewModel>, IMvvmRootAttribute, IMvvmFromStor
     @IBAction func showTableViewCtr(_ sender: Any) {
         viewModel.showTableViewModel()
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func showModal(_ sender: Any) {
+        viewModel.showModalViewModel()
     }
-    */
-
 }

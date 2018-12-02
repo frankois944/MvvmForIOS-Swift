@@ -8,13 +8,22 @@
 
 import UIKit
 
-open class MvvmSetup: NSObject {
-
-    private weak var _window: UIWindow!
-
-    public init(window: UIWindow, customNavigationController: UINavigationController.Type = UINavigationController.self) {
+open class MvvmSetup {
+    public init() {
+    }
+    /**
+     * Init the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
+     */
+    public init(window: UIWindow) {
         NSLog("[MvvmForIOS]START setup")
-        self._window = window
-        MvvmServiceLocator.register(service: MvvmNavigationService(window: window, customNavigationController: customNavigationController) as IMvvmNavigationService)
+        MvvmServiceLocator.register(service: MvvmNavigationService(presenter: MvvmBasicPresenter(window: window)) as IMvvmNavigationService)
+    }
+
+    /**
+     * Init the Mvvm Framework with a custom presenter
+     */
+    public init(presenter: IMvvmPresenter) {
+        NSLog("[MvvmForIOS]START setup")
+        MvvmServiceLocator.register(service: MvvmNavigationService(presenter: presenter) as IMvvmNavigationService)
     }
 }

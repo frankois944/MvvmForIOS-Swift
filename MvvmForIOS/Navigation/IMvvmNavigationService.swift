@@ -7,14 +7,9 @@
 //
 
 import UIKit
-import LGSideMenuController
 
 public protocol IMvvmNavigationService {
-    var baseNavigation: LGSideMenuController { get }
-
-    func setCenterViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func setRightSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func setLeftSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    var baseNavigation: UINavigationController { get }
 
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
@@ -23,24 +18,8 @@ public protocol IMvvmNavigationService {
                                               onCompletion:(() -> Void)?,
                                               withParameters: Any?)
 
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?,
-                                                   customizeModal: ((UIViewController) -> Void)?)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?,
-                                                   customizeModal: ((UIViewController) -> Void)?,
-                                                   withParameters: Any?)
-
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?)
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)
-
-    func showLeftPanel(animated: Bool)
-    func showRightPanel(animated: Bool)
-    func hideLeftPanel(animated: Bool)
-    func hideRightPanel(animated: Bool)
 
     func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
     func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]?
