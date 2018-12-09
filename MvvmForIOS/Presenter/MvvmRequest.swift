@@ -9,10 +9,10 @@
 import UIKit
 
 public struct MvvmRequest<T: IMvvmBaseViewModel> {
-    let viewModel: T.Type
-    let parameters: Any?
-    let customizeModalTransition: ((UIViewController) -> Void)?
-    let presenterParamters: [String: Any]?
+    public let viewModel: T.Type
+    public let parameters: Any?
+    public let customizeModalTransition: ((UIViewController) -> Void)?
+    public let presenterParamters: [String: Any]?
 
     init(viewModel: T.Type, parameters: Any?) {
         self.viewModel = viewModel

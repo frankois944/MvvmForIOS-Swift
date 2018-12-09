@@ -1,0 +1,3 @@
+module MvvmForIOSSwift_SidePanel_Private {
+    export *
+}

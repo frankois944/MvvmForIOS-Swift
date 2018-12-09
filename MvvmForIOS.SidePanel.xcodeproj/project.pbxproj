@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		073C57D621B44B78003A3F46 /* MvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C57D521B44B78003A3F46 /* MvvmBaseViewModel.swift */; };
+		078EB8A921BD3768000CF8D5 /* LGSideMenuSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB89B21BD3767000CF8D5 /* LGSideMenuSegue.h */; };
+		078EB8AA21BD3768000CF8D5 /* LGSideMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB89C21BD3767000CF8D5 /* LGSideMenuView.h */; };
+		078EB8AB21BD3768000CF8D5 /* LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB89D21BD3767000CF8D5 /* LGSideMenuController.h */; };
+		078EB8AC21BD3768000CF8D5 /* LGSideMenuGesturesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB89E21BD3767000CF8D5 /* LGSideMenuGesturesHandler.h */; };
+		078EB8AD21BD3768000CF8D5 /* LGSideMenuBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB89F21BD3767000CF8D5 /* LGSideMenuBorderView.h */; };
+		078EB8AE21BD3768000CF8D5 /* LGSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A021BD3767000CF8D5 /* LGSideMenuHelper.m */; };
+		078EB8AF21BD3768000CF8D5 /* UIViewController+LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB8A121BD3767000CF8D5 /* UIViewController+LGSideMenuController.h */; };
+		078EB8B021BD3768000CF8D5 /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A221BD3767000CF8D5 /* LGSideMenuView.m */; };
+		078EB8B121BD3768000CF8D5 /* LGSideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A321BD3767000CF8D5 /* LGSideMenuSegue.m */; };
+		078EB8B221BD3768000CF8D5 /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A421BD3767000CF8D5 /* LGSideMenuController.m */; };
+		078EB8B321BD3768000CF8D5 /* LGSideMenuGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A521BD3767000CF8D5 /* LGSideMenuGesturesHandler.m */; };
+		078EB8B421BD3768000CF8D5 /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A621BD3767000CF8D5 /* UIViewController+LGSideMenuController.m */; };
+		078EB8B521BD3768000CF8D5 /* LGSideMenuHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 078EB8A721BD3767000CF8D5 /* LGSideMenuHelper.h */; };
+		078EB8B621BD3768000CF8D5 /* LGSideMenuBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EB8A821BD3767000CF8D5 /* LGSideMenuBorderView.m */; };
 		079429F021A49B61009A3987 /* MvvmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079429EF21A49B61009A3987 /* MvvmSetup.swift */; };
 		079429F321A49BDC009A3987 /* IMvvmSidePanelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079429F221A49BDC009A3987 /* IMvvmSidePanelPresenter.swift */; };
 		079429F621A49C63009A3987 /* MvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079429F521A49C63009A3987 /* MvvmNavigationService.swift */; };
 		079429F821A4A301009A3987 /* MvvmSidePanelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079429F721A4A301009A3987 /* MvvmSidePanelPresenter.swift */; };
-		07942A0921A4A822009A3987 /* LGSideMenuSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = 079429FB21A4A822009A3987 /* LGSideMenuSegue.h */; };
-		07942A0A21A4A822009A3987 /* LGSideMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 079429FC21A4A822009A3987 /* LGSideMenuView.h */; };
-		07942A0B21A4A822009A3987 /* LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 079429FD21A4A822009A3987 /* LGSideMenuController.h */; };
-		07942A0C21A4A822009A3987 /* LGSideMenuGesturesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 079429FE21A4A822009A3987 /* LGSideMenuGesturesHandler.h */; };
-		07942A0D21A4A822009A3987 /* LGSideMenuBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 079429FF21A4A822009A3987 /* LGSideMenuBorderView.h */; };
-		07942A0E21A4A822009A3987 /* LGSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0021A4A822009A3987 /* LGSideMenuHelper.m */; };
-		07942A0F21A4A822009A3987 /* UIViewController+LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07942A0121A4A822009A3987 /* UIViewController+LGSideMenuController.h */; };
-		07942A1021A4A822009A3987 /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0221A4A822009A3987 /* LGSideMenuView.m */; };
-		07942A1121A4A822009A3987 /* LGSideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0321A4A822009A3987 /* LGSideMenuSegue.m */; };
-		07942A1221A4A822009A3987 /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0421A4A822009A3987 /* LGSideMenuController.m */; };
-		07942A1321A4A822009A3987 /* LGSideMenuGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0521A4A822009A3987 /* LGSideMenuGesturesHandler.m */; };
-		07942A1421A4A822009A3987 /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0621A4A822009A3987 /* UIViewController+LGSideMenuController.m */; };
-		07942A1521A4A822009A3987 /* LGSideMenuHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 07942A0721A4A822009A3987 /* LGSideMenuHelper.h */; };
-		07942A1621A4A822009A3987 /* LGSideMenuBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07942A0821A4A822009A3987 /* LGSideMenuBorderView.m */; };
 		07942A1821A4B518009A3987 /* IMvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07942A1721A4B518009A3987 /* IMvvmNavigationService.swift */; };
 		07E4CE4821A49ACE001C1A31 /* MvvmForIOS_SidePanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E4CE4621A49ACE001C1A31 /* MvvmForIOS_SidePanel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E4CE5C21A49AFF001C1A31 /* MvvmForIOSSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E4CE5B21A49AFF001C1A31 /* MvvmForIOSSwift.framework */; };
@@ -33,24 +33,26 @@
 
 /* Begin PBXFileReference section */
 		073C57D521B44B78003A3F46 /* MvvmBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseViewModel.swift; sourceTree = "<group>"; };
+		078EB89B21BD3767000CF8D5 /* LGSideMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuSegue.h; sourceTree = "<group>"; };
+		078EB89C21BD3767000CF8D5 /* LGSideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuView.h; sourceTree = "<group>"; };
+		078EB89D21BD3767000CF8D5 /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
+		078EB89E21BD3767000CF8D5 /* LGSideMenuGesturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuGesturesHandler.h; sourceTree = "<group>"; };
+		078EB89F21BD3767000CF8D5 /* LGSideMenuBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuBorderView.h; sourceTree = "<group>"; };
+		078EB8A021BD3767000CF8D5 /* LGSideMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuHelper.m; sourceTree = "<group>"; };
+		078EB8A121BD3767000CF8D5 /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
+		078EB8A221BD3767000CF8D5 /* LGSideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuView.m; sourceTree = "<group>"; };
+		078EB8A321BD3767000CF8D5 /* LGSideMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuSegue.m; sourceTree = "<group>"; };
+		078EB8A421BD3767000CF8D5 /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
+		078EB8A521BD3767000CF8D5 /* LGSideMenuGesturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuGesturesHandler.m; sourceTree = "<group>"; };
+		078EB8A621BD3767000CF8D5 /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
+		078EB8A721BD3767000CF8D5 /* LGSideMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuHelper.h; sourceTree = "<group>"; };
+		078EB8A821BD3767000CF8D5 /* LGSideMenuBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuBorderView.m; sourceTree = "<group>"; };
+		078EB8BD21BD3950000CF8D5 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		078EB8BE21BD3950000CF8D5 /* Objc.private.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
 		079429EF21A49B61009A3987 /* MvvmSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmSetup.swift; sourceTree = "<group>"; };
 		079429F221A49BDC009A3987 /* IMvvmSidePanelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmSidePanelPresenter.swift; sourceTree = "<group>"; };
 		079429F521A49C63009A3987 /* MvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmNavigationService.swift; sourceTree = "<group>"; };
 		079429F721A4A301009A3987 /* MvvmSidePanelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmSidePanelPresenter.swift; sourceTree = "<group>"; };
-		079429FB21A4A822009A3987 /* LGSideMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuSegue.h; sourceTree = "<group>"; };
-		079429FC21A4A822009A3987 /* LGSideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuView.h; sourceTree = "<group>"; };
-		079429FD21A4A822009A3987 /* LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuController.h; sourceTree = "<group>"; };
-		079429FE21A4A822009A3987 /* LGSideMenuGesturesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuGesturesHandler.h; sourceTree = "<group>"; };
-		079429FF21A4A822009A3987 /* LGSideMenuBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuBorderView.h; sourceTree = "<group>"; };
-		07942A0021A4A822009A3987 /* LGSideMenuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuHelper.m; sourceTree = "<group>"; };
-		07942A0121A4A822009A3987 /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
-		07942A0221A4A822009A3987 /* LGSideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuView.m; sourceTree = "<group>"; };
-		07942A0321A4A822009A3987 /* LGSideMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuSegue.m; sourceTree = "<group>"; };
-		07942A0421A4A822009A3987 /* LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuController.m; sourceTree = "<group>"; };
-		07942A0521A4A822009A3987 /* LGSideMenuGesturesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuGesturesHandler.m; sourceTree = "<group>"; };
-		07942A0621A4A822009A3987 /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
-		07942A0721A4A822009A3987 /* LGSideMenuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGSideMenuHelper.h; sourceTree = "<group>"; };
-		07942A0821A4A822009A3987 /* LGSideMenuBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGSideMenuBorderView.m; sourceTree = "<group>"; };
 		07942A1721A4B518009A3987 /* IMvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmNavigationService.swift; sourceTree = "<group>"; };
 		07E4CE4321A49ACE001C1A31 /* MvvmForIOSSwift_SidePanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift_SidePanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E4CE4621A49ACE001C1A31 /* MvvmForIOS_SidePanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvvmForIOS_SidePanel.h; sourceTree = "<group>"; };
@@ -76,6 +78,35 @@
 				073C57D521B44B78003A3F46 /* MvvmBaseViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		078EB89A21BD3767000CF8D5 /* LGSideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				078EB89B21BD3767000CF8D5 /* LGSideMenuSegue.h */,
+				078EB89C21BD3767000CF8D5 /* LGSideMenuView.h */,
+				078EB89D21BD3767000CF8D5 /* LGSideMenuController.h */,
+				078EB89E21BD3767000CF8D5 /* LGSideMenuGesturesHandler.h */,
+				078EB89F21BD3767000CF8D5 /* LGSideMenuBorderView.h */,
+				078EB8A021BD3767000CF8D5 /* LGSideMenuHelper.m */,
+				078EB8A121BD3767000CF8D5 /* UIViewController+LGSideMenuController.h */,
+				078EB8A221BD3767000CF8D5 /* LGSideMenuView.m */,
+				078EB8A321BD3767000CF8D5 /* LGSideMenuSegue.m */,
+				078EB8A421BD3767000CF8D5 /* LGSideMenuController.m */,
+				078EB8A521BD3767000CF8D5 /* LGSideMenuGesturesHandler.m */,
+				078EB8A621BD3767000CF8D5 /* UIViewController+LGSideMenuController.m */,
+				078EB8A721BD3767000CF8D5 /* LGSideMenuHelper.h */,
+				078EB8A821BD3767000CF8D5 /* LGSideMenuBorderView.m */,
+			);
+			path = LGSideMenuController;
+			sourceTree = "<group>";
+		};
+		078EB8BC21BD3950000CF8D5 /* ObjcPrivate */ = {
+			isa = PBXGroup;
+			children = (
+				078EB8BD21BD3950000CF8D5 /* module.modulemap */,
+			);
+			path = ObjcPrivate;
 			sourceTree = "<group>";
 		};
 		079429EE21A49B54009A3987 /* Setup */ = {
@@ -104,27 +135,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		079429FA21A4A822009A3987 /* LGSideMenuController */ = {
-			isa = PBXGroup;
-			children = (
-				079429FB21A4A822009A3987 /* LGSideMenuSegue.h */,
-				079429FC21A4A822009A3987 /* LGSideMenuView.h */,
-				079429FD21A4A822009A3987 /* LGSideMenuController.h */,
-				079429FE21A4A822009A3987 /* LGSideMenuGesturesHandler.h */,
-				079429FF21A4A822009A3987 /* LGSideMenuBorderView.h */,
-				07942A0021A4A822009A3987 /* LGSideMenuHelper.m */,
-				07942A0121A4A822009A3987 /* UIViewController+LGSideMenuController.h */,
-				07942A0221A4A822009A3987 /* LGSideMenuView.m */,
-				07942A0321A4A822009A3987 /* LGSideMenuSegue.m */,
-				07942A0421A4A822009A3987 /* LGSideMenuController.m */,
-				07942A0521A4A822009A3987 /* LGSideMenuGesturesHandler.m */,
-				07942A0621A4A822009A3987 /* UIViewController+LGSideMenuController.m */,
-				07942A0721A4A822009A3987 /* LGSideMenuHelper.h */,
-				07942A0821A4A822009A3987 /* LGSideMenuBorderView.m */,
-			);
-			path = LGSideMenuController;
-			sourceTree = "<group>";
-		};
 		07E4CE3921A49ACE001C1A31 = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +155,10 @@
 		07E4CE4521A49ACE001C1A31 /* MvvmForIOS.SidePanel */ = {
 			isa = PBXGroup;
 			children = (
+				078EB8BE21BD3950000CF8D5 /* Objc.private.modulemap */,
+				078EB8BC21BD3950000CF8D5 /* ObjcPrivate */,
+				078EB89A21BD3767000CF8D5 /* LGSideMenuController */,
 				073C57D421B44B5F003A3F46 /* ViewModel */,
-				079429FA21A4A822009A3987 /* LGSideMenuController */,
 				079429F421A49C3F009A3987 /* Navigation */,
 				079429F121A49BC4009A3987 /* Presenter */,
 				079429EE21A49B54009A3987 /* Setup */,
@@ -171,14 +183,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07942A0D21A4A822009A3987 /* LGSideMenuBorderView.h in Headers */,
-				07942A0C21A4A822009A3987 /* LGSideMenuGesturesHandler.h in Headers */,
+				078EB8AD21BD3768000CF8D5 /* LGSideMenuBorderView.h in Headers */,
+				078EB8AC21BD3768000CF8D5 /* LGSideMenuGesturesHandler.h in Headers */,
 				07E4CE4821A49ACE001C1A31 /* MvvmForIOS_SidePanel.h in Headers */,
-				07942A0B21A4A822009A3987 /* LGSideMenuController.h in Headers */,
-				07942A0A21A4A822009A3987 /* LGSideMenuView.h in Headers */,
-				07942A1521A4A822009A3987 /* LGSideMenuHelper.h in Headers */,
-				07942A0F21A4A822009A3987 /* UIViewController+LGSideMenuController.h in Headers */,
-				07942A0921A4A822009A3987 /* LGSideMenuSegue.h in Headers */,
+				078EB8AB21BD3768000CF8D5 /* LGSideMenuController.h in Headers */,
+				078EB8AA21BD3768000CF8D5 /* LGSideMenuView.h in Headers */,
+				078EB8B521BD3768000CF8D5 /* LGSideMenuHelper.h in Headers */,
+				078EB8AF21BD3768000CF8D5 /* UIViewController+LGSideMenuController.h in Headers */,
+				078EB8A921BD3768000CF8D5 /* LGSideMenuSegue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,18 +263,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				073C57D621B44B78003A3F46 /* MvvmBaseViewModel.swift in Sources */,
-				07942A1321A4A822009A3987 /* LGSideMenuGesturesHandler.m in Sources */,
+				078EB8B121BD3768000CF8D5 /* LGSideMenuSegue.m in Sources */,
 				079429F321A49BDC009A3987 /* IMvvmSidePanelPresenter.swift in Sources */,
 				079429F621A49C63009A3987 /* MvvmNavigationService.swift in Sources */,
-				07942A1221A4A822009A3987 /* LGSideMenuController.m in Sources */,
+				078EB8B021BD3768000CF8D5 /* LGSideMenuView.m in Sources */,
 				079429F821A4A301009A3987 /* MvvmSidePanelPresenter.swift in Sources */,
-				07942A0E21A4A822009A3987 /* LGSideMenuHelper.m in Sources */,
+				078EB8B221BD3768000CF8D5 /* LGSideMenuController.m in Sources */,
 				079429F021A49B61009A3987 /* MvvmSetup.swift in Sources */,
-				07942A1421A4A822009A3987 /* UIViewController+LGSideMenuController.m in Sources */,
-				07942A1621A4A822009A3987 /* LGSideMenuBorderView.m in Sources */,
-				07942A1021A4A822009A3987 /* LGSideMenuView.m in Sources */,
-				07942A1121A4A822009A3987 /* LGSideMenuSegue.m in Sources */,
+				078EB8B621BD3768000CF8D5 /* LGSideMenuBorderView.m in Sources */,
+				078EB8AE21BD3768000CF8D5 /* LGSideMenuHelper.m in Sources */,
+				078EB8B321BD3768000CF8D5 /* LGSideMenuGesturesHandler.m in Sources */,
 				07942A1821A4B518009A3987 /* IMvvmNavigationService.swift in Sources */,
+				078EB8B421BD3768000CF8D5 /* UIViewController+LGSideMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,9 +421,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/MvvmForIOS.SidePanel/Objc.private.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.francoisdabonot.MvvmForIOS-SidePanel";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/MvvmForIOS.SidePanel\"";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,9 +450,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/MvvmForIOS.SidePanel/Objc.private.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.francoisdabonot.MvvmForIOS-SidePanel";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "\"$(SRCROOT)/MvvmForIOS.SidePanel\"";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

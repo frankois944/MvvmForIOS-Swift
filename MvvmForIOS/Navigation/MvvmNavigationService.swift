@@ -18,7 +18,7 @@ open class MvvmNavigationService: IMvvmNavigationService {
         self.presenter = presenter
     }
 
-    public var baseNavigation: UINavigationController {
+    public var baseNavigation: UIViewController {
         return (presenter.navigationController)
     }
 
@@ -35,39 +35,6 @@ open class MvvmNavigationService: IMvvmNavigationService {
         CATransaction.setCompletionBlock(onCompletion)
         presenter.show(request: MvvmRequest(viewModel: viewModelToShow, parameters: withParameters, customizeTransition: nil))
         CATransaction.commit()
-       /* let view = getView(viewModel: viewModelToShow, withParameters: withParameters)
-        
-        if view is IMvvmLeftPanelAttribute {
-            if view is IMvvmRootAttribute {
-                sideNavigator.leftViewController = UINavigationController(rootViewController: view)
-                onCompletion?()
-            } else {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock(onCompletion)
-                (sideNavigator.leftViewController as? UINavigationController)!.pushViewController(view, animated: getIsAnimatedForOpen(view: view))
-                CATransaction.commit()
-            }
-        } else if view is IMvvmLeftPanelAttribute {
-            if view is IMvvmRootAttribute {
-                sideNavigator.rightViewController = UINavigationController(rootViewController: view)
-                onCompletion?()
-            } else {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock(onCompletion)
-                (sideNavigator.rightViewController as? UINavigationController)!.pushViewController(view, animated: getIsAnimatedForOpen(view: view))
-                CATransaction.commit()
-            }
-        } else {
-            if view is IMvvmRootAttribute {
-                sideNavigator.rootViewController = UINavigationController(rootViewController: view)
-                onCompletion?()
-            } else {
-                CATransaction.begin()
-                CATransaction.setCompletionBlock(onCompletion)
-                (sideNavigator.rootViewController as? UINavigationController)!.pushViewController(view, animated: getIsAnimatedForOpen(view: view))
-                CATransaction.commit()
-            }
-        }*/
     }
 
     public func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?) {

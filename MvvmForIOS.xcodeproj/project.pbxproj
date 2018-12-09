@@ -46,8 +46,8 @@
 		077B465F21023DD600B68535 /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
 		077B466021023DD600B68535 /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		078CCD5620FB525500310121 /* IMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmView.swift; sourceTree = "<group>"; };
-		07993D4D21023F2000E8AF3B /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
-		07993D5321023F5100E8AF3B /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		078EB8BA21BD3930000CF8D5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		078EB8BB21BD3938000CF8D5 /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
 		07CBA59721A0A5DB00BC449C /* IMvvmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmPresenter.swift; sourceTree = "<group>"; };
 		07CBA59921A0A70B00BC449C /* MvvmBasicPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBasicPresenter.swift; sourceTree = "<group>"; };
 		07CBA59B21A0A73300BC449C /* MvvmRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmRequest.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		049323D020234A3400950B7C /* MvvmForIOS */ = {
 			isa = PBXGroup;
 			children = (
-				07993D4D21023F2000E8AF3B /* Objc.private.modulemap */,
+				078EB8BB21BD3938000CF8D5 /* Objc.private.modulemap */,
 				07993D5221023F5100E8AF3B /* ObjcPrivate */,
 				077B465E21023DC500B68535 /* Tools */,
 				07CBA59621A0A5C800BC449C /* Presenter */,
@@ -178,7 +178,7 @@
 		07993D5221023F5100E8AF3B /* ObjcPrivate */ = {
 			isa = PBXGroup;
 			children = (
-				07993D5321023F5100E8AF3B /* module.modulemap */,
+				078EB8BA21BD3930000CF8D5 /* module.modulemap */,
 			);
 			path = ObjcPrivate;
 			sourceTree = "<group>";

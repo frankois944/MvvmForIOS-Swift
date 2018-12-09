@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol IMvvmNavigationService {
-    var baseNavigation: UINavigationController { get }
+    var baseNavigation: UIViewController { get }
 
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,

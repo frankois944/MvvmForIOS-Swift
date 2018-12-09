@@ -12,7 +12,7 @@ public protocol IMvvmPresenter {
 
     init(window: UIWindow)
 
-    var navigationController: UINavigationController { get }
+    var navigationController: UIViewController { get }
 
     func show<T: IMvvmBaseViewModel>(request: MvvmRequest<T>)
     func close<T: IMvvmBaseViewModel>(viewModel: T)

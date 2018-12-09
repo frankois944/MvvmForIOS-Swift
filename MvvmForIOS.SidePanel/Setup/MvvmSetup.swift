@@ -13,6 +13,17 @@ public extension MvvmSetup {
     /**
      * Init the Mvvm Framework with a Side pannel presenter
      */
+    public convenience init(window: UIWindow) {
+        self.init()
+        NSLog("[MvvmForIOS]START setup")
+        let instance = MvvmNavigationService(sidePannelPresenter: MvvmSidePanelPresenter(window: window))
+        MvvmServiceLocator.register(service: instance as IMvvmNavigationService)
+        MvvmServiceLocator.register(service: instance as ISideMvvmNavigationService)
+    }
+
+    /**
+     * Init the Mvvm Framework with a Side pannel presenter
+     */
     public convenience init(sidePannelpresenter: IMvvmSidePanelPresenter) {
         self.init()
         NSLog("[MvvmForIOS]START setup")

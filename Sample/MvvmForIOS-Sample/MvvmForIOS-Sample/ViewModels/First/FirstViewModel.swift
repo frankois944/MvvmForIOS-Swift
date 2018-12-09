@@ -31,7 +31,7 @@ class FirstViewModel: MvvmBaseViewModel {
         navigation.showViewModel(viewModelToShow: LeftSideViewModel.self, onCompletion: {
             print("Show LeftSideViewModel completed")
         }, withParameters: nil)
-        navigation.showLeftPanel(animated: true)
+        //navigation.showLeftPanel(animated: true)
     }
 
     func showThirdViewModel() {

@@ -19,7 +19,7 @@ open class MvvmBasicPresenter: IMvvmPresenter {
         self.window.rootViewController = navigationController
     }
 
-    public var navigationController: UINavigationController {
+    public var navigationController: UIViewController {
         guard let navController = self.window.rootViewController as? UINavigationController else {
             return (UINavigationController())
         }
@@ -31,7 +31,7 @@ open class MvvmBasicPresenter: IMvvmPresenter {
         if MvvmNavigationUtility.getIsModal(view: view) == true {
             self.presentModal(request: request, view: view)
         } else {
-            navigationController.pushViewController(view, animated: MvvmNavigationUtility.getIsAnimatedForOpen(view: view))
+            (navigationController as? UINavigationController)?.pushViewController(view, animated: MvvmNavigationUtility.getIsAnimatedForOpen(view: view))
         }
     }
 
@@ -40,7 +40,7 @@ open class MvvmBasicPresenter: IMvvmPresenter {
         //so if modalViewController is not nil, it's presented and can be dismiss
         if modalViewController != nil {
             closeModal()
-        } else {
+        } else if let navigationController = navigationController as? UINavigationController {
             guard let view = MvvmNavigationUtility.getViewFromViewModel(viewModel: viewModel, navigationController: navigationController) else {
                 print("No View to close found for viewModel \(viewModel)")
                 return
@@ -64,7 +64,7 @@ open class MvvmBasicPresenter: IMvvmPresenter {
 
     private func presentModal<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, view: UIViewController) {
         request.customizeModalTransition?(view)
-        if let topView = navigationController.topViewController {
+        if let topView = (navigationController as? UINavigationController)?.topViewController {
             topView.present(view, animated: MvvmNavigationUtility.getIsAnimatedForOpen(view: view), completion: nil)
             modalViewController = view
         }

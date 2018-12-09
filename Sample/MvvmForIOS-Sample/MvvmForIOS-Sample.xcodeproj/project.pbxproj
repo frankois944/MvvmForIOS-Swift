@@ -11,8 +11,8 @@
 		073644B521A1D4DA005CB1B1 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073644B421A1D4DA005CB1B1 /* ModalView.swift */; };
 		073644B721A1D4E8005CB1B1 /* Modal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073644B621A1D4E8005CB1B1 /* Modal.storyboard */; };
 		077B465A21023B8B00B68535 /* RightSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465921023B8B00B68535 /* RightSideView.swift */; };
-		079429EA21A49B35009A3987 /* MvvmForIOS_SidePanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E4CE5921A49AEE001C1A31 /* MvvmForIOS_SidePanel.framework */; };
-		079429EB21A49B35009A3987 /* MvvmForIOS_SidePanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07E4CE5921A49AEE001C1A31 /* MvvmForIOS_SidePanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07A05FA021B497CE00FF7909 /* MvvmForIOSSwift_SidePanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E4CE5921A49AEE001C1A31 /* MvvmForIOSSwift_SidePanel.framework */; };
+		07A05FA221B497DC00FF7909 /* MvvmForIOSSwift_SidePanel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07E4CE5921A49AEE001C1A31 /* MvvmForIOSSwift_SidePanel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07B2934921A1D6C20067C274 /* RightSideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077B465C21023B9F00B68535 /* RightSideViewModel.swift */; };
 		07B2934C21A1D6F70067C274 /* ModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2934B21A1D6F70067C274 /* ModalViewModel.swift */; };
 		07DEA2852104BCF5009E6C12 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2842104BCF5009E6C12 /* TableView.swift */; };
@@ -42,25 +42,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		079429EC21A49B35009A3987 /* PBXContainerItemProxy */ = {
+		07A05FA321B497DD00FF7909 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07E4CE5421A49AEE001C1A31 /* MvvmForIOS.SidePanel.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 07E4CE4221A49ACE001C1A31;
-			remoteInfo = MvvmForIOS.SidePanel;
+			remoteInfo = MvvmForIOSSwift.SidePanel;
 		};
 		07E4CE5821A49AEE001C1A31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07E4CE5421A49AEE001C1A31 /* MvvmForIOS.SidePanel.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 07E4CE4321A49ACE001C1A31;
-			remoteInfo = MvvmForIOS.SidePanel;
-		};
-		07E4CE5D21A49B09001C1A31 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07E4CE5421A49AEE001C1A31 /* MvvmForIOS.SidePanel.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 07E4CE4221A49ACE001C1A31;
 			remoteInfo = MvvmForIOS.SidePanel;
 		};
 		703F91222063EC2A000A81A1 /* PBXContainerItemProxy */ = {
@@ -93,7 +86,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				079429EB21A49B35009A3987 /* MvvmForIOS_SidePanel.framework in Embed Frameworks */,
+				07A05FA221B497DC00FF7909 /* MvvmForIOSSwift_SidePanel.framework in Embed Frameworks */,
 				70D9E0472066726200268958 /* MvvmForIOSSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -142,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079429EA21A49B35009A3987 /* MvvmForIOS_SidePanel.framework in Frameworks */,
+				07A05FA021B497CE00FF7909 /* MvvmForIOSSwift_SidePanel.framework in Frameworks */,
 				70D9E0462066726200268958 /* MvvmForIOSSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +203,7 @@
 		07E4CE5521A49AEE001C1A31 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07E4CE5921A49AEE001C1A31 /* MvvmForIOS_SidePanel.framework */,
+				07E4CE5921A49AEE001C1A31 /* MvvmForIOSSwift_SidePanel.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,9 +414,8 @@
 			);
 			dependencies = (
 				703F91372063EC5E000A81A1 /* PBXTargetDependency */,
-				07E4CE5E21A49B09001C1A31 /* PBXTargetDependency */,
 				70D9E0492066726200268958 /* PBXTargetDependency */,
-				079429ED21A49B35009A3987 /* PBXTargetDependency */,
+				07A05FA421B497DD00FF7909 /* PBXTargetDependency */,
 			);
 			name = "MvvmForIOS-Sample";
 			productName = "MvvmForIOS-Sample";
@@ -476,10 +468,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		07E4CE5921A49AEE001C1A31 /* MvvmForIOS_SidePanel.framework */ = {
+		07E4CE5921A49AEE001C1A31 /* MvvmForIOSSwift_SidePanel.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = MvvmForIOS_SidePanel.framework;
+			path = MvvmForIOSSwift_SidePanel.framework;
 			remoteRef = 07E4CE5821A49AEE001C1A31 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -541,15 +533,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		079429ED21A49B35009A3987 /* PBXTargetDependency */ = {
+		07A05FA421B497DD00FF7909 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MvvmForIOS.SidePanel;
-			targetProxy = 079429EC21A49B35009A3987 /* PBXContainerItemProxy */;
-		};
-		07E4CE5E21A49B09001C1A31 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MvvmForIOS.SidePanel;
-			targetProxy = 07E4CE5D21A49B09001C1A31 /* PBXContainerItemProxy */;
+			name = MvvmForIOSSwift.SidePanel;
+			targetProxy = 07A05FA321B497DD00FF7909 /* PBXContainerItemProxy */;
 		};
 		703F91372063EC5E000A81A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
