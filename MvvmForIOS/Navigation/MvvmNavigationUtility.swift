@@ -39,17 +39,15 @@ public class MvvmNavigationUtility {
 
     static public func getViewFromViewModel<T: IMvvmBaseViewModel>(viewModel: T, navigationController: UINavigationController) -> UIViewController? {
         let views = navigationController.viewControllers
-        if views.count > 1 {
-            for view in views {
-                guard let viewToTest = view as? IMvvmView else {
-                    continue
-                }
-                if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModel as AnyObject).toOpaque() {
-                    return (view)
-                }
-            }
-        }
-        return (nil)
+		for view in views {
+			guard let viewToTest = view as? IMvvmView else {
+				continue
+			}
+			if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModel as AnyObject).toOpaque() {
+				return (view)
+			}
+		}
+		return (nil)
     }
 
     static public func loadView<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, mustStart: Bool = false) -> UIViewController {

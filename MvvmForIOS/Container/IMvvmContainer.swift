@@ -9,5 +9,6 @@
 import UIKit
 
 public protocol IMvvmContainer {
+	init()
 	func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController
 }

@@ -10,6 +10,6 @@ import UIKit
 
 open class MvvmBaseContaiser: NSObject {
 	// Do nothing but is mandatory
-	public override init() {
+	required public override init() {
 	}
 }

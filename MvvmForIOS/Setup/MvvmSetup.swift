@@ -18,16 +18,10 @@ open class MvvmSetup {
     /**
      * Init the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
      */
-    public init(window: UIWindow) {
+	public init(window: UIWindow, presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
         NSLog("[MvvmForIOS]START setup")
-		MvvmServiceLocator.register(service: MvvmNavigationService(presenter: MvvmBasicPresenter(window: window), container: MvvmBasicContainer()) as IMvvmNavigationService)
-    }
-
-    /**
-     * Init the Mvvm Framework with a custom presenter
-     */
-	public init(presenter: IMvvmPresenter, container: IMvvmContainer) {
-        NSLog("[MvvmForIOS]START setup")
-		MvvmServiceLocator.register(service: MvvmNavigationService(presenter: presenter, container: container) as IMvvmNavigationService)
+		let mpresenter = presenter.init(window: window)
+		let mcontainer = container.init()
+		MvvmServiceLocator.register(service: MvvmNavigationService(presenter: mpresenter, container: mcontainer) as IMvvmNavigationService)
     }
 }
