@@ -19,12 +19,12 @@ open class MvvmBasicContainer: MvvmBaseContaiser, IMvvmContainer {
 		var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
 		let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
 		// getting the storyboardName from the associate view
-		let viewControllerIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
+		let viewControllerIsConformToFromStoryBoard = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
 		storyboardName = viewControllerIsConformToFromStoryBoard?.fromStoryboardName ?? storyboardName
 		// Init View
 		var newViewController = getViewControllerIfExist(storyboardName: storyboardName, identifier: viewName)
 		if newViewController == nil {
-			if let viewControllerIsConformToView  = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type {
+			if let viewControllerIsConformToView = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type {
 				newViewController = viewControllerIsConformToView.init() as? UIViewController
 			}
 		}
