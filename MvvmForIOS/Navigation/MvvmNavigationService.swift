@@ -7,15 +7,16 @@
 //
 
 import UIKit
-import MvvmForIOSSwift_Private
 
 open class MvvmNavigationService: IMvvmNavigationService {
 
     private let presenter: IMvvmPresenter!
+	private let container: IMvvmContainer!
 
-    public init(presenter: IMvvmPresenter) {
+	public init(presenter: IMvvmPresenter, container: IMvvmContainer) {
         NSLog("[MvvmForIOS]Load NavigationService")
         self.presenter = presenter
+		self.container = container
     }
 
     public var baseNavigation: UIViewController {
@@ -33,7 +34,7 @@ open class MvvmNavigationService: IMvvmNavigationService {
     public func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: Any?) {
         CATransaction.begin()
         CATransaction.setCompletionBlock(onCompletion)
-        presenter.show(request: MvvmRequest(viewModel: viewModelToShow, parameters: withParameters, customizeTransition: nil))
+		presenter.show(request: MvvmRequest(viewModel: viewModelToShow, container: container, parameters: withParameters))
         CATransaction.commit()
     }
 
@@ -56,7 +57,7 @@ open class MvvmNavigationService: IMvvmNavigationService {
 
     public func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]? {
         let result = viewModels.map {
-            return (MvvmNavigationUtility.getView(viewModel: $0, withParameters: nil, mustStart: false))
+            return (container.getView(viewModel: $0))
         }
         return (result)
     }

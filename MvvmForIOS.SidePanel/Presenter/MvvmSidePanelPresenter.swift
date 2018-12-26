@@ -36,7 +36,7 @@ open class MvvmSidePanelPresenter: MvvmBasicPresenter, IMvvmSidePanelPresenter {
     }
 
     open override func show<T: IMvvmBaseViewModel>(request: MvvmRequest<T>) {
-        let view = MvvmNavigationUtility.getView(viewModel: request.viewModel, withParameters: request.parameters)
+		let view = MvvmNavigationUtility.loadView(request: request)
         if view is IMvvmLeftPanelAttribute {
             if view is IMvvmRootAttribute {
                 baseNavigation.leftViewController = UINavigationController(rootViewController: view)

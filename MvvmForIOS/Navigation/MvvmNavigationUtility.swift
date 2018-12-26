@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MvvmForIOSSwift_Private
 
 public class MvvmNavigationUtility {
 
@@ -53,47 +52,14 @@ public class MvvmNavigationUtility {
         return (nil)
     }
 
-    static public func getView<T: IMvvmBaseViewModel>(viewModel: T.Type, withParameters: Any?, mustStart: Bool = false) -> UIViewController {
-        let classname = NSStringFromClass((viewModel as? AnyClass)!)
-        let module = classname.components(separatedBy: ".").first!
-        // getting view name
-        let shortClassname = classname.replacingOccurrences(of: module+".", with: "")
-        var storyboardName = shortClassname.replacingOccurrences(of: "ViewModel", with: "")
-        let viewName = shortClassname.replacingOccurrences(of: "Model", with: "")
-        // getting the storyboardName from the associate view
-        let viewControllerIsConformToFromStoryBoard  = NSClassFromString("\(module).\(viewName)") as? IMvvmFromStoryBoardAttribute.Type
-        storyboardName = viewControllerIsConformToFromStoryBoard?.fromStoryboardName ?? storyboardName
-        // Init and start ViewModel
-        let newViewModel = viewModel.init()
+    static public func loadView<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, mustStart: Bool = false) -> UIViewController {
+        let newViewModel = request.viewModel.init()
         if mustStart == true {
-            newViewModel.startViewModel(parameters: withParameters)
-        }
-        // Init View
-        var newViewController = getViewControllerIfExist(storyboardName: storyboardName, identifier: viewName)
-        if newViewController == nil {
-            if let viewControllerIsConformToView  = NSClassFromString("\(module).\(viewName)") as? IMvvmView.Type {
-                newViewController = viewControllerIsConformToView.init() as? UIViewController
-            }
+            newViewModel.startViewModel(parameters: request.parameters)
         }
         // Store ViewModel in View
-        (newViewController as? IMvvmView)!.viewModelObject = newViewModel
-        return (newViewController)!
-    }
-
-    static private func getViewControllerIfExist(storyboardName: String, identifier: String?) -> UIViewController? {
-        var resultVC: UIViewController?
-        do {
-            try ObjC.catchException {
-                let storyBoard = UIStoryboard(name: storyboardName, bundle: nil)
-                if let identifier = identifier {
-                    resultVC = storyBoard.instantiateViewController(withIdentifier: identifier)
-                } else {
-                    resultVC = storyBoard.instantiateInitialViewController()
-                }
-            }
-        } catch {
-            print("ViewController not found [\(storyboardName) - \(identifier ?? "Initial")]")
-        }
-        return (resultVC)
+		// crash if the View is not a IMvvmView (it's a choice!)
+        (request.view as? IMvvmView)!.viewModelObject = newViewModel
+		return (request.view)
     }
 }

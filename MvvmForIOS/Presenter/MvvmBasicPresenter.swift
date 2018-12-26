@@ -27,7 +27,7 @@ open class MvvmBasicPresenter: IMvvmPresenter {
     }
 
     open func show<T: IMvvmBaseViewModel>(request: MvvmRequest<T>) {
-        let view = MvvmNavigationUtility.getView(viewModel: request.viewModel, withParameters: request.parameters, mustStart: true)
+        let view = MvvmNavigationUtility.loadView(request: request, mustStart: true)
         if MvvmNavigationUtility.getIsModal(view: view) == true {
             self.presentModal(request: request, view: view)
         } else {

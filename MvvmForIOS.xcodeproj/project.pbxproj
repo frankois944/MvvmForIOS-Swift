@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041E74B821D380A4004EF594 /* IMvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B721D380A4004EF594 /* IMvvmContainer.swift */; };
+		041E74BA21D380B6004EF594 /* MvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B921D380B6004EF594 /* MvvmContainer.swift */; };
+		041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */; };
 		04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04750EA9202374A900315B77 /* IMvvmVisibility.swift */; };
 		049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323D920234A4300950B7C /* MvvmBaseViewModel.swift */; };
 		049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DA20234A4300950B7C /* MvvmSetup.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041E74B721D380A4004EF594 /* IMvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmContainer.swift; sourceTree = "<group>"; };
+		041E74B921D380B6004EF594 /* MvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmContainer.swift; sourceTree = "<group>"; };
+		041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseContaiser.swift; sourceTree = "<group>"; };
 		04750EA9202374A900315B77 /* IMvvmVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmVisibility.swift; sourceTree = "<group>"; };
 		049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049323D220234A3400950B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +78,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041E74B221D3807F004EF594 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */,
+				041E74B721D380A4004EF594 /* IMvvmContainer.swift */,
+				041E74B921D380B6004EF594 /* MvvmContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		041E74BD21D3878C004EF594 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				07CBA59B21A0A73300BC449C /* MvvmRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		04750EA82023749C00315B77 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +131,8 @@
 				078EB8BB21BD3938000CF8D5 /* Objc.private.modulemap */,
 				07993D5221023F5100E8AF3B /* ObjcPrivate */,
 				077B465E21023DC500B68535 /* Tools */,
+				041E74B221D3807F004EF594 /* Container */,
+				041E74BD21D3878C004EF594 /* Request */,
 				07CBA59621A0A5C800BC449C /* Presenter */,
 				049323FF2023510E00950B7C /* Navigation */,
 				049323FA20234F8B00950B7C /* View */,
@@ -188,7 +214,6 @@
 			children = (
 				07CBA59721A0A5DB00BC449C /* IMvvmPresenter.swift */,
 				07CBA59921A0A70B00BC449C /* MvvmBasicPresenter.swift */,
-				07CBA59B21A0A73300BC449C /* MvvmRequest.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -310,6 +335,7 @@
 				073644A921A1CBC6005CB1B1 /* MvvmNavigationUtility.swift in Sources */,
 				049324012023513100950B7C /* MvvmNavigationService.swift in Sources */,
 				077B466221023DD600B68535 /* ObjC.m in Sources */,
+				041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */,
 				07CBA59E21A0BC6700BC449C /* IMvvmModalView.swift in Sources */,
 				049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */,
 				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
@@ -318,6 +344,8 @@
 				70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */,
 				07CBA59821A0A5DB00BC449C /* IMvvmPresenter.swift in Sources */,
 				07DEA2892104BD36009E6C12 /* MvvmBaseTableView.swift in Sources */,
+				041E74B821D380A4004EF594 /* IMvvmContainer.swift in Sources */,
+				041E74BA21D380B6004EF594 /* MvvmContainer.swift in Sources */,
 				07CBA59C21A0A73300BC449C /* MvvmRequest.swift in Sources */,
 				049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */,
 				70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */,
@@ -463,10 +491,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-				);
 				INFOPLIST_FILE = MvvmForIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -493,10 +517,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-				);
 				INFOPLIST_FILE = MvvmForIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

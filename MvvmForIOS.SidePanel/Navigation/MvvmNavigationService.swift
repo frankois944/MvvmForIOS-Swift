@@ -13,8 +13,8 @@ open class MvvmNavigationService: MvvmForIOSSwift.MvvmNavigationService, ISideMv
 
     var presenter: IMvvmSidePanelPresenter!
 
-    convenience init(sidePannelPresenter: IMvvmSidePanelPresenter) {
-        self.init(presenter: sidePannelPresenter)
+	convenience init(sidePannelPresenter: IMvvmSidePanelPresenter, container: IMvvmContainer) {
+        self.init(presenter: sidePannelPresenter, container: container)
         self.presenter = sidePannelPresenter
     }
 
