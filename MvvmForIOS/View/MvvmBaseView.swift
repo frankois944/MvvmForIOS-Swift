@@ -30,7 +30,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
 
     fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
-            let instance = (viewModel as? MvvmBaseViewModel.Type)!.init()
+            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
         }

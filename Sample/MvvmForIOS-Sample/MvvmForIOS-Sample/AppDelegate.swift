@@ -8,7 +8,9 @@
 
 import UIKit
 import MvvmForIOSSwift
+#if canImport(MvvmForIOSSwift_SidePanel)
 import MvvmForIOSSwift_SidePanel
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
