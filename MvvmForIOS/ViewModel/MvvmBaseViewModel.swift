@@ -31,6 +31,6 @@ open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
     open func isVisible(isVisible: Bool) {
     }
 
-    open func isDestroyed() {
+    open func cleanUp() {
     }
 }

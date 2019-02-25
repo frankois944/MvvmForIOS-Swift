@@ -99,7 +99,7 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
         super.didMove(toParent: parent)
         if parent == nil {
             viewControllers?.forEach {  $0.didMove(toParent: parent) }
-            (viewModel as? IMvvmVisibility)?.isDestroyed()
+            (viewModel as? IMvvmVisibility)?.cleanUp()
             viewModel = nil
         }
     }

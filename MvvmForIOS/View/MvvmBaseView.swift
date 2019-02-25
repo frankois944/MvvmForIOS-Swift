@@ -68,7 +68,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
         // clean viewModel
         super.didMove(toParent: parent)
         if parent == nil {
-            (viewModel as? IMvvmVisibility)?.isDestroyed()
+            (viewModel as? IMvvmVisibility)?.cleanUp()
             viewModel = nil
         }
     }
