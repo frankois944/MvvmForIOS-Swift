@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ *
+ */
 open class MvvmBaseContaiser: NSObject {
 	// Do nothing but is mandatory
 	required public override init() {

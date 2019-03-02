@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+ *
+ */
 open class MvvmSetup {
 	/*
 	* Do Nothing but mandatory
@@ -16,7 +18,15 @@ open class MvvmSetup {
 	public init() {
 	}
     /**
-     * Init the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
+     * Entry point of the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
+     *
+     *  - parameters:
+     *      - window: The main app window, the framework will use it for navigation
+     *      - presenter: The presenter who manage the navigation between viewmodel
+     *      - container: The container manager
+     *
+     *  - Important:
+     *  This method must be call before everything
      */
 	public init(window: UIWindow, presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
         NSLog("[MvvmForIOS]START setup")

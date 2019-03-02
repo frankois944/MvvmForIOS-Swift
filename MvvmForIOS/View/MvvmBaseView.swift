@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ *
+ */
 open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!

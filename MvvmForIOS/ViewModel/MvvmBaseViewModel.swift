@@ -11,6 +11,9 @@ import Foundation
 open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
     public var started: Bool = false
 
+    /**
+     *
+     */
     public var navigation: IMvvmNavigationService {
         return (MvvmServiceLocator.resolve()!)
     }
@@ -21,16 +24,28 @@ open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
     deinit {
     }
 
+    /**
+     *
+     */
     open func startViewModel(parameters: Any?) {
         started = true
     }
 
+    /**
+     *
+     */
     open func willBeVisible(willBeVisible: Bool) {
     }
 
+    /**
+     *
+     */
     open func isVisible(isVisible: Bool) {
     }
 
+    /**
+     *
+     */
     open func cleanUp() {
     }
 }

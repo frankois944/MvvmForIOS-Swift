@@ -9,6 +9,9 @@
 import UIKit
 import MvvmForIOSSwift_Private
 
+/**
+ *
+ */
 open class MvvmBasicContainer: MvvmBaseContaiser, IMvvmContainer {
 
 	public func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController {

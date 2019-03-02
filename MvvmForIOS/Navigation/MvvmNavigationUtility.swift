@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ *
+ */
 public class MvvmNavigationUtility {
 
     static public func getIsAnimatedForOpen(view: UIViewController) -> Bool {

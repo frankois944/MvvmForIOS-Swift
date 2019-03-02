@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ *
+ */
 public struct MvvmRequest<T: IMvvmBaseViewModel> {
     public let viewModel: T.Type
 	public let view: UIViewController
