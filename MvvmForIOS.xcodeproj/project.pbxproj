@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041E74B821D380A4004EF594 /* IMvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B721D380A4004EF594 /* IMvvmContainer.swift */; };
+		041E74BA21D380B6004EF594 /* MvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B921D380B6004EF594 /* MvvmContainer.swift */; };
+		041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */; };
 		04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04750EA9202374A900315B77 /* IMvvmVisibility.swift */; };
 		049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323D920234A4300950B7C /* MvvmBaseViewModel.swift */; };
 		049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DA20234A4300950B7C /* MvvmSetup.swift */; };
@@ -15,36 +18,26 @@
 		049324012023513100950B7C /* MvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324002023513100950B7C /* MvvmNavigationService.swift */; };
 		049324032023513D00950B7C /* IMvvmNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324022023513D00950B7C /* IMvvmNavigationService.swift */; };
 		049324052023560E00950B7C /* IMvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049324042023560E00950B7C /* IMvvmBaseViewModel.swift */; };
+		073644A921A1CBC6005CB1B1 /* MvvmNavigationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073644A821A1CBC6005CB1B1 /* MvvmNavigationUtility.swift */; };
 		077B466121023DD600B68535 /* ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 077B465F21023DD600B68535 /* ObjC.h */; };
 		077B466221023DD600B68535 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B466021023DD600B68535 /* ObjC.m */; };
 		078CCD5720FB525500310121 /* IMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CCD5620FB525500310121 /* IMvvmView.swift */; };
+		07CBA59821A0A5DB00BC449C /* IMvvmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CBA59721A0A5DB00BC449C /* IMvvmPresenter.swift */; };
+		07CBA59A21A0A70B00BC449C /* MvvmBasicPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CBA59921A0A70B00BC449C /* MvvmBasicPresenter.swift */; };
+		07CBA59C21A0A73300BC449C /* MvvmRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CBA59B21A0A73300BC449C /* MvvmRequest.swift */; };
+		07CBA59E21A0BC6700BC449C /* IMvvmModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CBA59D21A0BC6700BC449C /* IMvvmModalView.swift */; };
 		07DEA2812104AF58009E6C12 /* IMvvmBaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */; };
 		07DEA2892104BD36009E6C12 /* MvvmBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA2882104BD36009E6C12 /* MvvmBaseTableView.swift */; };
 		7055ECF72042B8AC00A08E0F /* IMvvmViewAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */; };
-		7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */; };
 		70588D7D20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */; };
 		70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730B20A7037E000C5771 /* MvvmBaseTabView.swift */; };
 		70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		703F90F72063D864000A81A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4AF139C01BF384DA0037B073;
-			remoteInfo = LGSideMenuController;
-		};
-		703F90F92063D871000A81A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4AF139BF1BF384DA0037B073;
-			remoteInfo = LGSideMenuController;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		041E74B721D380A4004EF594 /* IMvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmContainer.swift; sourceTree = "<group>"; };
+		041E74B921D380B6004EF594 /* MvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmContainer.swift; sourceTree = "<group>"; };
+		041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseContaiser.swift; sourceTree = "<group>"; };
 		04750EA9202374A900315B77 /* IMvvmVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmVisibility.swift; sourceTree = "<group>"; };
 		049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049323D220234A3400950B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,14 +48,18 @@
 		049324002023513100950B7C /* MvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmNavigationService.swift; sourceTree = "<group>"; };
 		049324022023513D00950B7C /* IMvvmNavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmNavigationService.swift; sourceTree = "<group>"; };
 		049324042023560E00950B7C /* IMvvmBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseViewModel.swift; sourceTree = "<group>"; };
+		073644A821A1CBC6005CB1B1 /* MvvmNavigationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmNavigationUtility.swift; sourceTree = "<group>"; };
 		077B465F21023DD600B68535 /* ObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
 		077B466021023DD600B68535 /* ObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		078CCD5620FB525500310121 /* IMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmView.swift; sourceTree = "<group>"; };
-		07993D4D21023F2000E8AF3B /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
-		07993D5321023F5100E8AF3B /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		078EB8BA21BD3930000CF8D5 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		078EB8BB21BD3938000CF8D5 /* Objc.private.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Objc.private.modulemap; sourceTree = "<group>"; };
+		07CBA59721A0A5DB00BC449C /* IMvvmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmPresenter.swift; sourceTree = "<group>"; };
+		07CBA59921A0A70B00BC449C /* MvvmBasicPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBasicPresenter.swift; sourceTree = "<group>"; };
+		07CBA59B21A0A73300BC449C /* MvvmRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmRequest.swift; sourceTree = "<group>"; };
+		07CBA59D21A0BC6700BC449C /* IMvvmModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmModalView.swift; sourceTree = "<group>"; };
 		07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmBaseTabView.swift; sourceTree = "<group>"; };
 		07DEA2882104BD36009E6C12 /* MvvmBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseTableView.swift; sourceTree = "<group>"; };
-		703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LGSideMenuControllerFramework.xcodeproj; path = External/LGSideMenuController/Framework/LGSideMenuControllerFramework.xcodeproj; sourceTree = "<group>"; };
 		7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmViewAttributes.swift; sourceTree = "<group>"; };
 		7055ECF92042B9DF00A08E0F /* LGSideMenuController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LGSideMenuController.framework; path = External/LGSideMenuController.framework; sourceTree = "<group>"; };
 		70588D7C20A7105B00EDC7A5 /* MvvmBaseTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseTabViewModel.swift; sourceTree = "<group>"; };
@@ -75,13 +72,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7055ECFA2042B9DF00A08E0F /* LGSideMenuController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041E74B221D3807F004EF594 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */,
+				041E74B721D380A4004EF594 /* IMvvmContainer.swift */,
+				041E74B921D380B6004EF594 /* MvvmContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		041E74BD21D3878C004EF594 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				07CBA59B21A0A73300BC449C /* MvvmRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		04750EA82023749C00315B77 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +103,7 @@
 				70F8730D20A70A98000C5771 /* IMvvmBaseView.swift */,
 				04750EA9202374A900315B77 /* IMvvmVisibility.swift */,
 				07DEA2802104AF58009E6C12 /* IMvvmBaseTabView.swift */,
+				07CBA59D21A0BC6700BC449C /* IMvvmModalView.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -96,7 +111,6 @@
 		049323C420234A3400950B7C = {
 			isa = PBXGroup;
 			children = (
-				703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */,
 				049323D020234A3400950B7C /* MvvmForIOS */,
 				049323CF20234A3400950B7C /* Products */,
 				7055ECF82042B9DF00A08E0F /* Frameworks */,
@@ -114,9 +128,12 @@
 		049323D020234A3400950B7C /* MvvmForIOS */ = {
 			isa = PBXGroup;
 			children = (
-				07993D4D21023F2000E8AF3B /* Objc.private.modulemap */,
+				078EB8BB21BD3938000CF8D5 /* Objc.private.modulemap */,
 				07993D5221023F5100E8AF3B /* ObjcPrivate */,
 				077B465E21023DC500B68535 /* Tools */,
+				041E74B221D3807F004EF594 /* Container */,
+				041E74BD21D3878C004EF594 /* Request */,
+				07CBA59621A0A5C800BC449C /* Presenter */,
 				049323FF2023510E00950B7C /* Navigation */,
 				049323FA20234F8B00950B7C /* View */,
 				049323E120234A5D00950B7C /* Locator */,
@@ -170,6 +187,7 @@
 				049324002023513100950B7C /* MvvmNavigationService.swift */,
 				049324022023513D00950B7C /* IMvvmNavigationService.swift */,
 				7055ECF62042B8AC00A08E0F /* IMvvmViewAttributes.swift */,
+				073644A821A1CBC6005CB1B1 /* MvvmNavigationUtility.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -186,9 +204,18 @@
 		07993D5221023F5100E8AF3B /* ObjcPrivate */ = {
 			isa = PBXGroup;
 			children = (
-				07993D5321023F5100E8AF3B /* module.modulemap */,
+				078EB8BA21BD3930000CF8D5 /* module.modulemap */,
 			);
 			path = ObjcPrivate;
+			sourceTree = "<group>";
+		};
+		07CBA59621A0A5C800BC449C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07CBA59721A0A5DB00BC449C /* IMvvmPresenter.swift */,
+				07CBA59921A0A70B00BC449C /* MvvmBasicPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		07DEA2822104B366009E6C12 /* Interfaces */ = {
@@ -197,14 +224,6 @@
 				049324042023560E00950B7C /* IMvvmBaseViewModel.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		703F90F42063D864000A81A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				703F90F82063D864000A81A1 /* LGSideMenuController.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7055ECF82042B9DF00A08E0F /* Frameworks */ = {
@@ -242,7 +261,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				703F90FA2063D871000A81A1 /* PBXTargetDependency */,
 			);
 			name = MvvmForIOSSwift;
 			productName = MvvmForIOS;
@@ -255,7 +273,7 @@
 		049323C520234A3400950B7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "francois dabonot";
 				TargetAttributes = {
 					049323CD20234A3400950B7C = {
@@ -275,28 +293,12 @@
 			mainGroup = 049323C420234A3400950B7C;
 			productRefGroup = 049323CF20234A3400950B7C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 703F90F42063D864000A81A1 /* Products */;
-					ProjectRef = 703F90F32063D864000A81A1 /* LGSideMenuControllerFramework.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				049323CD20234A3400950B7C /* MvvmForIOSSwift */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		703F90F82063D864000A81A1 /* LGSideMenuController.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LGSideMenuController.framework;
-			remoteRef = 703F90F72063D864000A81A1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		049323CC20234A3400950B7C /* Resources */ = {
@@ -321,7 +323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -330,13 +332,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073644A921A1CBC6005CB1B1 /* MvvmNavigationUtility.swift in Sources */,
 				049324012023513100950B7C /* MvvmNavigationService.swift in Sources */,
 				077B466221023DD600B68535 /* ObjC.m in Sources */,
+				041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */,
+				07CBA59E21A0BC6700BC449C /* IMvvmModalView.swift in Sources */,
 				049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */,
 				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
 				049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */,
+				07CBA59A21A0A70B00BC449C /* MvvmBasicPresenter.swift in Sources */,
 				70F8730E20A70A98000C5771 /* IMvvmBaseView.swift in Sources */,
+				07CBA59821A0A5DB00BC449C /* IMvvmPresenter.swift in Sources */,
 				07DEA2892104BD36009E6C12 /* MvvmBaseTableView.swift in Sources */,
+				041E74B821D380A4004EF594 /* IMvvmContainer.swift in Sources */,
+				041E74BA21D380B6004EF594 /* MvvmContainer.swift in Sources */,
+				07CBA59C21A0A73300BC449C /* MvvmRequest.swift in Sources */,
 				049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */,
 				70F8730C20A7037E000C5771 /* MvvmBaseTabView.swift in Sources */,
 				078CCD5720FB525500310121 /* IMvvmView.swift in Sources */,
@@ -350,14 +360,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		703F90FA2063D871000A81A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LGSideMenuController;
-			targetProxy = 703F90F92063D871000A81A1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		049323D420234A3400950B7C /* Debug */ = {
@@ -489,10 +491,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-				);
 				INFOPLIST_FILE = MvvmForIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -519,10 +517,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/External",
-				);
 				INFOPLIST_FILE = MvvmForIOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

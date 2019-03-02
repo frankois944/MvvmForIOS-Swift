@@ -7,20 +7,31 @@
 //
 
 import UIKit
-
-open class MvvmSetup: NSObject {
-
-    private weak var _window: UIWindow!
-
-    public init(window: UIWindow) {
+/**
+ *
+ */
+open class MvvmSetup {
+	/*
+	* Do Nothing but mandatory
+	* Don't call directly
+	*/
+	public init() {
+	}
+    /**
+     * Entry point of the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
+     *
+     *  - parameters:
+     *      - window: The main app window, the framework will use it for navigation
+     *      - presenter: The presenter who manage the navigation between viewmodel
+     *      - container: The container manager
+     *
+     *  - Important:
+     *  This method must be call before everything
+     */
+	public init(window: UIWindow, presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
         NSLog("[MvvmForIOS]START setup")
-        self._window = window
-        MvvmServiceLocator.register(service: MvvmNavigationService(window: window) as IMvvmNavigationService)
-    }
-
-    public init(window: UIWindow, customNavigationController: UINavigationController.Type) {
-        NSLog("[MvvmForIOS]START setup")
-        self._window = window
-        MvvmServiceLocator.register(service: MvvmNavigationService(window: window, customNavigationController: customNavigationController) as IMvvmNavigationService)
+		let mpresenter = presenter.init(window: window)
+		let mcontainer = container.init()
+		MvvmServiceLocator.register(service: MvvmNavigationService(presenter: mpresenter, container: mcontainer) as IMvvmNavigationService)
     }
 }

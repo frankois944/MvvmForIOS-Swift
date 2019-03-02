@@ -1,22 +1,23 @@
 //
-//  ThirdViewModel.swift
-//  MvvmForIOS-Sample
+//  SecondViewModel.swift
+//  MvvmForIOSSwift-Sample
 //
-//  Created by Francois Dabonot on 20/07/2018.
+//  Created by Dabonot Francois on 22/03/2018.
 //  Copyright © 2018 Dabonot Francois. All rights reserved.
 //
 
+import UIKit
 import MvvmForIOSSwift
-import Foundation
 
-class ThirdViewModel: MvvmBaseViewModel {
+class LeftSideViewModel: MvvmBaseViewModel {
+    let service: IDataService! = MvvmServiceLocator.resolve()
 
     override func startViewModel(parameters: Any?) {
         NSLog("[startViewModel] \(String(describing: self))")
     }
 
-    override func isDestroyed() {
-        super.isDestroyed()
+    override func cleanUp() {
+        super.cleanUp()
         NSLog("[isDestroyed] \(String(describing: self))")
     }
 

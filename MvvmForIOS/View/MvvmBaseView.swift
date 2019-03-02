@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ *
+ */
 open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!
@@ -30,7 +33,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
 
     fileprivate func loadViewModelForCurrent() {
         if viewModelObject == nil {
-            let instance = (viewModel as? MvvmBaseViewModel.Type)!.init()
+            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
         }
@@ -68,7 +71,7 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
         // clean viewModel
         super.didMove(toParent: parent)
         if parent == nil {
-            (viewModel as? IMvvmVisibility)?.isDestroyed()
+            (viewModel as? IMvvmVisibility)?.cleanUp()
             viewModel = nil
         }
     }

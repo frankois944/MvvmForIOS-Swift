@@ -9,7 +9,8 @@
 import UIKit
 import MvvmForIOSSwift
 
-class ThirdView: MvvmBaseView<ThirdViewModel> {
+class RightSideView: MvvmBaseView<RightSideViewModel>, IMvvmRightPanelAttribute {
+
     var label: UILabel {
         let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
         lbl.text = "label from code"

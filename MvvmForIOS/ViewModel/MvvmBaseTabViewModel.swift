@@ -18,6 +18,13 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
     private var tabs: [UIViewController]?
     private var animated = false
 
+    /**
+     *  Set the tabViews for the current TabViewController
+     *
+     *  - parameters:
+     *      - arrayOfViewModelsToAdd: A array of class which implements MvvmBaseViewModel
+     *      - animated: animated or not
+     */
     open func setTabs<T: MvvmBaseViewModel>(arrayOfViewModelsToAdd: [T.Type], animated: Bool) {
         let viewControllers = self.navigation.associateViewControllersWithViewModels(viewModels: arrayOfViewModelsToAdd)
         self.tabs = viewControllers
@@ -26,9 +33,8 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
     }
 
     func setTabsWithStoredViewController() {
-        if tabCtr != nil && tabs != nil {
+        if let tabCtr = tabCtr, let tabs = tabs {
             tabCtr.setViewControllers(tabs, animated: animated)
-            tabs = nil
             if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
                 if viewModel.started == false {
                     viewModel.startViewModel(parameters: nil)

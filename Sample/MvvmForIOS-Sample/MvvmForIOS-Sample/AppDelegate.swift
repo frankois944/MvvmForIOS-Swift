@@ -8,23 +8,25 @@
 
 import UIKit
 import MvvmForIOSSwift
+#if canImport(MvvmForIOSSwift_SidePanel)
+import MvvmForIOSSwift_SidePanel
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let window = UIWindow(frame: UIScreen.main.bounds)
+    var window: UIWindow?
     lazy var navigation: IMvvmNavigationService! = MvvmServiceLocator.resolve()
     var mvvmForIOSSwift: MvvmSetup!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        window = UIWindow(frame: UIScreen.main.bounds)
         registerServices()
-
-        mvvmForIOSSwift = MvvmSetup(window: window, customNavigationController: UINavigationController.self)
-        navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self)
-        navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self)
-        navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self)
+        mvvmForIOSSwift = MvvmSetup(window: window!)
+        //mvvmForIOSSwift = MvvmSetup(sidePannelpresenter: MvvmSidePanelPresenter(window: window))
+        navigation.showViewModel(viewModelToShow: FirstViewModel.self)
         // Override point for customization after application launch.
+        window!.makeKeyAndVisible()
         return true
     }
 

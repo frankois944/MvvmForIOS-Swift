@@ -14,8 +14,8 @@ class Tab1BarViewModel: MvvmBaseViewModel {
         NSLog("[startViewModel] \(String(describing: self))")
     }
 
-    override func isDestroyed() {
-        super.isDestroyed()
+    override func cleanUp() {
+        super.cleanUp()
         NSLog("[isDestroyed] \(String(describing: self))")
     }
 

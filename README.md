@@ -7,7 +7,7 @@
 # MvvmForIOS-Swift
 MvvmForIOS is a framework for using Mvvm pattern on iOS.
 
-It's fully written in Swift 4 and have some tools for respecting the mvvm pattern.
+It's fully written in Swift 4.x and have some tools for respecting the mvvm pattern.
 
 Content of the framework :
 * A structure View/ViewModel/Model
@@ -27,15 +27,9 @@ Currently, I advise to use Bond (https://github.com/DeclarativeHub/Bond)
 
 This framework is specialized for binding content between view and viewModel
 
-Also, you can KVO but it's not fully compatible with Swift.
+Also, you can use KVO but it's not fully compatible with Swift.
 
 ## How to install MvvmForIOS-Swift
-
-* Carthage
-```
-github "Friend-LGA/LGSideMenuController"
-github "frankois944/MvvmForIOS-Swift"
-```
 
 * import
 
@@ -70,11 +64,60 @@ let result = service.openApplicationSetting()
 ### Navigation
 
 #### Important
-The navigation is managed trought __INavigationService__ .
 
-It also based on __LGSideMenuController__ Framework (https://github.com/Friend-LGA/LGSideMenuController), If not needed, you can just ignore it because you don't use it directly
+The navigations is based on components trought __INavigationService__ .
 
-* __default__ :
+    * Presenter
+
+When calling for navigation to another view, the presenter is called, it's a class which implement the protocol IMvvmPresenter.
+```swift
+/**
+* A presenter is use when the app asked for navigate to another view
+*/
+public protocol IMvvmPresenter {
+/**
+* Init of the presenter
+*/
+init(window: UIWindow)
+/**
+* The current navigation controller
+*/
+var navigationController: UIViewController { get }
+
+/**
+* Called when asking to navigate to another view
+*/
+func show<T: IMvvmBaseViewModel>(request: MvvmRequest<T>)
+/**
+* Called when asking closing a view
+*/
+func close<T: IMvvmBaseViewModel>(viewModel: T)
+}
+```
+    * Container
+
+The container is used before calling the presenter, it retrieve the wanted view by the viewmodel type
+
+```swift
+/**
+* Used for getting the view
+*/
+public protocol IMvvmContainer {
+init()
+/**
+* From the viewModel, retrieve the wanted view
+*/
+func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController
+}
+
+```
+
+The Framework embedded a basic presenter and container but you can replace them when you setup the framework.
+```swift
+public init(window: UIWindow, presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self)
+```
+
+* __The default container__ :
 
 All navigation between *Views* are made in the ViewModels, it requires some specifics naming between the *View* + (Storyboard) and the corresponding *ViewModel*.
 
@@ -117,74 +160,19 @@ self.navigation.closeViewModel(viewModelToClose: self, onCompletion: { () -> (Vo
 INavigationService have a lot of methods for navigating, with completion, parameters ...
 ```Swift
 public protocol IMvvmNavigationService {
-    var baseNavigation: LGSideMenuController { get }
-
-    func setCenterViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func setRightSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func setLeftSideViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
+    var baseNavigation: UIViewController { get }
 
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                              onCompletion:(() -> Void)?)
+    onCompletion:(() -> Void)?)
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                              onCompletion:(() -> Void)?,
-                                              withParameters: AnyObject?)
-
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?,
-                                                   customizeModal: ((UIViewController) -> Void)?)
-    func showModalViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                                   onCompletion:(() -> Void)?,
-                                                   customizeModal: ((UIViewController) -> Void)?,
-                                                   withParameters: AnyObject?)
+    onCompletion:(() -> Void)?,
+    withParameters: Any?)
 
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?)
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)
 
-    func showLeftPanel(animated: Bool)
-    func showRightPanel(animated: Bool)
-    func hideLeftPanel(animated: Bool)
-    func hideRightPanel(animated: Bool)
-
     func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
+    func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]?
 }
 ```
-
-### Side Panel
-
-* As this framework is based on __LGSideMenuController__, the use of Panel is easy
-
-```Swift
-//in the appDelegate, set root view for Panel
-navigation.setCenterViewModel(viewModelToShow: FirstViewModel.self) // The initial view of your application
-navigation.setLeftSideViewModel(viewModelToShow: SecondViewModel.self) // Ignore it if not needed
-navigation.setRightSideViewModel(viewModelToShow: SecondViewModel.self) // Ignore it if not needed
-
-//in a viewModel
-//show
-navigation.showLeftPanel(animated: true)
-navigation.showRightPanel(animated: true)
-//hide
-navigation.hideLeftPanel(animated: true)
-navigation.hideRightPanel(animated: true)
-```
-
-* You can also push a viewModel inside a side Panel 
-
-```Swift
-the view declaration must have 
-class SecondView: MvvmBaseView<SecondViewModel>, ILeftPanelAttribute /*mandatory*/ {
-//implementation
-}
-navigation.showViewModel(viewModelToShow: SecondViewModel.self)
-```
-
-* You can access to __LGSideMenuController__ with 
-```Swift
-let lgSideCtr = navigation.baseNavigation;
-```
-so you can customize this component.
-
