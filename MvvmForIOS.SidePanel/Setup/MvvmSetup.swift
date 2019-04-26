@@ -11,7 +11,7 @@ import MvvmForIOSSwift
 
 public extension MvvmSetup {
 
-	public convenience init(windowForSidePanel: UIWindow, sidePresenter: IMvvmSidePanelPresenter.Type = MvvmSidePanelPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
+    convenience init(windowForSidePanel: UIWindow, sidePresenter: IMvvmSidePanelPresenter.Type = MvvmSidePanelPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
 		self.init()
 		NSLog("[MvvmForIOS]START setup")
 		let mpresenter = sidePresenter.init(window: windowForSidePanel)

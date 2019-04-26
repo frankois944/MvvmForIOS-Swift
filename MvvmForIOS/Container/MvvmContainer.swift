@@ -12,7 +12,7 @@ import MvvmForIOSSwift_Private
 /**
  *
  */
-open class MvvmBasicContainer: MvvmBaseContaiser, IMvvmContainer {
+open class MvvmBasicContainer: MvvmBaseContainer, IMvvmContainer {
 
 	public func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController {
 		let classname = NSStringFromClass((viewModel as? AnyClass)!)
