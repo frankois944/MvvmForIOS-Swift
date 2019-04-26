@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		041E74B821D380A4004EF594 /* IMvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B721D380A4004EF594 /* IMvvmContainer.swift */; };
 		041E74BA21D380B6004EF594 /* MvvmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74B921D380B6004EF594 /* MvvmContainer.swift */; };
-		041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */; };
+		041E74BC21D386C7004EF594 /* MvvmBaseContanier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E74BB21D386C7004EF594 /* MvvmBaseContanier.swift */; };
 		04750EAA202374A900315B77 /* IMvvmVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04750EA9202374A900315B77 /* IMvvmVisibility.swift */; };
 		049323DC20234A4300950B7C /* MvvmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323D920234A4300950B7C /* MvvmBaseViewModel.swift */; };
 		049323DD20234A4300950B7C /* MvvmSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049323DA20234A4300950B7C /* MvvmSetup.swift */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		041E74B721D380A4004EF594 /* IMvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmContainer.swift; sourceTree = "<group>"; };
 		041E74B921D380B6004EF594 /* MvvmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmContainer.swift; sourceTree = "<group>"; };
-		041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseContaiser.swift; sourceTree = "<group>"; };
+		041E74BB21D386C7004EF594 /* MvvmBaseContanier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvvmBaseContanier.swift; sourceTree = "<group>"; };
 		04750EA9202374A900315B77 /* IMvvmVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMvvmVisibility.swift; sourceTree = "<group>"; };
 		049323CE20234A3400950B7C /* MvvmForIOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MvvmForIOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049323D220234A3400950B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		041E74B221D3807F004EF594 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				041E74BB21D386C7004EF594 /* MvvmBaseContaiser.swift */,
+				041E74BB21D386C7004EF594 /* MvvmBaseContanier.swift */,
 				041E74B721D380A4004EF594 /* IMvvmContainer.swift */,
 				041E74B921D380B6004EF594 /* MvvmContainer.swift */,
 			);
@@ -273,12 +273,12 @@
 		049323C520234A3400950B7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "francois dabonot";
 				TargetAttributes = {
 					049323CD20234A3400950B7C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -289,6 +289,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 049323C420234A3400950B7C;
 			productRefGroup = 049323CF20234A3400950B7C /* Products */;
@@ -335,7 +336,7 @@
 				073644A921A1CBC6005CB1B1 /* MvvmNavigationUtility.swift in Sources */,
 				049324012023513100950B7C /* MvvmNavigationService.swift in Sources */,
 				077B466221023DD600B68535 /* ObjC.m in Sources */,
-				041E74BC21D386C7004EF594 /* MvvmBaseContaiser.swift in Sources */,
+				041E74BC21D386C7004EF594 /* MvvmBaseContanier.swift in Sources */,
 				07CBA59E21A0BC6700BC449C /* IMvvmModalView.swift in Sources */,
 				049323DE20234A4300950B7C /* MvvmServiceLocator.swift in Sources */,
 				049323FC20234F9E00950B7C /* MvvmBaseView.swift in Sources */,
@@ -501,7 +502,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MvvmForIOS";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -526,7 +527,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/MvvmForIOS";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

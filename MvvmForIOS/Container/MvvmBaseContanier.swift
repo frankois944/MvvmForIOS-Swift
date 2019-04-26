@@ -11,7 +11,7 @@ import UIKit
 /**
  *
  */
-open class MvvmBaseContaiser: NSObject {
+open class MvvmBaseContainer: NSObject {
 	// Do nothing but is mandatory
 	required public override init() {
 	}
