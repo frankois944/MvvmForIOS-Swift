@@ -10,11 +10,7 @@
  *
  */
 open class MvvmServiceLocator {
-
     private static let sharedInstance = MvvmServiceLocator()
-    private init() {
-    }
-
     private lazy var services = [String: Any]()
 
     private static func typeName(some: Any) -> String {
@@ -31,7 +27,8 @@ open class MvvmServiceLocator {
 
     /**
      *
-     */    public static func resolve<T>() -> T? {
+     */
+    public static func resolve<T>() -> T? {
         let key = typeName(some: T.self)
         return MvvmServiceLocator.sharedInstance.services[key] as? T
     }

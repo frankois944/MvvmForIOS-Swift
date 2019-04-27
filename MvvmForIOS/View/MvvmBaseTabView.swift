@@ -36,11 +36,9 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
             }
         }
         (viewModel as? IMvvmBaseTabView)?.tabCtr = self
-        // Do any additional setup after loading the view.
     }
 
-    public func tabBarController(_ tabBarController: UITabBarController,
-                                 shouldSelect viewController: UIViewController) -> Bool {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         initViewModelIfnecessary(viewController: (viewController as? IMvvmView)!)
         return (true)
     }
@@ -69,11 +67,6 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
         }
     }
 
-    override open func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         (viewModel as? IMvvmVisibility)?.isVisible(isVisible: true)
@@ -94,16 +87,12 @@ open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBar
         (viewModel as? IMvvmVisibility)?.willBeVisible(willBeVisible: false)
     }
 
-    deinit {
-    }
-
     open override func didMove(toParent parent: UIViewController?) {
         // clean viewModel
         super.didMove(toParent: parent)
         if parent == nil {
             viewControllers?.forEach {  $0.didMove(toParent: parent) }
             (viewModel as? IMvvmVisibility)?.cleanUp()
-            viewModel = nil
         }
     }
 }

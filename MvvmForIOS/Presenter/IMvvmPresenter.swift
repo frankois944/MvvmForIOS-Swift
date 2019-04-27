@@ -20,7 +20,6 @@ public protocol IMvvmPresenter {
      * The current navigation controller
      */
     var navigationController: UIViewController { get }
-
     /**
      * Called when asking to navigate to another view
      */

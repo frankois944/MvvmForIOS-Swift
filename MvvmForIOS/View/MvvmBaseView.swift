@@ -28,7 +28,6 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
     override open func viewDidLoad() {
         super.viewDidLoad()
         loadViewModelForCurrent()
-        // Do any additional setup after loading the view.
     }
 
     fileprivate func loadViewModelForCurrent() {
@@ -37,11 +36,6 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
             instance.startViewModel(parameters: nil)
             viewModelObject = instance
         }
-    }
-
-    override open func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     open override func viewDidAppear(_ animated: Bool) {
@@ -64,15 +58,11 @@ open class MvvmBaseView<T: IMvvmBaseViewModel> : UIViewController, IMvvmBaseView
         (viewModel as? IMvvmVisibility)?.willBeVisible(willBeVisible: false)
     }
 
-    deinit {
-    }
-
     open override func didMove(toParent parent: UIViewController?) {
         // clean viewModel
         super.didMove(toParent: parent)
         if parent == nil {
             (viewModel as? IMvvmVisibility)?.cleanUp()
-            viewModel = nil
         }
     }
 }

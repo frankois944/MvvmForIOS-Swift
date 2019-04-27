@@ -10,14 +10,13 @@ import UIKit
 import MvvmForIOSSwift
 
 public extension MvvmSetup {
-
     convenience init(windowForSidePanel: UIWindow, sidePresenter: IMvvmSidePanelPresenter.Type = MvvmSidePanelPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
-		self.init()
-		NSLog("[MvvmForIOS]START setup")
-		let mpresenter = sidePresenter.init(window: windowForSidePanel)
-		let mcontainer = container.init()
-		let instance = MvvmNavigationService(sidePannelPresenter: mpresenter, container: mcontainer)
-		MvvmServiceLocator.register(service: instance as IMvvmNavigationService)
-		MvvmServiceLocator.register(service: instance as ISideMvvmNavigationService)
-	}
+        self.init()
+        NSLog("[MvvmForIOS]START setup")
+        let mpresenter = sidePresenter.init(window: windowForSidePanel)
+        let mcontainer = container.init()
+        let instance = MvvmNavigationService(sidePannelPresenter: mpresenter, container: mcontainer)
+        MvvmServiceLocator.register(service: instance as IMvvmNavigationService)
+        MvvmServiceLocator.register(service: instance as ISideMvvmNavigationService)
+    }
 }

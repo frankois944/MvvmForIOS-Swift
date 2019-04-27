@@ -13,14 +13,14 @@ import UIKit
  */
 public struct MvvmRequest<T: IMvvmBaseViewModel> {
     public let viewModel: T.Type
-	public let view: UIViewController
+    public let view: UIViewController
     public let parameters: Any?
     public let customizeModalTransition: ((UIViewController) -> Void)?
     public let presenterParamters: [String: Any]?
 
-	init(viewModel: T.Type, container: IMvvmContainer, parameters: Any?) {
+    init(viewModel: T.Type, container: IMvvmContainer, parameters: Any?) {
         self.viewModel = viewModel
-		self.view = container.getView(viewModel: viewModel)
+        self.view = container.getView(viewModel: viewModel)
         self.parameters = parameters
         self.customizeModalTransition = nil
         self.presenterParamters = nil
@@ -28,7 +28,7 @@ public struct MvvmRequest<T: IMvvmBaseViewModel> {
 
     init(viewModel: T.Type, container: IMvvmContainer, parameters: Any?, customizeTransition: ((UIViewController) -> Void)? = nil) {
         self.viewModel = viewModel
-		self.view = container.getView(viewModel: viewModel)
+        self.view = container.getView(viewModel: viewModel)
         self.parameters = parameters
         self.customizeModalTransition = customizeTransition
         self.presenterParamters = nil

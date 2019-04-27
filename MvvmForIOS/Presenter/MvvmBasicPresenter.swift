@@ -13,10 +13,9 @@ import MvvmForIOSSwift_Private
  *
  */
 open class MvvmBasicPresenter: IMvvmPresenter {
-
-	/*
-    * Let's consider there is only one modal at the time
-	*/
+    /*
+     * Let's consider there is only one modal at the time
+     */
     private var modalViewController: UIViewController?
     public let window: UIWindow
 
@@ -64,10 +63,10 @@ open class MvvmBasicPresenter: IMvvmPresenter {
     // MARK: Utilities
 
     private func closeModal() {
-		if let modal = modalViewController {
-        	modal.dismiss(animated: MvvmNavigationUtility.getIsAnimatedForClose(view: modal), completion: nil)
-		}
-		modalViewController = nil
+        if let modal = modalViewController {
+            modal.dismiss(animated: MvvmNavigationUtility.getIsAnimatedForClose(view: modal), completion: nil)
+        }
+        modalViewController = nil
     }
 
     private func presentModal<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, view: UIViewController) {

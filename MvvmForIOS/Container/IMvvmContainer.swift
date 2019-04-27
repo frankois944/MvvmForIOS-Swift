@@ -12,9 +12,9 @@ import UIKit
  * Used for getting the view
  */
 public protocol IMvvmContainer {
-	init()
+    init()
     /**
      * From the viewModel, retrieve the wanted view
      */
-	func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController
+    func getView<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController
 }

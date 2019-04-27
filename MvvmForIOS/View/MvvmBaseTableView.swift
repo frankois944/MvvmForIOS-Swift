@@ -45,7 +45,6 @@ open class MvvmBaseTableView<T: IMvvmBaseViewModel> : UITableViewController, IMv
         super.didMove(toParent: parent)
         if parent == nil {
             (viewModel as? IMvvmVisibility)?.cleanUp()
-            viewModel = nil
         }
     }
 }

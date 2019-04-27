@@ -15,11 +15,8 @@ public protocol IMvvmNavigationService {
     var baseNavigation: UIViewController { get }
 
     func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type)
-    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                              onCompletion:(() -> Void)?)
-    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type,
-                                              onCompletion:(() -> Void)?,
-                                              withParameters: Any?)
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?)
+    func showViewModel<T: IMvvmBaseViewModel>(viewModelToShow: T.Type, onCompletion:(() -> Void)?, withParameters: Any?)
 
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T, onCompletion:(() -> Void)?)
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)

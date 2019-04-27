@@ -12,7 +12,6 @@ import UIKit
  *
  */
 public class MvvmNavigationUtility {
-
     static public func getIsAnimatedForOpen(view: UIViewController) -> Bool {
         var animated: Bool = true
         if let viewToTest = view as? IMvvmTransitionAttribute {
@@ -42,15 +41,15 @@ public class MvvmNavigationUtility {
 
     static public func getViewFromViewModel<T: IMvvmBaseViewModel>(viewModel: T, navigationController: UINavigationController) -> UIViewController? {
         let views = navigationController.viewControllers
-		for view in views {
-			guard let viewToTest = view as? IMvvmView else {
-				continue
-			}
-			if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModel as AnyObject).toOpaque() {
-				return (view)
-			}
-		}
-		return (nil)
+        for view in views {
+            guard let viewToTest = view as? IMvvmView else {
+                continue
+            }
+            if Unmanaged.passUnretained(viewToTest.viewModelObject as AnyObject).toOpaque() == Unmanaged.passUnretained(viewModel as AnyObject).toOpaque() {
+                return (view)
+            }
+        }
+        return (nil)
     }
 
     static public func loadView<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, mustStart: Bool = false) -> UIViewController {
@@ -59,8 +58,8 @@ public class MvvmNavigationUtility {
             newViewModel.startViewModel(parameters: request.parameters)
         }
         // Store ViewModel in View
-		// crash if the View is not a IMvvmView (it's a choice!)
+        // crash if the View is not a IMvvmView (it's a choice!)
         (request.view as? IMvvmView)!.viewModelObject = newViewModel
-		return (request.view)
+        return (request.view)
     }
 }
