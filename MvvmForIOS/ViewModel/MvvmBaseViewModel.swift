@@ -9,20 +9,22 @@
 import Foundation
 
 open class MvvmBaseViewModel: IMvvmBaseViewModel, IMvvmVisibility {
-    public var started: Bool = false
+    public var parameters: Any?
     /**
      *
      */
     public var navigation: IMvvmNavigationService {
         return (MvvmServiceLocator.resolve()!)
     }
+    /**
+     * 
+     */
     required public init() {
     }
     /**
      *
      */
     open func startViewModel(parameters: Any?) {
-        started = true
     }
     /**
      *

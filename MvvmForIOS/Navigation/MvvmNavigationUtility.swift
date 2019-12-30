@@ -53,9 +53,9 @@ public class MvvmNavigationUtility {
     }
 
     static public func loadView<T: IMvvmBaseViewModel>(request: MvvmRequest<T>, mustStart: Bool = false) -> UIViewController {
-        let newViewModel = request.viewModel.init()
+        var newViewModel = request.viewModel.init()
         if mustStart == true {
-            newViewModel.startViewModel(parameters: request.parameters)
+            newViewModel.parameters = request.parameters
         }
         // Store ViewModel in View
         // crash if the View is not a IMvvmView (it's a choice!)

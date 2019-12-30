@@ -12,59 +12,26 @@ import UIKit
  *
  */
 open class MvvmBaseTabView<T: IMvvmBaseViewModel>: UITabBarController, UITabBarControllerDelegate, IMvvmBaseView {
-    typealias ViewModelType = T
-    open var viewModel: T!
-
-    internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: Any? {
+    var viewModelObject: Any? {
         get {
-            return (viewModel as Any?)
+            return viewModel
         }
         set {
             viewModel = newValue as? T
         }
     }
 
+    lazy open var viewModel: T! = {
+        let newViewModel = (T.self).init()
+        return newViewModel
+    }()
+
     override open func viewDidLoad() {
         super.viewDidLoad()
-        loadViewModelForCurrent()
         self.delegate = self
-        if let viewControllers = viewControllers, viewControllers.count > 0 {
-            let viewController = viewControllers[0]
-            if let viewController = viewController as? IMvvmView {
-                initViewModelIfnecessary(viewController: viewController)
-            }
-        }
         (viewModel as? IMvvmBaseTabView)?.tabCtr = self
-    }
-
-    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        initViewModelIfnecessary(viewController: (viewController as? IMvvmView)!)
-        return (true)
-    }
-
-    fileprivate func initViewModelIfnecessary(viewController: IMvvmView) {
-        if viewController.viewModelObject == nil, let type = viewController.typeOfViewModel as? MvvmBaseViewModel.Type {
-            let instance = type.init()
-            instance.startViewModel(parameters: nil)
-            viewController.viewModelObject = instance
-        }
-        if let viewModel = viewController.viewModelObject as? MvvmBaseViewModel {
-            if viewModel.started == false {
-                viewModel.startViewModel(parameters: nil)
-                viewModel.started = true
-            }
-        }
-    }
-
-    fileprivate func loadViewModelForCurrent() {
-        if viewModelObject == nil {
-            if let type = typeOfViewModel as? MvvmBaseViewModel.Type {
-                let instance = type.init()
-                instance.startViewModel(parameters: nil)
-                viewModelObject = instance
-            }
-        }
+        viewModel.startViewModel(parameters: viewModel.parameters)
+        viewModel.parameters = nil
     }
 
     open override func viewDidAppear(_ animated: Bool) {

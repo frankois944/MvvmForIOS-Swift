@@ -18,5 +18,5 @@ public protocol IMvvmBaseViewModel {
     /**
      *
      */
-    var started: Bool {get set}
+    var parameters: Any? {get set}
 }

@@ -24,7 +24,7 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
      *      - arrayOfViewModelsToAdd: A array of class which implements MvvmBaseViewModel
      *      - animated: animated or not
      */
-    open func setTab<T: MvvmBaseViewModel>(viewModelToShow: T.Type, at index: Int, animated: Bool = false) {
+    open func setTab(viewModelToShow: MvvmBaseViewModel.Type, at index: Int, animated: Bool = false) {
         let viewContoller = self.navigation.associateViewControllerForViewModel(viewModel: viewModelToShow)
         assert(viewContoller != nil, "The viewcontroller cant be nil \(viewModelToShow)")
         self.tabs.insert(viewContoller!, at: index)
@@ -36,10 +36,8 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
         if let tabCtr = tabCtr {
             tabCtr.setViewControllers(tabs, animated: animated)
             if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
-                if viewModel.started == false {
-                    viewModel.startViewModel(parameters: nil)
-                    viewModel.started = true
-                }
+                viewModel.startViewModel(parameters: viewModel.parameters)
+                viewModel.parameters = nil
             }
         }
     }

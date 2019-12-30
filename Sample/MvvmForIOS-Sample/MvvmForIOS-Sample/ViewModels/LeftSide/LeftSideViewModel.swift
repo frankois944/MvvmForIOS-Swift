@@ -14,6 +14,8 @@ class LeftSideViewModel: MvvmBaseViewModel {
 
     override func startViewModel(parameters: Any?) {
         NSLog("[startViewModel] \(String(describing: self))")
+        assert(parameters != nil, "Parameters cant be nil")
+        NSLog("[LeftSideViewModel Parameters] \(String(describing: parameters))")
     }
 
     override func cleanUp() {

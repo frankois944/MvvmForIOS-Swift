@@ -12,30 +12,25 @@ import UIKit
  *
  */
 open class MvvmBaseView<T: IMvvmBaseViewModel>: UIViewController, IMvvmBaseView {
-    typealias ViewModelType = T
-    open var viewModel: T!
 
-    internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: Any? {
+    var viewModelObject: Any? {
         get {
-            return (viewModel as Any?)
+            return viewModel
         }
         set {
-            viewModel = (newValue as? T)!
+            viewModel = newValue as? T
         }
     }
+
+    lazy open var viewModel: T! = {
+        let newViewModel = (T.self).init()
+        return newViewModel
+    }()
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        loadViewModelForCurrent()
-    }
-
-    fileprivate func loadViewModelForCurrent() {
-        if viewModelObject == nil {
-            let instance = (typeOfViewModel as? MvvmBaseViewModel.Type)!.init()
-            instance.startViewModel(parameters: nil)
-            viewModelObject = instance
-        }
+        viewModel.startViewModel(parameters: viewModel.parameters)
+        viewModel.parameters = nil
     }
 
     open override func viewDidAppear(_ animated: Bool) {
@@ -56,13 +51,5 @@ open class MvvmBaseView<T: IMvvmBaseViewModel>: UIViewController, IMvvmBaseView 
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         (viewModel as? IMvvmVisibility)?.willBeVisible(willBeVisible: false)
-    }
-
-    open override func didMove(toParent parent: UIViewController?) {
-        // clean viewModel
-        super.didMove(toParent: parent)
-        if parent == nil {
-            (viewModel as? IMvvmVisibility)?.cleanUp()
-        }
     }
 }

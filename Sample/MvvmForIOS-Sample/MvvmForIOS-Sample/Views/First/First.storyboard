@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIz-Kd-b9J">
-                                <rect key="frame" x="16" y="20" width="343" height="62"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="PJ0-kN-Xrc"/>
                                 </constraints>
@@ -30,116 +28,99 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-uh-8K8">
-                                <rect key="frame" x="16" y="90" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1po-45-Xlf"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO0-gT-blU">
-                                <rect key="frame" x="16" y="128" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="sPM-45-oMJ"/>
-                                </constraints>
-                                <state key="normal" title="SecondView"/>
-                                <connections>
-                                    <action selector="goSecondView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="J4o-VQ-ole"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-NI-bWD">
-                                <rect key="frame" x="16" y="166" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="kX5-gI-zi5"/>
-                                </constraints>
-                                <state key="normal" title=" Third View without stroryboard"/>
-                                <connections>
-                                    <action selector="goThirdView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="BLZ-9B-3SI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYc-Hd-jlG">
-                                <rect key="frame" x="16" y="204" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="voE-Z7-0Zr"/>
-                                </constraints>
-                                <state key="normal" title="Show left Panel"/>
-                                <connections>
-                                    <action selector="showLeftPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="hUp-Wz-plk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUK-AG-g0w">
-                                <rect key="frame" x="16" y="242" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="zhJ-NW-Rnc"/>
-                                </constraints>
-                                <state key="normal" title="Show right Panel"/>
-                                <connections>
-                                    <action selector="showRightPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="oUo-3V-wZj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-qI-aHJ">
-                                <rect key="frame" x="16" y="280" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4Yg-CH-0es"/>
-                                </constraints>
-                                <state key="normal" title="Show tab bar"/>
-                                <connections>
-                                    <action selector="goTabView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="G7p-Ol-GJG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKM-BP-C4P">
-                                <rect key="frame" x="16" y="318" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Rbt-tR-obE"/>
-                                </constraints>
-                                <state key="normal" title="Show tableview Controller"/>
-                                <connections>
-                                    <action selector="showTableViewCtr:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="exg-Nm-k0K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-6c-m9C">
-                                <rect key="frame" x="16" y="356" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="btD-P2-i93"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xYT-s8-aPQ"/>
-                                </constraints>
-                                <state key="normal" title="Show Modal"/>
-                                <connections>
-                                    <action selector="showModal:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="Kew-RW-bPq"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lgi-bv-i7a">
+                                <rect key="frame" x="24" y="70" width="327" height="296"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zK-uh-8K8">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1po-45-Xlf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO0-gT-blU">
+                                        <rect key="frame" x="0.0" y="38" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="sPM-45-oMJ"/>
+                                        </constraints>
+                                        <state key="normal" title="SecondView"/>
+                                        <connections>
+                                            <action selector="goSecondView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="J4o-VQ-ole"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-NI-bWD">
+                                        <rect key="frame" x="0.0" y="76" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kX5-gI-zi5"/>
+                                        </constraints>
+                                        <state key="normal" title=" Third View without stroryboard"/>
+                                        <connections>
+                                            <action selector="goThirdView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="BLZ-9B-3SI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYc-Hd-jlG">
+                                        <rect key="frame" x="0.0" y="114" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="voE-Z7-0Zr"/>
+                                        </constraints>
+                                        <state key="normal" title="Show left Panel"/>
+                                        <connections>
+                                            <action selector="showLeftPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="hUp-Wz-plk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUK-AG-g0w">
+                                        <rect key="frame" x="0.0" y="152" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="zhJ-NW-Rnc"/>
+                                        </constraints>
+                                        <state key="normal" title="Show right Panel"/>
+                                        <connections>
+                                            <action selector="showRightPanel:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="oUo-3V-wZj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdN-qI-aHJ">
+                                        <rect key="frame" x="0.0" y="190" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4Yg-CH-0es"/>
+                                        </constraints>
+                                        <state key="normal" title="Show tab bar"/>
+                                        <connections>
+                                            <action selector="goTabView:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="G7p-Ol-GJG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKM-BP-C4P">
+                                        <rect key="frame" x="0.0" y="228" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Rbt-tR-obE"/>
+                                        </constraints>
+                                        <state key="normal" title="Show tableview Controller"/>
+                                        <connections>
+                                            <action selector="showTableViewCtr:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="exg-Nm-k0K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ba-6c-m9C">
+                                        <rect key="frame" x="0.0" y="266" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="btD-P2-i93"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xYT-s8-aPQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Show Modal"/>
+                                        <connections>
+                                            <action selector="showModal:" destination="8BQ-eY-MJr" eventType="touchUpInside" id="Kew-RW-bPq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dO0-gT-blU" firstAttribute="leading" secondItem="WQN-NI-bWD" secondAttribute="leading" id="4L7-3j-Cdu"/>
-                            <constraint firstItem="3ba-6c-m9C" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="8ox-mH-Ktp"/>
-                            <constraint firstItem="6zK-uh-8K8" firstAttribute="top" secondItem="DIz-Kd-b9J" secondAttribute="bottom" constant="8" symbolic="YES" id="Bdc-Lg-n4N"/>
-                            <constraint firstItem="sUK-AG-g0w" firstAttribute="top" secondItem="MYc-Hd-jlG" secondAttribute="bottom" constant="8" symbolic="YES" id="Djn-OS-PNR"/>
-                            <constraint firstItem="eKM-BP-C4P" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="EMw-Xm-sFP"/>
-                            <constraint firstItem="WQN-NI-bWD" firstAttribute="top" secondItem="dO0-gT-blU" secondAttribute="bottom" constant="8" symbolic="YES" id="Ecq-PW-Pvc"/>
-                            <constraint firstItem="WQN-NI-bWD" firstAttribute="trailing" secondItem="MYc-Hd-jlG" secondAttribute="trailing" id="FOP-1z-Prt"/>
+                            <constraint firstItem="Lgi-bv-i7a" firstAttribute="top" secondItem="DIz-Kd-b9J" secondAttribute="bottom" constant="8" id="BRT-2r-QM9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lgi-bv-i7a" secondAttribute="trailing" constant="8" id="FDq-Py-qpX"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="SQK-9f-ZMS"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="top" secondItem="rne-DP-Vag" secondAttribute="bottom" id="SWH-yX-6Lr"/>
-                            <constraint firstItem="dO0-gT-blU" firstAttribute="top" secondItem="6zK-uh-8K8" secondAttribute="bottom" constant="8" symbolic="YES" id="Tr0-6T-ixp"/>
-                            <constraint firstItem="WQN-NI-bWD" firstAttribute="leading" secondItem="MYc-Hd-jlG" secondAttribute="leading" id="XfX-jC-hsJ"/>
-                            <constraint firstItem="3ba-6c-m9C" firstAttribute="top" secondItem="eKM-BP-C4P" secondAttribute="bottom" constant="8" id="YeM-e2-Ss5"/>
-                            <constraint firstItem="dO0-gT-blU" firstAttribute="trailing" secondItem="WQN-NI-bWD" secondAttribute="trailing" id="bSc-7U-a81"/>
-                            <constraint firstItem="sUK-AG-g0w" firstAttribute="trailing" secondItem="gdN-qI-aHJ" secondAttribute="trailing" id="cfP-D4-Kaf"/>
-                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="leading" secondItem="sUK-AG-g0w" secondAttribute="leading" id="dAf-p4-daL"/>
-                            <constraint firstItem="DIz-Kd-b9J" firstAttribute="trailing" secondItem="6zK-uh-8K8" secondAttribute="trailing" id="dRC-ka-ZkR"/>
-                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="trailing" secondItem="sUK-AG-g0w" secondAttribute="trailing" id="ebB-Yg-xv7"/>
-                            <constraint firstItem="6zK-uh-8K8" firstAttribute="trailing" secondItem="dO0-gT-blU" secondAttribute="trailing" id="em6-II-yJb"/>
-                            <constraint firstItem="3ba-6c-m9C" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="juG-Dn-SIy"/>
-                            <constraint firstItem="eKM-BP-C4P" firstAttribute="top" secondItem="gdN-qI-aHJ" secondAttribute="bottom" constant="8" id="nzc-U6-DwY"/>
-                            <constraint firstItem="6zK-uh-8K8" firstAttribute="leading" secondItem="dO0-gT-blU" secondAttribute="leading" id="q12-Af-Tn5"/>
-                            <constraint firstItem="DIz-Kd-b9J" firstAttribute="leading" secondItem="6zK-uh-8K8" secondAttribute="leading" id="qTg-D1-FOY"/>
+                            <constraint firstItem="Lgi-bv-i7a" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" constant="8" id="oLG-Bu-GSE"/>
                             <constraint firstItem="DIz-Kd-b9J" firstAttribute="trailing" secondItem="QWl-2Y-ehK" secondAttribute="trailingMargin" id="rJN-j1-F3z"/>
-                            <constraint firstItem="MYc-Hd-jlG" firstAttribute="top" secondItem="WQN-NI-bWD" secondAttribute="bottom" constant="8" symbolic="YES" id="rkr-M6-s9p"/>
-                            <constraint firstItem="eKM-BP-C4P" firstAttribute="leading" secondItem="QWl-2Y-ehK" secondAttribute="leadingMargin" id="rxi-01-eX3"/>
-                            <constraint firstItem="gdN-qI-aHJ" firstAttribute="top" secondItem="sUK-AG-g0w" secondAttribute="bottom" constant="8" symbolic="YES" id="sp5-2U-sGZ"/>
-                            <constraint firstItem="sUK-AG-g0w" firstAttribute="leading" secondItem="gdN-qI-aHJ" secondAttribute="leading" id="u3h-3c-0xw"/>
                         </constraints>
                     </view>
                     <connections>

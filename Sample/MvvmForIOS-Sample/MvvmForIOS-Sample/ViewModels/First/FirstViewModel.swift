@@ -30,7 +30,7 @@ class FirstViewModel: MvvmBaseViewModel {
     func showSecondViewModel() {
         navigation.showViewModel(viewModelToShow: LeftSideViewModel.self, onCompletion: {
             print("Show LeftSideViewModel completed")
-        }, withParameters: nil)
+        }, withParameters: "A parameters")
         //navigation.showLeftPanel(animated: true)
     }
 

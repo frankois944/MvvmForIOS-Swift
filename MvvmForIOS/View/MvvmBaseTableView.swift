@@ -12,32 +12,21 @@ import UIKit
  *
  */
 open class MvvmBaseTableView<T: IMvvmBaseViewModel>: UITableViewController, IMvvmBaseView {
-    typealias ViewModelType = T
-    open var viewModel: T!
 
-    internal var typeOfViewModel: AnyClass? = T.self as? AnyClass
-    internal var viewModelObject: Any? {
-        get {
-            return (viewModel as Any?)
-        }
-        set {
-            viewModel = newValue as? T
-        }
+    var viewModelObject: Any? {
+        get { return viewModel }
+        set { viewModel = newValue as? T }
     }
+
+    lazy open var viewModel: T! = {
+        let newViewModel = (T.self).init()
+        return newViewModel
+    }()
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        loadViewModelForCurrent()
-    }
-
-    fileprivate func loadViewModelForCurrent() {
-        if viewModelObject == nil {
-            if let type = viewModel as? MvvmBaseViewModel.Type {
-                let instance = type.init()
-                instance.startViewModel(parameters: nil)
-                viewModelObject = instance
-            }
-        }
+        viewModel.startViewModel(parameters: viewModel.parameters)
+        viewModel.parameters = nil
     }
 
     open override func didMove(toParent parent: UIViewController?) {
