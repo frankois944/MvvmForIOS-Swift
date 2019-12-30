@@ -31,14 +31,22 @@ open class MvvmBaseTabViewModel: MvvmBaseViewModel, IMvvmBaseTabView {
         self.animated = animated
         self.setTabsWithStoredViewController()
     }
-
-    func setTabsWithStoredViewController() {
+    /**
+     *  Remove a specific tab
+     *
+     *  - parameters:
+     *      - arrayOfViewModelsToAdd: A array of class which implements MvvmBaseViewModel
+     *      - animated: animated or not
+     */
+    open func removeTab(at index: Int, animated: Bool = false) {
         if let tabCtr = tabCtr {
+            var tabs = tabCtr.viewControllers
+            tabs?.remove(at: index)
             tabCtr.setViewControllers(tabs, animated: animated)
-            if let viewModel = (tabCtr.selectedViewController as? IMvvmView)?.viewModelObject as? MvvmBaseViewModel {
-                viewModel.startViewModel(parameters: viewModel.parameters)
-                viewModel.parameters = nil
-            }
         }
+    }
+
+    private func setTabsWithStoredViewController() {
+        tabCtr?.setViewControllers(tabs, animated: animated)
     }
 }

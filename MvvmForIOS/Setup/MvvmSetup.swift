@@ -15,7 +15,7 @@ open class MvvmSetup {
      * Do Nothing but mandatory, don't call directly
      */
     public init() {
-        assertionFailure("can be called directly")
+        assertionFailure("cant be called directly")
     }
     /**
      * Entry point of the Mvvm Framework with a basic presenter (MvvmBasicPresenter)
@@ -28,7 +28,9 @@ open class MvvmSetup {
      *  - Important:
      *  This method must be call before everything
      **/
-    public init(window: UIWindow, presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self, container: IMvvmContainer.Type = MvvmBasicContainer.self) {
+    public init(window: UIWindow,
+                presenter: IMvvmPresenter.Type = MvvmBasicPresenter.self,
+                container: IMvvmContainer.Type = MvvmBasicContainer.self) {
         NSLog("[MvvmForIOS]START setup")
         let mpresenter = presenter.init(window: window)
         let mcontainer = container.init()
