@@ -11,7 +11,7 @@ import UIKit
 /**
  *
  */
-open class MvvmBaseTableView<T: IMvvmBaseViewModel> : UITableViewController, IMvvmBaseView {
+open class MvvmBaseTableView<T: IMvvmBaseViewModel>: UITableViewController, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!
 

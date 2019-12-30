@@ -11,7 +11,7 @@ import UIKit
 /**
  *
  */
-open class MvvmBaseTabView<T: IMvvmBaseViewModel> : UITabBarController, UITabBarControllerDelegate, IMvvmBaseView {
+open class MvvmBaseTabView<T: IMvvmBaseViewModel>: UITabBarController, UITabBarControllerDelegate, IMvvmBaseView {
     typealias ViewModelType = T
     open var viewModel: T!
 

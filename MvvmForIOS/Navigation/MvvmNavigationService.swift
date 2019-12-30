@@ -58,9 +58,13 @@ open class MvvmNavigationService: IMvvmNavigationService {
         return (newViewModel)
     }
 
+    public func associateViewControllerForViewModel<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController? {
+        return container.getView(viewModel: viewModel)
+    }
+
     public func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]? {
-        let result = viewModels.map {
-            return (container.getView(viewModel: $0))
+        let result = viewModels.compactMap {
+            return (associateViewControllerForViewModel(viewModel: $0))
         }
         return (result)
     }

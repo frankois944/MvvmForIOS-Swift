@@ -13,7 +13,9 @@ class TabBarViewModel: MvvmBaseTabViewModel {
 
     required init() {
         super.init()
-        self.setTabs(arrayOfViewModelsToAdd: [Tab1BarViewModel.self, Tab2BarViewModel.self, Tab3BarViewModel.self], animated: true)
+        setTab(viewModelToShow: Tab1BarViewModel.self, at: 0)
+        setTab(viewModelToShow: Tab2BarViewModel.self, at: 1)
+        setTab(viewModelToShow: Tab3BarViewModel.self, at: 2)
     }
 
     override func startViewModel(parameters: Any?) {

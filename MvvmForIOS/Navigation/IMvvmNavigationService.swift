@@ -22,5 +22,5 @@ public protocol IMvvmNavigationService {
     func closeViewModel<T: IMvvmBaseViewModel>(viewModelToClose: T)
 
     func resolveViewModel<T: IMvvmBaseViewModel>(viewModelToGet: T.Type) -> T
-    func associateViewControllersWithViewModels<T: IMvvmBaseViewModel>(viewModels: [T.Type]) -> [UIViewController]?
+    func associateViewControllerForViewModel<T: IMvvmBaseViewModel>(viewModel: T.Type) -> UIViewController?
 }
